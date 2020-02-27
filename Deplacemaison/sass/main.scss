@@ -1,0 +1,115 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  font-family: Favorit, sans-serif;
+}
+@font-face {
+  font-family: myFont;
+  src: url("../fonts/5d0751a28518922f090030ce_Cyberthrone.ttf");
+}
+html {
+  scroll-behavior: smooth;
+}
+img {
+  max-width: 100%;
+  vertical-align: middle;
+}
+
+/* class hay sử dụng */
+.row {
+  margin-top: 20px;
+}
+.box {
+  min-height: 200px;
+  background-color: lightcoral;
+}
+
+.big {
+  min-height: 500px;
+}
+body {
+  background-color: #fcf9ee;
+}
+.rotate-360 {
+  transform: translate3d(0px, 0%, 0px) scale3d(1, 1, 1) rotateX(0deg)
+    rotateY(0deg) rotateZ(0deg) skew(0deg, 0deg);
+  transform-style: preserve-3d;
+}
+header {
+  padding-right: 10vw;
+  padding-left: 23.5vw;
+  background-color: #fcf9ee;
+  .row {
+    .col {
+      .box {
+        background-color: #fcf9ee;
+        .row {
+          .col {
+            .box#fall {
+              h1 {
+                font-size: 200px;
+                color: black;
+                float: right;
+                transition: 0.5s;
+              }
+            }
+          }
+        }
+        .row {
+          .col {
+            .box#winter {
+              display: flex;
+              justify-content: space-evenly;
+              div {
+                display: flex;
+                h1 {
+                  display: inline-block;
+                  font-size: 200px;
+                  font-weight: 500;
+                  letter-spacing: -0.5rem;
+                  color: black;
+                  object-fit: contain;
+                }
+              }
+              div#layer {
+                #Layer_1 {
+                  width: 10.2vw;
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+section {
+  padding-right: 10vw;
+  padding-left: 23.5vw;
+  margin-top: 50px;
+}
+footer {
+}
+
+/* first section */
+#first_section {
+  background-color: lightgreen;
+  min-height: 500px;
+}
+/* rolling section */
+#rolling-section {
+  padding-left: 0;
+  padding-right: 0;
+}
+
+/*who-we-are-section*/
+#who-we-are-section {
+}
+
+/*product-section*/
+#product-section {
+  margin-left: -23vw;
+  padding-left: 0;
+  padding-right: 0;
+}
