@@ -41,6 +41,70 @@ body {
   transform-style: preserve-3d;
 }
 
+.slide {
+  height: fit-content;
+  width: fit-content;
+  position: relative;
+}
+
+.slide-up {
+  position: absolute;
+}
+
+.slide-down {
+  position: absolute;
+  top: 10px;
+  opacity: 0;
+}
+
+.slide-left {
+  position: absolute;
+}
+
+.slide-right {
+  position: absolute;
+  left: 10px;
+  opacity: 0;
+}
+
+polygon {
+  stroke: transparent;
+  fill: none !important;
+  stroke-dasharray: 1800;
+  opacity: 1;
+}
+
+path {
+  stroke: transparent;
+  fill: none !important;
+  stroke-dasharray: 1800;
+  opacity: 1;
+}
+
+@keyframes write {
+  0% {
+    opacity: 0;
+    fill: none;
+    stroke-width: 0;
+    stroke-dashoffset: 1800;
+    stroke: black;
+  }
+  50% {
+    opacity: 1;
+    fill: none;
+    stroke-width: 5;
+    stroke-dashoffset: 1800;
+    stroke: black;
+  }
+  100% {
+    opacity: 1;
+    fill: none;
+    stroke-width: 10;
+    stroke-dashoffset: 0;
+    stroke: black;
+  }
+}
+/* header css */
 header {
   padding-right: 10vw;
   padding-left: 23.5vw;
@@ -54,6 +118,7 @@ header .row .col .box .row .col .box#fall h1 {
   color: black;
   float: right;
   transition: 0.5s;
+  font-weight: 500;
 }
 header .row .col .box .row .col .box#winter {
   display: flex;
