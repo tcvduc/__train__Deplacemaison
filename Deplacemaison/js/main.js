@@ -102,35 +102,94 @@ const svgText = anime({
   }
 });
 
+// xử lý loading animation
+
+const load1 = $(".load-1");
+const load2 = $(".load-2");
+const load3 = $(".load-3");
+const load4 = $(".load-4");
+
+window.addEventListener("load", () => {
+  anime({
+    targets: ".load-1",
+    translateY: -150,
+    opacity: 0,
+
+    easing: "easeOutQuart"
+  });
+
+  setTimeout(() => {
+    load2.css("display", "block");
+    anime({
+      targets: ".load-2",
+      translateY: -150,
+      opacity: 0,
+
+      easing: "easeOutQuart"
+    });
+  }, 350);
+
+  setTimeout(() => {
+    load3.css("display", "block");
+    anime({
+      targets: ".load-3",
+      translateY: -150,
+      opacity: 0,
+
+      easing: "easeOutQuart"
+    });
+  }, 700);
+
+  setTimeout(() => {
+    load4.css("display", "block");
+    anime({
+      targets: ".load-4",
+      translateY: -150,
+      opacity: 0,
+
+      easing: "easeOutQuart"
+    });
+  }, 1050);
+
+  setTimeout(() => {
+    const loader = document.querySelector(".loader");
+    loader.className += " hidden";
+    log(loader);
+  }, 2000);
+});
+
+// xử lý write hand animation
 $(window).ready(() => {
-  $("#c-group path").css("animation", "write 1s forwards");
+  setTimeout(() => {
+    $("#c-group path").css("animation", "write 1s forwards");
+  }, 2250);
   setTimeout(() => {
     $("#o-group path").css("animation", "write 1s forwards");
-  }, 250);
+  }, 2500);
   setTimeout(() => {
     $("#l1-group path").css("animation", "write 1s forwards");
-  }, 500);
+  }, 2750);
   setTimeout(() => {
     $("#l2-group path").css("animation", "write 1s forwards");
-  }, 750);
+  }, 3000);
   setTimeout(() => {
     $("#point-group path").css("animation", "write 1s forwards");
-  }, 1000);
+  }, 3000);
   setTimeout(() => {
     $("#numb1-group path").css("animation", "write 1s forwards");
-  }, 750);
+  }, 3000);
   setTimeout(() => {
     $("#numb9-group path").css("animation", "write 1s forwards");
-  }, 1000);
+  }, 3250);
   setTimeout(() => {
     $("#slash-group path").css("animation", "write 1s forwards");
-  }, 1250);
+  }, 3250);
   setTimeout(() => {
     $("#numb2-group path").css("animation", "write 1s forwards");
-  }, 1500);
+  }, 3500);
   setTimeout(() => {
     $("#num0-group path").css("animation", "write 1s forwards");
-  }, 1750);
+  }, 3750);
 });
 
 //  this.CSS({ animation: "write 1s forwards" });

@@ -41,6 +41,7 @@ body {
   transform-style: preserve-3d;
 }
 
+/* hiệu ứng lật khi hover */
 .slide {
   height: fit-content;
   width: fit-content;
@@ -67,6 +68,7 @@ body {
   opacity: 0;
 }
 
+/*Xử lý svg*/
 polygon {
   stroke: transparent;
   fill: none !important;
@@ -81,6 +83,7 @@ path {
   opacity: 1;
 }
 
+/* animation: write 5s forwards;*/
 @keyframes write {
   0% {
     opacity: 0;
@@ -104,6 +107,85 @@ path {
     stroke: black;
   }
 }
+/* xử lý loadding  */
+.loader {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 10;
+  height: 100vh;
+  width: 100vw;
+  background-color: black;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-direction: column;
+}
+
+.load-header {
+  display: flex;
+  padding: 50px;
+  justify-content: center;
+  align-items: center;
+  min-height: 100px;
+  background-color: black;
+  width: 100%;
+}
+
+.load-footer {
+  background-color: black;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  min-height: 100px;
+  width: 100%;
+}
+.load-footer .load-footer-text {
+  color: #fcf9ee;
+  display: block;
+  font-size: 1.2vw;
+  line-height: 1.5vw;
+  letter-spacing: 0.05em;
+}
+
+.load-main {
+  position: relative;
+  height: 100%;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.load-main .loadding {
+  position: absolute;
+  display: none;
+  color: #fcf9ee;
+  font-size: 20vw;
+  line-height: 17vw;
+  letter-spacing: 2rem;
+  font-weight: 500;
+  font-family: myFont, sans-serif;
+}
+.load-main .load-1 {
+  display: block;
+}
+
+/* không thể dùng tranfrom để canh giữa vì anime js dùng transform */
+.loader.hidden {
+  animation: fadeOut 0.2s forwards;
+}
+
+@keyframes fadeOut {
+  100% {
+    opacity: 0;
+    visibility: hidden;
+  }
+}
+#loader-img path {
+  fill: #ff6900 !important;
+}
+
 /* header css */
 header {
   padding-right: 10vw;
