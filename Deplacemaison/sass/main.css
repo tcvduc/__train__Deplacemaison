@@ -173,13 +173,15 @@ path {
 
 /* không thể dùng tranfrom để canh giữa vì anime js dùng transform */
 .loader.hidden {
-  animation: fadeOut 0.2s forwards;
+  animation: fadeOut 0.5s forwards;
 }
 
 @keyframes fadeOut {
-  100% {
-    opacity: 0;
-    visibility: hidden;
+  from {
+    top: 0%;
+  }
+  to {
+    top: -100%;
   }
 }
 #loader-img path {
@@ -192,33 +194,35 @@ header {
   padding-left: 23.5vw;
   background-color: #fcf9ee;
 }
-header .row .col .box {
-  background-color: #fcf9ee;
-}
-header .row .col .box .row .col .box#fall h1 {
-  font-size: 200px;
+header .box#fall h1 {
+  font-size: 13vw;
   color: black;
   float: right;
   transition: 0.5s;
   font-weight: 500;
+  padding-bottom: -330px;
 }
-header .row .col .box .row .col .box#winter {
-  display: flex;
-  justify-content: space-evenly;
-}
-header .row .col .box .row .col .box#winter div {
-  display: flex;
-}
-header .row .col .box .row .col .box#winter div h1 {
-  display: inline-block;
-  font-size: 200px;
+header .box#winter h1 {
+  font-size: 13vw;
   font-weight: 500;
   letter-spacing: -0.5rem;
   color: black;
   object-fit: contain;
+  padding-top: -33vw;
 }
-header .row .col .box .row .col .box#winter div#layer #Layer_1 {
+header div#layer #Layer_1 {
   width: 10.2vw;
+}
+header .row {
+  margin-top: 0;
+  margin-left: 0;
+  margin-right: 0;
+}
+header #h-r-1 {
+  margin-bottom: -3vw;
+}
+header #h-r-2 {
+  margin-top: -3vw;
 }
 
 section {
@@ -245,6 +249,23 @@ section {
   margin-left: -23vw;
   padding-left: 0;
   padding-right: 0;
+}
+
+/* moblie responsive   */
+/* medium - md - <=768px */
+@media (max-width: 768px) {
+  header .box#fall h1 {
+    font-size: 12vw;
+  }
+  header .box#winter h1 {
+    font-size: 12vw;
+  }
+  header #layer {
+    transform: translateY(-20%);
+  }
+  header .box {
+    min-height: 0;
+  }
 }
 
 /*# sourceMappingURL=main.css.map */

@@ -109,56 +109,56 @@ const load2 = $(".load-2");
 const load3 = $(".load-3");
 const load4 = $(".load-4");
 
-window.addEventListener("load", () => {
-  anime({
-    targets: ".load-1",
-    translateY: -150,
-    opacity: 0,
+// window.addEventListener("load", () => {
+//   anime({
+//     targets: ".load-1",
+//     translateY: -25,
+//     opacity: 0,
 
-    easing: "easeOutQuart"
-  });
+//     easing: "easeOutQuart"
+//   });
 
-  setTimeout(() => {
-    load2.css("display", "block");
-    anime({
-      targets: ".load-2",
-      translateY: -150,
-      opacity: 0,
+//   setTimeout(() => {
+//     load2.css("display", "block");
+//     anime({
+//       targets: ".load-2",
+//       translateY: -25,
+//       opacity: 0,
 
-      easing: "easeOutQuart"
-    });
-  }, 350);
+//       easing: "easeOutQuart"
+//     });
+//   }, 350);
 
-  setTimeout(() => {
-    load3.css("display", "block");
-    anime({
-      targets: ".load-3",
-      translateY: -150,
-      opacity: 0,
+//   setTimeout(() => {
+//     load3.css("display", "block");
+//     anime({
+//       targets: ".load-3",
+//       translateY: -25,
+//       opacity: 0,
 
-      easing: "easeOutQuart"
-    });
-  }, 700);
+//       easing: "easeOutQuart"
+//     });
+//   }, 700);
 
-  setTimeout(() => {
-    load4.css("display", "block");
-    anime({
-      targets: ".load-4",
-      translateY: -150,
-      opacity: 0,
+//   setTimeout(() => {
+//     load4.css("display", "block");
+//     anime({
+//       targets: ".load-4",
+//       translateY: -25,
+//       opacity: 0,
 
-      easing: "easeOutQuart"
-    });
-  }, 1050);
+//       easing: "easeOutQuart"
+//     });
+//   }, 1050);
 
-  setTimeout(() => {
-    const loader = document.querySelector(".loader");
-    loader.className += " hidden";
-    log(loader);
-  }, 2000);
-});
+//   setTimeout(() => {
+//     const loader = document.querySelector(".loader");
+//     loader.className += " hidden";
+//     log(loader);
+//   }, 2000);
+// });
 
-// xử lý write hand animation
+//xử lý write hand animation
 $(window).ready(() => {
   setTimeout(() => {
     $("#c-group path").css("animation", "write 1s forwards");
