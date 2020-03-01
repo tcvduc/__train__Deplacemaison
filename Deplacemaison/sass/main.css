@@ -232,9 +232,41 @@ section {
 }
 
 /* first section */
-#first_section {
+#first-section {
   background-color: lightgreen;
   min-height: 500px;
+}
+#first-section div.box.first-sec-img {
+  border: 4px solid black;
+}
+#first-section .img-infor {
+  min-height: 10px;
+  background-color: #fff;
+  display: flex;
+  justify-content: space-between;
+}
+#first-section .explore {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+}
+#first-section .explore p {
+  margin-right: 2vw;
+  font-size: 1.5vw;
+  text-transform: uppercase;
+  cursor: pointer;
+}
+#first-section .explore .explore-under {
+  position: absolute;
+  top: 52%;
+  left: 1%;
+  transform: scaleX(0);
+  height: 2px;
+  width: 75%;
+  background-color: black;
+  transition: transform 0.5s ease-;
+  transform-origin: bottom left;
 }
 
 /* rolling section */

@@ -193,3 +193,31 @@ $(window).ready(() => {
 });
 
 //  this.CSS({ animation: "write 1s forwards" });
+
+// explore animation
+const explore_pure_css = {
+  position: "absolute",
+  top: "52%",
+  left: "1%",
+  transform: " scaleX(0)",
+  height: "2px",
+  width: "2px",
+  backgroundColor: "black",
+  transition: "transform 0.35s ease-out",
+  transformOrigin: "bottom left"
+};
+const explore_on_mouseenter = {
+  transform: "scaleX(50)"
+};
+const explore_on_mouseleave = {
+  transformOrigin: "bottom right",
+  transform: "scaleX(0)"
+};
+
+$(".explore p")
+  .mouseenter(() => {
+    $(".explore-under").css(explore_on_mouseenter);
+  })
+  .mouseleave(() => {
+    $(".explore-under").css(explore_on_mouseleave);
+  });
