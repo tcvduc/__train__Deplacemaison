@@ -4,10 +4,12 @@ $(document).ready(function() {
   $(".owl-carousel").owlCarousel();
 });
 
+// rolling section
 $("#rolling-section .row .owl-carousel").owlCarousel({
   items: 4,
   loop: true,
-  margin: 10,
+  margin: 0,
+  width: 0,
   autoplay: true,
   autoplayTimeout: 2000,
   autoplaySpeed: 3000,
@@ -28,6 +30,20 @@ $("#rolling-section .row .owl-carousel").owlCarousel({
   }
 });
 
+// background rolling
+const rolling_pure_css = {
+  display: "flex",
+  justifyContent: "center",
+  alignItems: "center",
+  padding: "1vw",
+  backgroundColor: "#fbc355",
+  border: "3px solid black"
+};
+$("#rolling-section .owl-stage").css(rolling_pure_css);
+const not_scroll_text = {
+  textTransform: "uppercase"
+};
+$(".not-scroll").css(not_scroll_text);
 /*  hash product section */
 $("#product-section .row .owl-carousel").owlCarousel({
   items: 4,
@@ -214,10 +230,15 @@ const explore_on_mouseleave = {
   transform: "scaleX(0)"
 };
 
-$(".explore p")
-  .mouseenter(() => {
-    $(".explore-under").css(explore_on_mouseenter);
-  })
-  .mouseleave(() => {
-    $(".explore-under").css(explore_on_mouseleave);
-  });
+// $(".explore p")
+//   .mouseenter(() => {
+//     $(".explore-under").css(explore_on_mouseenter);
+//   })
+//   .mouseleave(() => {
+//     $(".explore-under").css(explore_on_mouseleave);
+//   });
+
+// explore btn click
+$("#ex-btn-wrap").click(() => {
+  window.location.href = "https://www.facebook.com/";
+});
