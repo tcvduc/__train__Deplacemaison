@@ -47,10 +47,11 @@ const not_scroll_text = {
 $(".not-scroll").css(not_scroll_text);
 /*  hash product section */
 $("#product-section .row .owl-carousel").owlCarousel({
-  items: 6,
+  items: 4,
   loop: false,
   center: true,
   margin: 400,
+
   URLhashListener: true,
   autoplayHoverPause: true,
   startPosition: "",
@@ -69,7 +70,7 @@ $("#product-section .row .owl-carousel").owlCarousel({
       items: 3
     },
     1000: {
-      items: 5
+      items: 4
     }
   }
 });
