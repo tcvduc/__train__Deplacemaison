@@ -15,7 +15,7 @@ $("#rolling-section .row .owl-carousel").owlCarousel({
   autoplaySpeed: 3000,
   slideTransition: "linear",
   autoplayHoverPause: false,
-
+  mouseDrag: false,
   nav: false,
   responsive: {
     0: {
@@ -37,7 +37,8 @@ const rolling_pure_css = {
   alignItems: "center",
   padding: "1vw",
   backgroundColor: "#fbc355",
-  border: "3px solid black"
+  border: "3px solid black",
+  overflow: "hidden"
 };
 $("#rolling-section .owl-stage").css(rolling_pure_css);
 const not_scroll_text = {
@@ -46,18 +47,19 @@ const not_scroll_text = {
 $(".not-scroll").css(not_scroll_text);
 /*  hash product section */
 $("#product-section .row .owl-carousel").owlCarousel({
-  items: 4,
+  items: 6,
   loop: false,
   center: true,
-  margin: 0,
+  margin: 400,
   URLhashListener: true,
   autoplayHoverPause: true,
-  startPosition: "URLHash",
-
+  startPosition: "",
+  dots: false,
   autoplay: false,
   autoplayTimeout: 2000,
   autoplaySpeed: 3000,
   slideTransition: "linear",
+
   nav: false,
   responsive: {
     0: {
@@ -242,3 +244,24 @@ const explore_on_mouseleave = {
 $("#ex-btn-wrap").click(() => {
   window.location.href = "https://www.facebook.com/";
 });
+
+// who we are section
+
+const wwa__h2__pure__css = {
+  display: "inline",
+  fontWeight: "lighter",
+  fontSize: "3.7vw",
+  color: "black",
+  letterSpacing: "-0.1rem"
+};
+
+const wwa__h3__pure__css = {
+  display: "inline",
+  position: "relative",
+  textTransform: "uppercase",
+  fontSize: "1.5vw",
+  color: "black"
+};
+
+$("#who-we-are-section h2").css(wwa__h2__pure__css);
+$("#who-we-are-section h3").css(wwa__h3__pure__css);

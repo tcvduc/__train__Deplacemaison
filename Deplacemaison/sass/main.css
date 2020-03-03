@@ -3,6 +3,7 @@
   box-sizing: border-box;
   margin: 0;
   font-family: Favorit, sans-serif;
+  user-select: none;
 }
 
 @font-face {
@@ -299,6 +300,13 @@ section {
 #rolling-section {
   padding-left: 0;
   padding-right: 0;
+  min-height: 550px;
+  display: flex;
+  align-items: center;
+  margin-top: 0;
+}
+#rolling-section .row {
+  overflow: hidden;
 }
 #rolling-section .not-scroll {
   width: 100%;
@@ -316,11 +324,49 @@ section {
 }
 
 /*who-we-are-section*/
+#who-we-are-section {
+  margin-top: 0;
+  display: flex;
+  align-items: center;
+}
+#who-we-are-section h3 {
+  display: inline;
+  position: relative;
+  text-transform: uppercase;
+  font-size: 1.5vw;
+}
+#who-we-are-section a {
+  color: black;
+  text-decoration: none;
+}
+#who-we-are-section h3::after {
+  content: "";
+  position: absolute;
+  top: 90%;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background-color: black;
+}
+#who-we-are-section .row {
+  margin-top: 0;
+}
+#who-we-are-section .box {
+  background-color: rgba(0, 0, 0, 0);
+}
 /*product-section*/
 #product-section {
   margin-left: -23vw;
   padding-left: 0;
   padding-right: 0;
+  margin: 20vh 0;
+}
+#product-section .product {
+  background-color: #e8d5c4;
+  height: 65vh;
+  width: 27vw;
+  padding: 20px;
+  border: 2px solid black;
 }
 
 /* moblie responsive   */
