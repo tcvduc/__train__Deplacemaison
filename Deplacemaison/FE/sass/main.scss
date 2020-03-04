@@ -370,12 +370,84 @@ footer {
   padding-right: 0;
   margin: 20vh 0;
   .product {
-    background-color: #e8d5c4;
+    background-color: transparentize($color: #000000, $amount: 0.5);
     height: 65vh;
     width: 25vw;
-    padding: 20px;
+    padding: 25px;
     border: 2px solid black;
   }
+  .product-infor {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    padding: 20px;
+    background-color: lightgreen;
+  }
+  .row#shop-all-r {
+    padding-left: 23.5vw;
+    padding-right: 10vw;
+  }
+  .shop-all {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    p {
+      margin-right: 2vw;
+      font-size: 1.5vw;
+      text-transform: uppercase;
+      transform: translate(1vh, 1vh);
+      cursor: pointer;
+    }
+    .shop-all-under {
+      position: absolute;
+      top: 52%;
+      left: 1%;
+
+      transform: scaleX(0);
+      height: 2px;
+      width: 75%;
+      background-color: black;
+      transition: transform 0.5s ease-out;
+      transform-origin: bottom left;
+    }
+  }
+  .shop-all-button {
+    display: flex;
+    align-items: center;
+    #sa-btn-wrap {
+      position: relative;
+      width: 6vw;
+      height: 10vh;
+    }
+    svg {
+      height: 10vh;
+      position: absolute;
+    }
+    path {
+      fill: black !important;
+    }
+    #circle_shop_all {
+      cursor: pointer;
+    }
+    #arrow_shop_all {
+      top: 2.5vh;
+      cursor: pointer;
+      height: 5vh;
+      width: 5vw;
+    }
+  }
+  .owl-stage {
+    overflow: auto;
+    overflow-x: hidden;
+    overflow-y: hidden;
+    overflow-wrap: unset;
+    margin-left: 9vw;
+  }
+}
+
+#review-section {
 }
 
 /* moblie responsive   */

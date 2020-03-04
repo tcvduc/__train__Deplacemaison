@@ -46,15 +46,17 @@ const not_scroll_text = {
 };
 $(".not-scroll").css(not_scroll_text);
 /*  hash product section */
+const product_index = $(".product").length - 5;
 $("#product-section .row .owl-carousel").owlCarousel({
   items: 4,
   loop: false,
   center: true,
   margin: 400,
+  left: 100,
 
   URLhashListener: true,
   autoplayHoverPause: true,
-  startPosition: "",
+  startPosition: product_index,
   dots: false,
   autoplay: false,
   autoplayTimeout: 2000,
@@ -213,7 +215,7 @@ $(window).ready(() => {
 
 //  this.CSS({ animation: "write 1s forwards" });
 
-// explore animation
+// explore css
 const explore_pure_css = {
   position: "absolute",
   top: "52%",
@@ -233,6 +235,7 @@ const explore_on_mouseleave = {
   transform: "scaleX(0)"
 };
 
+// explore animation
 // $(".explore p")
 //   .mouseenter(() => {
 //     $(".explore-under").css(explore_on_mouseenter);
@@ -266,3 +269,26 @@ const wwa__h3__pure__css = {
 
 $("#who-we-are-section h2").css(wwa__h2__pure__css);
 $("#who-we-are-section h3").css(wwa__h3__pure__css);
+
+// product section
+// shop all pure css
+const shop_all_pure_css = {
+  position: "absolute",
+  top: "52%",
+  left: "1%",
+  transform: " scaleX(0)",
+  height: "2px",
+  width: "2px",
+  backgroundColor: "black",
+  transition: "transform 0.35s ease-out",
+  transformOrigin: "bottom left"
+};
+const shop_all_on_mouseenter = {
+  transform: "scaleX(50)"
+};
+const shop_all_on_mouseleave = {
+  transformOrigin: "bottom right",
+  transform: "scaleX(0)"
+};
+
+// shop all animation
