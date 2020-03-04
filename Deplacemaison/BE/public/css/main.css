@@ -1,0 +1,458 @@
+@charset "UTF-8";
+* {
+  box-sizing: border-box;
+  margin: 0;
+  font-family: Favorit, sans-serif;
+  user-select: none;
+}
+
+@font-face {
+  font-family: myFont;
+  src: url("../fonts/5d0751a28518922f090030ce_Cyberthrone.ttf");
+}
+html {
+  scroll-behavior: smooth;
+}
+
+img {
+  max-width: 100%;
+  vertical-align: middle;
+}
+
+/* class hay sử dụng */
+.row {
+  margin-top: 20px;
+}
+
+.box {
+  min-height: 200px;
+  background-color: lightcoral;
+}
+
+.big {
+  min-height: 500px;
+}
+
+body {
+  background-color: #fcf9ee;
+}
+
+.rotate-360 {
+  transform: translate3d(0px, 0%, 0px) scale3d(1, 1, 1) rotateX(0deg)
+    rotateY(0deg) rotateZ(0deg) skew(0deg, 0deg);
+  transform-style: preserve-3d;
+}
+
+/* hiệu ứng lật khi hover */
+.slide {
+  height: fit-content;
+  width: fit-content;
+  position: relative;
+}
+
+.slide-up {
+  position: absolute;
+}
+
+.slide-down {
+  position: absolute;
+  top: 10px;
+  opacity: 0;
+}
+
+.slide-left {
+  position: absolute;
+}
+
+.slide-right {
+  position: absolute;
+  left: 10px;
+  opacity: 0;
+}
+
+/*Xử lý svg*/
+polygon {
+  stroke: transparent;
+  fill: none !important;
+  stroke-dasharray: 1800;
+  opacity: 1;
+}
+
+path {
+  stroke: transparent;
+  fill: none !important;
+  stroke-dasharray: 1800;
+  opacity: 1;
+}
+
+/* animation: write 5s forwards;*/
+@keyframes write {
+  0% {
+    opacity: 0;
+    fill: none;
+    stroke-width: 0;
+    stroke-dashoffset: 1800;
+    stroke: black;
+  }
+  50% {
+    opacity: 1;
+    fill: none;
+    stroke-width: 5;
+    stroke-dashoffset: 1800;
+    stroke: black;
+  }
+  100% {
+    opacity: 1;
+    fill: none;
+    stroke-width: 10;
+    stroke-dashoffset: 0;
+    stroke: black;
+  }
+}
+/* xử lý loadding  */
+.loader {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 10;
+  height: 100vh;
+  width: 100vw;
+  background-color: black;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-direction: column;
+}
+
+.load-header {
+  display: flex;
+  padding: 50px;
+  justify-content: center;
+  align-items: center;
+  min-height: 100px;
+  background-color: black;
+  width: 100%;
+}
+
+.load-footer {
+  background-color: black;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  min-height: 100px;
+  width: 100%;
+}
+.load-footer .load-footer-text {
+  color: #fcf9ee;
+  display: block;
+  font-size: 1.2vw;
+  line-height: 1.5vw;
+  letter-spacing: 0.05em;
+}
+
+.load-main {
+  position: relative;
+  height: 100%;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.load-main .loadding {
+  position: absolute;
+  display: none;
+  color: #fcf9ee;
+  font-size: 20vw;
+  line-height: 17vw;
+  letter-spacing: 2rem;
+  font-weight: 500;
+  font-family: myFont, sans-serif;
+}
+.load-main .load-1 {
+  display: block;
+}
+
+/* không thể dùng tranfrom để canh giữa vì anime js dùng transform */
+.loader.hidden {
+  animation: fadeOut 0.5s forwards;
+}
+
+@keyframes fadeOut {
+  from {
+    top: 0%;
+  }
+  to {
+    top: -100%;
+  }
+}
+#loader-img path {
+  fill: #ff6900 !important;
+}
+
+/* header css */
+header {
+  padding-right: 10vw;
+  padding-left: 23.5vw;
+  background-color: #fcf9ee;
+}
+header .box#fall h1 {
+  font-size: 13vw;
+  color: black;
+  float: right;
+  transition: 0.5s;
+  font-weight: 500;
+  padding-bottom: -330px;
+}
+header .box#winter h1 {
+  font-size: 13vw;
+  font-weight: 500;
+  letter-spacing: -0.5rem;
+  color: black;
+  object-fit: contain;
+  padding-top: -33vw;
+}
+header div#layer #Layer_1 {
+  width: 10.2vw;
+}
+header .row {
+  margin-top: 0;
+  margin-left: 0;
+  margin-right: 0;
+}
+header #h-r-1 {
+  margin-bottom: -3vw;
+}
+header #h-r-2 {
+  margin-top: -3vw;
+}
+
+section {
+  padding-right: 10vw;
+  padding-left: 23.5vw;
+  margin-top: 50px;
+}
+
+/* first section */
+#first-section {
+  background-color: lightgreen;
+  min-height: 500px;
+}
+#first-section div.box.first-sec-img {
+  border: 4px solid black;
+}
+#first-section .img-infor {
+  min-height: 10px;
+  background-color: #fff;
+  display: flex;
+  justify-content: space-between;
+}
+#first-section .explore {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+}
+#first-section .explore p {
+  margin-right: 2vw;
+  font-size: 1.5vw;
+  text-transform: uppercase;
+  transform: translate(1vh, 1vh);
+  cursor: pointer;
+}
+#first-section .explore .explore-under {
+  position: absolute;
+  top: 52%;
+  left: 1%;
+  transform: scaleX(0);
+  height: 2px;
+  width: 75%;
+  background-color: black;
+  transition: transform 0.5s ease-out;
+  transform-origin: bottom left;
+}
+#first-section .ex-button {
+  display: flex;
+  align-items: center;
+}
+#first-section .ex-button #ex-btn-wrap {
+  position: relative;
+  width: 6vw;
+  height: 10vh;
+}
+#first-section .ex-button svg {
+  height: 10vh;
+  position: absolute;
+}
+#first-section .ex-button path {
+  fill: black !important;
+}
+#first-section .ex-button #circle_explore {
+  cursor: pointer;
+}
+#first-section .ex-button #arrow_explore {
+  top: 2.5vh;
+  cursor: pointer;
+  height: 5vh;
+  width: 5vw;
+}
+
+/* rolling section */
+#rolling-section {
+  padding-left: 0;
+  padding-right: 0;
+  min-height: 550px;
+  display: flex;
+  align-items: center;
+  margin-top: 0;
+}
+#rolling-section .row {
+  overflow: hidden;
+}
+#rolling-section .not-scroll {
+  width: 100%;
+  font-size: 2vw;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+#rolling-section .not-scroll::after {
+  content: ".";
+  position: absolute;
+  right: 0;
+  top: -20%;
+}
+
+/*who-we-are-section*/
+#who-we-are-section {
+  margin-top: 0;
+  display: flex;
+  align-items: center;
+}
+#who-we-are-section h3 {
+  display: inline;
+  position: relative;
+  text-transform: uppercase;
+  font-size: 1.5vw;
+}
+#who-we-are-section a {
+  color: black;
+  text-decoration: none;
+}
+#who-we-are-section h3::after {
+  content: "";
+  position: absolute;
+  top: 90%;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background-color: black;
+}
+#who-we-are-section .row {
+  margin-top: 0;
+}
+#who-we-are-section .box {
+  background-color: rgba(0, 0, 0, 0);
+}
+/*product-section*/
+#product-section {
+  margin-left: -23vw;
+  padding-left: 0;
+  padding-right: 0;
+  margin: 20vh 0;
+}
+#product-section .product {
+  background-color: rgba(0, 0, 0, 0.5);
+  height: 65vh;
+  width: 25vw;
+  padding: 25px;
+  border: 2px solid black;
+}
+#product-section .product-infor {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  padding: 20px;
+  background-color: lightgreen;
+}
+#product-section .row#shop-all-r {
+  padding-left: 23.5vw;
+  padding-right: 10vw;
+}
+#product-section .shop-all {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+}
+#product-section .shop-all p {
+  margin-right: 2vw;
+  font-size: 1.5vw;
+  text-transform: uppercase;
+  transform: translate(1vh, 1vh);
+  cursor: pointer;
+}
+#product-section .shop-all .shop-all-under {
+  position: absolute;
+  top: 52%;
+  left: 1%;
+  transform: scaleX(0);
+  height: 2px;
+  width: 75%;
+  background-color: black;
+  transition: transform 0.5s ease-out;
+  transform-origin: bottom left;
+}
+#product-section .shop-all-button {
+  display: flex;
+  align-items: center;
+}
+#product-section .shop-all-button #sa-btn-wrap {
+  position: relative;
+  width: 6vw;
+  height: 10vh;
+}
+#product-section .shop-all-button svg {
+  height: 10vh;
+  position: absolute;
+}
+#product-section .shop-all-button path {
+  fill: black !important;
+}
+#product-section .shop-all-button #circle_shop_all {
+  cursor: pointer;
+}
+#product-section .shop-all-button #arrow_shop_all {
+  top: 2.5vh;
+  cursor: pointer;
+  height: 5vh;
+  width: 5vw;
+}
+#product-section .owl-stage {
+  overflow: auto;
+  overflow-x: hidden;
+  overflow-y: hidden;
+  overflow-wrap: unset;
+  margin-left: 9vw;
+}
+
+/* moblie responsive   */
+/* medium - md - <=768px */
+@media (max-width: 768px) {
+  header .box#fall h1 {
+    font-size: 12vw;
+  }
+  header .box#winter h1 {
+    font-size: 12vw;
+  }
+  header #layer {
+    transform: translateY(-20%);
+  }
+  header .box {
+    min-height: 0;
+  }
+}
+
+/*# sourceMappingURL=main.css.map */
