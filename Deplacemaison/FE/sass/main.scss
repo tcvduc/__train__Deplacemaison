@@ -447,7 +447,31 @@ footer {
   }
 }
 
+/* review section */
 #review-section {
+}
+
+/* footer */
+
+footer {
+  padding-left: 4vw;
+  padding-right: 12vw;
+  .box {
+    min-height: 300px;
+  }
+  .letter {
+    flex-grow: 3;
+  }
+  .email {
+    flex-grow: 7;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    align-items: center;
+    .email-header {
+      width: 100%;
+    }
+  }
 }
 
 /* moblie responsive   */

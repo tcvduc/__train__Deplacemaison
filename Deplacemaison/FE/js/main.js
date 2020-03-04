@@ -77,7 +77,7 @@ $("#product-section .row .owl-carousel").owlCarousel({
   }
 });
 
-// anime js
+// anime js slide up down
 
 $(".slide")
   .mouseenter(() => {

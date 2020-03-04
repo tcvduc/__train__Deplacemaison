@@ -437,6 +437,29 @@ section {
   margin-left: 9vw;
 }
 
+/* review section */
+/* footer */
+footer {
+  padding-left: 4vw;
+  padding-right: 12vw;
+}
+footer .box {
+  min-height: 300px;
+}
+footer .letter {
+  flex-grow: 3;
+}
+footer .email {
+  flex-grow: 7;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  align-items: center;
+}
+footer .email .email-header {
+  width: 100%;
+}
+
 /* moblie responsive   */
 /* medium - md - <=768px */
 @media (max-width: 768px) {
