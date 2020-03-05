@@ -292,3 +292,11 @@ const shop_all_on_mouseleave = {
 };
 
 // shop all animation
+
+// footer
+
+// to top
+$(".btn-top").click(() => {
+  document.body.scrollTop = 0;
+  document.documentElement.scrollTop = 0;
+});

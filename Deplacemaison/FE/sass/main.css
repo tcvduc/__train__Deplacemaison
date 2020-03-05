@@ -449,6 +449,18 @@ footer .box {
 footer .letter {
   flex-grow: 3;
 }
+footer .letter .letter-header h3 {
+  text-transform: uppercase;
+  font-size: 1vw;
+  color: black;
+}
+footer .letter .letter-content {
+  height: 3.5vh;
+  width: 3.5vw;
+}
+footer .letter .letter-content path {
+  fill: black !important;
+}
 footer .email {
   flex-grow: 7;
   display: flex;
@@ -458,6 +470,140 @@ footer .email {
 }
 footer .email .email-header {
   width: 100%;
+}
+footer .email .email-header h4 {
+  text-transform: uppercase;
+  font-size: 1vw;
+  color: black;
+}
+footer .email .email-content {
+  margin-top: -10vh;
+  display: flex;
+  width: 100%;
+}
+footer .email .email-content input.email-ip {
+  outline: unset;
+  width: 70%;
+  padding: 3vh 1vw;
+  background-color: rgba(0, 0, 0, 0);
+  border: unset;
+  border-bottom: 1px solid black;
+}
+footer .email .email-content input.email-ip::placeholder {
+  color: #9c9c9b;
+  font-size: 1.5vw;
+}
+footer .email .email-btn {
+  font-size: 0.8vw;
+  margin-top: 3.5vh;
+  margin-left: -3.33vw;
+  text-transform: uppercase;
+  background-color: transparent;
+  border: unset;
+}
+footer .box {
+  background-color: transparent;
+}
+footer #ft-col-2 h3 {
+  text-transform: uppercase;
+  font-size: 1vw;
+  color: black;
+}
+footer #ft-col-2 .infor-up .list-infor {
+  text-transform: uppercase;
+}
+footer #ft-col-2 .infor-up .list-infor ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+footer #ft-col-2 .infor-up .list-infor ul a {
+  color: black;
+  text-decoration: none;
+  font-size: 1.5vw;
+}
+footer #ft-col-2 .infor-down {
+  text-transform: uppercase;
+  font-size: 0.9vw;
+  color: black;
+}
+footer #ft-col-3 h3 {
+  text-transform: uppercase;
+  font-size: 1vw;
+  color: black;
+}
+footer #ft-col-3 .infor-up .list-infor {
+  text-transform: uppercase;
+}
+footer #ft-col-3 .infor-up .list-infor ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+footer #ft-col-3 .infor-up .list-infor ul a {
+  color: black;
+  text-decoration: none;
+  font-size: 1.5vw;
+}
+footer #ft-col-3 .infor-down {
+  font-size: 0.9vw;
+  text-transform: uppercase;
+  color: black;
+}
+footer #ft-col-4 h3 {
+  text-transform: uppercase;
+  font-size: 1vw;
+  color: black;
+}
+footer #ft-col-4 .infor-up .list-infor {
+  text-transform: uppercase;
+}
+footer #ft-col-4 .infor-up .list-infor ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+footer #ft-col-4 .infor-up .list-infor ul a {
+  color: black;
+  text-decoration: none;
+  font-size: 1.5vw;
+}
+footer #ft-col-4 .social-media {
+  padding-top: 9vh;
+  height: 100%;
+  width: 100%;
+}
+footer #ft-col-4 .social-media .fb-icon {
+  height: 15%;
+  width: 15%;
+  cursor: pointer;
+}
+footer #ft-col-4 .social-media .ins-icon {
+  height: 15%;
+  width: 15%;
+  cursor: pointer;
+}
+footer #ft-col-4 #ft-to-top .btn-top {
+  height: 100%;
+  width: 100%;
+  position: relative;
+  height: 5vh;
+  width: 5vw;
+}
+footer #ft-col-4 #ft-to-top #circle {
+  cursor: pointer;
+  position: absolute;
+}
+footer #ft-col-4 #ft-to-top #arrow {
+  cursor: pointer;
+  transform: rotate(-90deg);
+  top: 2.5vh;
+  position: absolute;
+  height: 5vh;
+  width: 5vw;
+}
+footer #ft-col-4 #ft-to-top path {
+  fill: black !important;
 }
 
 /* moblie responsive   */

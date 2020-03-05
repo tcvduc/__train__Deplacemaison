@@ -456,12 +456,28 @@ footer {
 footer {
   padding-left: 4vw;
   padding-right: 12vw;
+
   .box {
     min-height: 300px;
   }
   .letter {
     flex-grow: 3;
+    .letter-header {
+      h3 {
+        text-transform: uppercase;
+        font-size: 1vw;
+        color: black;
+      }
+    }
+    .letter-content {
+      height: 3.5vh;
+      width: 3.5vw;
+      path {
+        fill: black !important;
+      }
+    }
   }
+
   .email {
     flex-grow: 7;
     display: flex;
@@ -470,6 +486,159 @@ footer {
     align-items: center;
     .email-header {
       width: 100%;
+    }
+    .email-header {
+      h4 {
+        text-transform: uppercase;
+        font-size: 1vw;
+        color: black;
+      }
+    }
+    .email-content {
+      margin-top: -10vh;
+      display: flex;
+      width: 100%;
+      input.email-ip {
+        outline: unset;
+        width: 70%;
+        padding: 3vh 1vw;
+        background-color: transparentize($color: #000000, $amount: 1);
+        border: unset;
+        border-bottom: 1px solid black;
+      }
+      input.email-ip::placeholder {
+        color: #9c9c9b;
+        font-size: 1.5vw;
+      }
+    }
+    .email-btn {
+      font-size: 0.8vw;
+      margin-top: 3.5vh;
+      margin-left: -3.33vw;
+      text-transform: uppercase;
+      background-color: transparent;
+      border: unset;
+    }
+  }
+
+  .box {
+    background-color: transparent;
+  }
+
+  #ft-col-2 {
+    h3 {
+      text-transform: uppercase;
+      font-size: 1vw;
+      color: black;
+    }
+    .infor-up {
+      .list-infor {
+        text-transform: uppercase;
+        ul {
+          list-style: none;
+          margin: 0;
+          padding: 0;
+          a {
+            color: black;
+            text-decoration: none;
+            font-size: 1.5vw;
+          }
+        }
+      }
+    }
+    .infor-down {
+      text-transform: uppercase;
+      font-size: 0.9vw;
+      color: black;
+    }
+  }
+  #ft-col-3 {
+    h3 {
+      text-transform: uppercase;
+      font-size: 1vw;
+      color: black;
+    }
+    .infor-up {
+      .list-infor {
+        text-transform: uppercase;
+        ul {
+          list-style: none;
+          margin: 0;
+          padding: 0;
+          a {
+            color: black;
+            text-decoration: none;
+            font-size: 1.5vw;
+          }
+        }
+      }
+    }
+    .infor-down {
+      font-size: 0.9vw;
+      text-transform: uppercase;
+      color: black;
+    }
+  }
+  #ft-col-4 {
+    h3 {
+      text-transform: uppercase;
+      font-size: 1vw;
+      color: black;
+    }
+    .infor-up {
+      .list-infor {
+        text-transform: uppercase;
+        ul {
+          list-style: none;
+          margin: 0;
+          padding: 0;
+          a {
+            color: black;
+            text-decoration: none;
+            font-size: 1.5vw;
+          }
+        }
+      }
+    }
+    .social-media {
+      padding-top: 9vh;
+      height: 100%;
+      width: 100%;
+      .fb-icon {
+        height: 15%;
+        width: 15%;
+        cursor: pointer;
+      }
+      .ins-icon {
+        height: 15%;
+        width: 15%;
+        cursor: pointer;
+      }
+    }
+    #ft-to-top {
+      .btn-top {
+        height: 100%;
+        width: 100%;
+        position: relative;
+        height: 5vh;
+        width: 5vw;
+      }
+      #circle {
+        cursor: pointer;
+        position: absolute;
+      }
+      #arrow {
+        cursor: pointer;
+        transform: rotate(-90deg);
+        top: 2.5vh;
+        position: absolute;
+        height: 5vh;
+        width: 5vw;
+      }
+
+      path {
+        fill: black !important;
+      }
     }
   }
 }
