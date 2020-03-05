@@ -48,7 +48,7 @@ $(".not-scroll").css(not_scroll_text);
 /*  hash product section */
 const product_index = $(".product").length - 5;
 $("#product-section .row .owl-carousel").owlCarousel({
-  items: 4,
+  items: 6,
   loop: false,
   center: true,
   margin: 400,
@@ -59,17 +59,48 @@ $("#product-section .row .owl-carousel").owlCarousel({
   startPosition: product_index,
   dots: false,
   autoplay: false,
-  autoplayTimeout: 2000,
-  autoplaySpeed: 3000,
+  autoplayTimeout: 1,
+  autoplaySpeed: 1,
   slideTransition: "linear",
 
   nav: false,
   responsive: {
     0: {
-      items: 1
+      items: 6,
+      loop: false,
+      center: true,
+      margin: 200,
+      left: 100,
+
+      URLhashListener: true,
+      autoplayHoverPause: true,
+      startPosition: product_index,
+      dots: false,
+      autoplay: false,
+      autoplayTimeout: 2000,
+      autoplaySpeed: 3000,
+      slideTransition: "linear",
+
+      nav: false
     },
+
     600: {
-      items: 3
+      items: 2,
+      loop: false,
+      center: true,
+      margin: 0,
+      left: 100,
+
+      URLhashListener: true,
+      autoplayHoverPause: true,
+      startPosition: 0,
+      dots: false,
+      autoplay: false,
+      autoplayTimeout: 2000,
+      autoplaySpeed: 3000,
+      slideTransition: "linear",
+
+      nav: false
     },
     1000: {
       items: 4

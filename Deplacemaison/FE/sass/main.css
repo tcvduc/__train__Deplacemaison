@@ -234,7 +234,7 @@ section {
 
 /* first section */
 #first-section {
-  background-color: lightgreen;
+  background-color: transparent;
   min-height: 500px;
 }
 #first-section div.box.first-sec-img {
@@ -242,7 +242,7 @@ section {
 }
 #first-section .img-infor {
   min-height: 10px;
-  background-color: #fff;
+  background-color: transparent;
   display: flex;
   justify-content: space-between;
 }
@@ -438,10 +438,14 @@ section {
 }
 
 /* review section */
+#review-section {
+  min-height: 500px;
+}
+
 /* footer */
 footer {
   padding-left: 4vw;
-  padding-right: 12vw;
+  padding-right: 10vw;
 }
 footer .box {
   min-height: 300px;
@@ -620,6 +624,114 @@ footer #ft-col-4 #ft-to-top path {
   }
   header .box {
     min-height: 0;
+  }
+
+  /* footer */
+  footer .box {
+    min-height: unset;
+  }
+}
+/* medium - lg - <=992px */
+@media (max-width: 992px) {
+  .box {
+    min-height: 15vh;
+  }
+
+  header .box#fall h1 {
+    font-size: 12vw;
+  }
+  header .box#winter h1 {
+    font-size: 12vw;
+  }
+  header #layer {
+    transform: translateY(-20%);
+  }
+  header .box {
+    min-height: 0;
+  }
+
+  main #first-section .first-sec-img {
+    border: 3px solid black !important;
+  }
+  main #first-section .explore {
+    flex-grow: 7;
+    justify-content: flex-end;
+  }
+  main #first-section .explore p {
+    font-size: 2.5vw;
+  }
+  main #first-section .ex-button {
+    margin-left: -2vw;
+    flex-grow: 1;
+    justify-content: flex-start;
+  }
+  main #first-section .ex-button #circle_explore {
+    top: 1vh;
+    cursor: pointer;
+    position: absolute;
+    height: 8vh;
+    width: 10vw;
+  }
+  main #first-section .ex-button #arrow_explore {
+    cursor: pointer !important;
+    top: 3vh !important;
+    left: 2.5vw !important;
+    position: absolute !important;
+    height: 4vh !important;
+    width: 5vw !important;
+  }
+  main #rolling-section {
+    min-height: 40vh;
+  }
+  main #product-section .owl-stage {
+    margin-left: 0;
+  }
+  main #product-section .product {
+    height: 60vh !important;
+    width: 40vw !important;
+  }
+  main #product-section #shop-all-r #arrow_shop_all {
+    left: 2vw !important;
+  }
+  main #product-section #shop-all-r p {
+    font-size: 3vw;
+  }
+
+  /* footer */
+  footer h3 {
+    font-size: 1.5vw !important;
+  }
+  footer h4 {
+    font-size: 1.5vw !important;
+  }
+  footer a {
+    font-size: 2vw !important;
+  }
+  footer .box {
+    min-height: 25vh;
+  }
+  footer #circle {
+    cursor: pointer;
+    position: absolute;
+    height: 8vh;
+    width: 10vw;
+  }
+  footer #arrow {
+    cursor: pointer !important;
+    transform: rotate(-90deg) !important;
+    top: 2vh !important;
+    left: 2.5vw !important;
+    position: absolute !important;
+    height: 4vh !important;
+    width: 5vw !important;
+  }
+  footer .fb-icon {
+    height: 35% !important;
+    width: 35% !important;
+  }
+  footer .ins-icon {
+    height: 35% !important;
+    width: 35% !important;
   }
 }
 

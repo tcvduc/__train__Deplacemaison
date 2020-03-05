@@ -233,7 +233,7 @@ footer {
 
 /* first section */
 #first-section {
-  background-color: lightgreen;
+  background-color: transparent;
   min-height: 500px;
 
   div.box.first-sec-img {
@@ -241,7 +241,7 @@ footer {
   }
   .img-infor {
     min-height: 10px;
-    background-color: #fff;
+    background-color: transparent;
     display: flex;
     justify-content: space-between;
   }
@@ -251,6 +251,7 @@ footer {
     justify-content: center;
     align-items: center;
     position: relative;
+
     p {
       margin-right: 2vw;
       font-size: 1.5vw;
@@ -449,13 +450,14 @@ footer {
 
 /* review section */
 #review-section {
+  min-height: 500px;
 }
 
 /* footer */
 
 footer {
   padding-left: 4vw;
-  padding-right: 12vw;
+  padding-right: 10vw;
 
   .box {
     min-height: 300px;
@@ -662,6 +664,136 @@ footer {
     }
     .box {
       min-height: 0;
+    }
+  }
+
+  /* footer */
+  footer {
+    .box {
+      min-height: unset;
+    }
+  }
+}
+
+/* medium - lg - <=992px */
+@media (max-width: 992px) {
+  .box {
+    min-height: 15vh;
+  }
+  header {
+    .box#fall {
+      h1 {
+        font-size: 12vw;
+      }
+    }
+    .box#winter {
+      h1 {
+        font-size: 12vw;
+      }
+    }
+    #layer {
+      transform: translateY(-20%);
+    }
+    .box {
+      min-height: 0;
+    }
+  }
+  main {
+    #first-section {
+      .first-sec-img {
+        border: 3px solid black !important;
+      }
+      .explore {
+        flex-grow: 7;
+        justify-content: flex-end;
+        p {
+          font-size: 2.5vw;
+        }
+      }
+      .ex-button {
+        margin-left: -2vw;
+        flex-grow: 1;
+        justify-content: flex-start;
+
+        #circle_explore {
+          top: 1vh;
+          cursor: pointer;
+          position: absolute;
+          height: 8vh;
+          width: 10vw;
+        }
+        #arrow_explore {
+          cursor: pointer !important;
+
+          top: 3vh !important;
+          left: 2.5vw !important;
+          position: absolute !important;
+          height: 4vh !important;
+          width: 5vw !important;
+        }
+      }
+    }
+
+    #rolling-section {
+      min-height: 40vh;
+    }
+
+    #product-section {
+      .owl-stage {
+        margin-left: 0;
+      }
+      .product {
+        height: 60vh !important;
+        width: 40vw !important;
+      }
+      #shop-all-r {
+        #arrow_shop_all {
+          left: 2vw !important;
+        }
+        p {
+          font-size: 3vw;
+        }
+      }
+    }
+  }
+
+  /* footer */
+  footer {
+    h3 {
+      font-size: 1.5vw !important;
+    }
+    h4 {
+      font-size: 1.5vw !important;
+    }
+    a {
+      font-size: 2vw !important;
+    }
+    .box {
+      min-height: 25vh;
+    }
+    #circle {
+      cursor: pointer;
+      position: absolute;
+      height: 8vh;
+      width: 10vw;
+    }
+    #arrow {
+      cursor: pointer !important;
+      transform: rotate(-90deg) !important;
+      top: 2vh !important;
+      left: 2.5vw !important;
+      position: absolute !important;
+      height: 4vh !important;
+      width: 5vw !important;
+    }
+
+    .fb-icon {
+      height: 35% !important;
+      width: 35% !important;
+    }
+    .ins-icon {
+      height: 35% !important;
+      width: 35% !important;
     }
   }
 }
