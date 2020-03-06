@@ -1,4 +1,11 @@
 let log = console.log;
+
+// nav bug - khi lăn đến footer thì phải biến mất
+
+let offsetFooter = $("footer").offset();
+log(offsetFooter.top);
+
+
 // owl carousel
 $(document).ready(function() {
   $(".owl-carousel").owlCarousel();
