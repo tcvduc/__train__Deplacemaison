@@ -312,6 +312,7 @@ section {
   width: 100%;
   font-size: 2vw;
   position: relative;
+  font-weight: 500;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -611,8 +612,13 @@ footer #ft-col-4 #ft-to-top path {
 }
 
 /* moblie responsive   */
+/* small - sm - <= 576px */
 /* medium - md - <=768px */
 @media (max-width: 768px) {
+  .box {
+    min-height: 15vh;
+  }
+
   header .box#fall h1 {
     font-size: 12vw;
   }
@@ -626,9 +632,97 @@ footer #ft-col-4 #ft-to-top path {
     min-height: 0;
   }
 
+  main #first-section .first-sec-img {
+    border: 3px solid black !important;
+  }
+  main #first-section .explore {
+    flex-grow: 7;
+    justify-content: flex-end;
+  }
+  main #first-section .explore p {
+    font-size: 2.5vw;
+  }
+  main #first-section .ex-button {
+    margin-left: -2vw;
+    flex-grow: 1;
+    justify-content: flex-start;
+  }
+  main #first-section .ex-button #circle_explore {
+    top: 1vh;
+    cursor: pointer;
+    position: absolute;
+    height: 8vh;
+    width: 10vw;
+  }
+  main #first-section .ex-button #arrow_explore {
+    cursor: pointer !important;
+    top: 3vh !important;
+    left: 2.5vw !important;
+    position: absolute !important;
+    height: 4vh !important;
+    width: 5vw !important;
+  }
+  main #rolling-section {
+    min-height: 40vh;
+  }
+  main #product-section .owl-stage {
+    margin-left: 0;
+  }
+  main #product-section .product {
+    height: 60vh !important;
+    width: 40vw !important;
+  }
+  main #product-section #shop-all-r #arrow_shop_all {
+    left: 2vw !important;
+  }
+  main #product-section #shop-all-r p {
+    font-size: 3vw;
+  }
+
   /* footer */
+  footer .email-header {
+    margin-bottom: 1.3vh !important;
+  }
+  footer .email-btn {
+    font-size: 1vw !important;
+  }
+  footer h3 {
+    font-size: 1.5vw !important;
+  }
+  footer h4 {
+    font-size: 1.5vw !important;
+  }
+  footer a {
+    font-size: 2vw !important;
+  }
   footer .box {
-    min-height: unset;
+    min-height: 25vh;
+  }
+  footer #circle {
+    cursor: pointer;
+    position: absolute;
+    height: 8vh;
+    width: 10vw;
+  }
+  footer #arrow {
+    cursor: pointer !important;
+    transform: rotate(-90deg) !important;
+    top: 2vh !important;
+    left: 2.5vw !important;
+    position: absolute !important;
+    height: 4vh !important;
+    width: 5vw !important;
+  }
+  footer .fb-icon {
+    height: 35% !important;
+    width: 35% !important;
+  }
+  footer .ins-icon {
+    height: 35% !important;
+    width: 35% !important;
+  }
+  footer .infor-down {
+    font-size: 1.2vw !important;
   }
 }
 /* medium - lg - <=992px */

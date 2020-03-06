@@ -22,7 +22,9 @@ $("#rolling-section .row .owl-carousel").owlCarousel({
       items: 1
     },
     600: {
-      items: 3
+      items: 4,
+      margin: 0,
+      width: 150
     },
     1000: {
       items: 5
