@@ -5,6 +5,18 @@ let log = console.log;
 let offsetFooter = $("footer").offset();
 log(offsetFooter.top);
 
+const listVisible = $(".shop-link")
+  .children()
+  .children();
+
+log(listVisible);
+
+document.addEventListener("scroll", () => {
+  var docTop = $(document).scrollTop();
+  if (docTop >= offsetFooter.top) {
+  }
+});
+
 // owl carousel
 $(document).ready(function() {
   $(".owl-carousel").owlCarousel();

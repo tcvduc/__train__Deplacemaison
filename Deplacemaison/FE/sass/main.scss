@@ -16,6 +16,11 @@ img {
   vertical-align: middle;
 }
 
+/* turn off scrollbar */
+::-webkit-scrollbar {
+  display: none;
+}
+
 /* class hay sử dụng */
 .row {
   margin-top: 20px;
@@ -996,6 +1001,18 @@ footer {
     }
     .ins-icon {
       height: 35% !important;
+      width: 35% !important;
+    }
+  }
+}
+
+/* xl >=1200px */
+@media (min-width: 1200px) {
+  footer {
+    .fb-icon {
+      width: 35% !important;
+    }
+    .ins-icon {
       width: 35% !important;
     }
   }
