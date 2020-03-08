@@ -5,7 +5,6 @@ let log = console.log;
 let offsetFooter = $("footer").offset();
 log(offsetFooter.top);
 
-
 // owl carousel
 $(document).ready(function() {
   $(".owl-carousel").owlCarousel();
