@@ -192,6 +192,14 @@ nav {
   background-color: crimson;
 
   overflow: hidden;
+  li {
+    transition: 0.5s;
+  }
+}
+
+.nav-bug {
+  margin-bottom: 1vh;
+  opacity: 0;
 }
 
 #nav-left {
@@ -327,8 +335,6 @@ section {
   padding-right: 10vw;
   padding-left: 23.5vw;
   margin-top: 50px;
-}
-footer {
 }
 
 /* first section */
@@ -654,6 +660,10 @@ footer {
       text-transform: uppercase;
       font-size: 0.9vw;
       color: black;
+      font-weight: bold;
+      h3 {
+        font-weight: bold;
+      }
     }
   }
   #ft-col-3 {
@@ -681,6 +691,9 @@ footer {
       font-size: 0.9vw;
       text-transform: uppercase;
       color: black;
+      h3 {
+        font-weight: bold;
+      }
     }
   }
   #ft-col-4 {
@@ -748,8 +761,6 @@ footer {
 }
 
 /* moblie responsive   */
-
-/* small - sm - <= 576px */
 
 /* medium - md - <=768px */
 @media (max-width: 768px) {
@@ -888,19 +899,33 @@ footer {
   .box {
     min-height: 15vh;
   }
+
+  nav {
+    li {
+      a {
+        font-size: 1.5vw !important;
+      }
+    }
+    #nav-top {
+      .my-card {
+        display: flex;
+        padding: 3vh 3vw 0 0;
+      }
+    }
+  }
   header {
     .box#fall {
       h1 {
-        font-size: 12vw;
+        font-size: 15vw;
       }
     }
     .box#winter {
       h1 {
-        font-size: 12vw;
+        font-size: 15vw;
       }
     }
     #layer {
-      transform: translateY(-20%);
+      transform: translate(0, 10%);
     }
     .box {
       min-height: 0;
@@ -912,6 +937,7 @@ footer {
         border: 3px solid black !important;
       }
       .explore {
+        margin-right: 2vw;
         flex-grow: 7;
         justify-content: flex-end;
         p {
@@ -946,6 +972,15 @@ footer {
       min-height: 40vh;
     }
 
+    #who-we-are-section {
+      h3 {
+        font-size: 3vw !important;
+      }
+      h2 {
+        font-size: 4.5vw !important;
+      }
+    }
+
     #product-section {
       .owl-stage {
         margin-left: 0;
@@ -957,9 +992,27 @@ footer {
       #shop-all-r {
         #arrow_shop_all {
           left: 2vw !important;
+          top: 1.5vh;
+          cursor: pointer;
+          height: 5vh;
+          width: 4vw;
+        }
+        .shop-all {
+          margin-right: 1.5vw;
         }
         p {
           font-size: 3vw;
+        }
+        .shop-all-button {
+          height: 8vh;
+          width: 10vw;
+          svg {
+            height: 8vh;
+          }
+          #sa-btn-wrap {
+            height: unset !important;
+            width: unset !important;
+          }
         }
       }
     }
@@ -967,6 +1020,9 @@ footer {
 
   /* footer */
   footer {
+    .col-sm-2 {
+      padding: 0;
+    }
     h3 {
       font-size: 1.5vw !important;
     }
@@ -994,7 +1050,9 @@ footer {
       height: 4vh !important;
       width: 5vw !important;
     }
-
+    .social-media {
+      width: 70% !important;
+    }
     .fb-icon {
       height: 35% !important;
       width: 35% !important;
@@ -1014,6 +1072,141 @@ footer {
     }
     .ins-icon {
       width: 35% !important;
+    }
+  }
+}
+
+/* small - sm - <= 576px */
+@media (max-width: 576px) {
+  main {
+    #review-section {
+      min-height: 100px;
+    }
+    #product-section {
+      #arrow_shop_all {
+        left: 3vw !important;
+      }
+    }
+  }
+  header {
+    #layer {
+      transform: translate(15%, 10%) !important;
+    }
+  }
+  footer {
+    .box {
+      min-height: 0 !important;
+    }
+    #ft-col-1 {
+      display: none;
+    }
+    #ft-col-2 {
+      flex-direction: row !important;
+      padding: 3vw;
+      #ft-infor {
+        flex-direction: row !important;
+        flex-wrap: wrap;
+        .infor-up {
+          flex-direction: row !important;
+          width: 100%;
+          h3 {
+            display: flex;
+            flex-grow: 3;
+            font-size: 3vw !important;
+            justify-content: center;
+            align-items: center;
+            margin-bottom: 0;
+            line-height: 1.5;
+          }
+          .list-infor {
+            flex-grow: 7;
+            display: flex;
+            justify-content: flex-end;
+            ul {
+              width: 100%;
+              display: flex;
+              justify-content: space-around;
+              li {
+                display: flex;
+                a {
+                  font-size: 3vw !important;
+                }
+              }
+            }
+          }
+        }
+        .infor-down {
+          width: 100%;
+          padding: 5vh 0;
+          h3 {
+            font-weight: bold;
+            display: flex;
+            flex-grow: 3;
+            line-height: 1.5;
+            margin-bottom: 0;
+            font-size: 3vw !important;
+            justify-content: center;
+            align-items: center;
+            align-items: center;
+          }
+        }
+      }
+    }
+    #ft-col-3 {
+      flex-direction: row !important;
+      padding: 3vw;
+      #ft-policy {
+        flex-direction: row !important;
+        flex-wrap: wrap;
+        .infor-up {
+          flex-direction: row !important;
+          width: 100%;
+          h3 {
+            display: flex;
+            flex-grow: 3;
+            font-size: 3vw !important;
+            justify-content: center;
+            align-items: center;
+            margin-bottom: 0;
+          }
+          .list-infor {
+            flex-grow: 7;
+            display: flex;
+            justify-content: flex-end;
+            ul {
+              width: 100%;
+              display: flex;
+              justify-content: space-around;
+              li {
+                display: flex;
+                a {
+                  font-size: 3vw !important;
+                }
+              }
+            }
+          }
+        }
+        .infor-down {
+          padding: 5vh 0;
+          width: 100%;
+          h3 {
+            font-weight: bold;
+            display: flex;
+            flex-grow: 3;
+            line-height: 1.5;
+            margin-bottom: 0;
+            font-size: 3vw !important;
+            justify-content: center;
+            align-items: center;
+            align-items: center;
+          }
+        }
+      }
+    }
+    #ft-col-4 {
+      .social-media {
+        width: 30% !important;
+      }
     }
   }
 }

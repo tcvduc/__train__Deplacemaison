@@ -3,6 +3,7 @@ let log = console.log;
 // nav bug - khi lăn đến footer thì phải biến mất
 
 let offsetFooter = $("footer").offset();
+let takeSomeSpace = (20 * offsetFooter.top) / 100;
 log(offsetFooter.top);
 
 const listVisible = $(".shop-link")
@@ -13,7 +14,10 @@ log(listVisible);
 
 document.addEventListener("scroll", () => {
   var docTop = $(document).scrollTop();
-  if (docTop >= offsetFooter.top) {
+  if (docTop >= offsetFooter.top - takeSomeSpace) {
+    listVisible.addClass("nav-bug");
+  } else {
+    listVisible.removeClass("nav-bug");
   }
 });
 
@@ -90,6 +94,42 @@ $("#product-section .row .owl-carousel").owlCarousel({
       loop: false,
       center: true,
       margin: 200,
+      left: 100,
+
+      URLhashListener: true,
+      autoplayHoverPause: true,
+      startPosition: product_index,
+      dots: false,
+      autoplay: false,
+      autoplayTimeout: 2000,
+      autoplaySpeed: 3000,
+      slideTransition: "linear",
+
+      nav: false
+    },
+    300: {
+      items: 2,
+      loop: false,
+      center: true,
+      margin: 0,
+      left: 0,
+
+      URLhashListener: true,
+      autoplayHoverPause: true,
+      startPosition: product_index,
+      dots: false,
+      autoplay: false,
+      autoplayTimeout: 2000,
+      autoplaySpeed: 3000,
+      slideTransition: "linear",
+
+      nav: false
+    },
+    500: {
+      items: 2,
+      loop: false,
+      center: true,
+      margin: 0,
       left: 100,
 
       URLhashListener: true,
