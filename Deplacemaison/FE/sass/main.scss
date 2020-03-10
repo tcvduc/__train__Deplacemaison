@@ -200,6 +200,7 @@ nav {
 .nav-bug {
   margin-bottom: 1vh;
   opacity: 0;
+  cursor: unset;
 }
 
 #nav-left {
@@ -251,7 +252,7 @@ nav {
         letter-spacing: -0.01rem;
         color: black;
         text-decoration: none;
-        cursor: pointer;
+        cursor: unset;
       }
     }
   }
@@ -295,7 +296,7 @@ header {
   .box#fall {
     h1 {
       font-family: "Roboto Condensed", sans-serif;
-      font-size: 13vw;
+      font-size: 16vw;
       color: black;
       float: right;
       transition: 0.5s;
@@ -315,6 +316,7 @@ header {
   }
   div#layer {
     #Layer_1 {
+      transform: translate(-15%, 15%);
       width: 10.2vw;
     }
   }
@@ -467,8 +469,6 @@ section {
   }
   .box {
     background-color: transparentize($color: #000000, $amount: 1);
-  }
-  #wwa-1-row {
   }
 }
 

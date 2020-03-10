@@ -1,3 +1,25 @@
+// - Gặp vấn đề
+// + SVG
+// - path
+// - stroke
+// - animation
+
+// + Loadding
+// - transform không dùng được do đụng độ anime js
+// - canh giữa bằng flex box
+
+// + hover animation real
+
+// + !important bi ghi đè
+
+// + visual code tự động tắt
+
+// + Lỗi duyệt web không mở được, không tắt được tab
+
+// + nav bug
+// - Cursor
+// - Spacing of two element
+
 let log = console.log;
 
 // nav bug - khi lăn đến footer thì phải biến mất
@@ -16,6 +38,7 @@ document.addEventListener("scroll", () => {
   var docTop = $(document).scrollTop();
   if (docTop >= offsetFooter.top - takeSomeSpace) {
     listVisible.addClass("nav-bug");
+    listVisible.click(false);
   } else {
     listVisible.removeClass("nav-bug");
   }
