@@ -1,25 +1,3 @@
-// - Gặp vấn đề
-// + SVG
-// - path
-// - stroke
-// - animation
-
-// + Loadding
-// - transform không dùng được do đụng độ anime js
-// - canh giữa bằng flex box
-
-// + hover animation real
-
-// + !important bi ghi đè
-
-// + visual code tự động tắt
-
-// + Lỗi duyệt web không mở được, không tắt được tab
-
-// + nav bug
-// - Cursor
-// - Spacing of two element
-
 let log = console.log;
 
 // nav bug - khi lăn đến footer thì phải biến mất
@@ -28,7 +6,12 @@ let offsetFooter = $("footer").offset();
 let takeSomeSpace = (20 * offsetFooter.top) / 100;
 log(offsetFooter.top);
 
+const listUp = $(".shop-link")
+  .children()
+  .children();
+
 const listVisible = $(".shop-link")
+  .children()
   .children()
   .children();
 
@@ -37,10 +20,11 @@ log(listVisible);
 document.addEventListener("scroll", () => {
   var docTop = $(document).scrollTop();
   if (docTop >= offsetFooter.top - takeSomeSpace) {
-    listVisible.addClass("nav-bug");
-    listVisible.click(false);
+    listUp.addClass("nav-bug-li");
+    listVisible.click(event => {});
   } else {
-    listVisible.removeClass("nav-bug");
+    listUp.removeClass("nav-bug-li");
+    listVisible.click(event => {});
   }
 });
 
@@ -92,14 +76,14 @@ const not_scroll_text = {
   textTransform: "uppercase"
 };
 $(".not-scroll").css(not_scroll_text);
+
 /*  hash product section */
 const product_index = $(".product").length - 5;
 $("#product-section .row .owl-carousel").owlCarousel({
   items: 6,
   loop: false,
   center: true,
-  margin: 400,
-  left: 100,
+  margin: 100,
 
   URLhashListener: true,
   autoplayHoverPause: true,
@@ -193,35 +177,24 @@ $("#product-section .row .owl-carousel").owlCarousel({
 
 // anime js slide up down
 
-$(".slide")
-  .mouseenter(() => {
-    anime({
-      targets: ".slide-up",
-      translateY: -10,
-      opacity: 0,
-      easing: "easeOutQuart"
-    });
-    anime({
-      targets: ".slide-down",
-      translateY: -10,
-      opacity: 1,
-      easing: "easeOutQuart"
-    });
-  })
-  .mouseleave(() => {
-    anime({
-      targets: ".slide-up",
-      translateY: 0,
-      opacity: 1,
-      easing: "easeOutQuart"
-    });
-    anime({
-      targets: ".slide-down",
-      translateY: 0,
-      opacity: 0,
-      easing: "easeOutQuart"
-    });
-  });
+const ulSlide = $(".list-infor");
+ulSlide.children().addClass("slide");
+const liSlide = ulSlide
+  .children()
+  .children()
+  .addClass("slide-right");
+
+const navLeftSlide = $("#nav-left .shop-link");
+navLeftSlide
+  .children()
+  .children()
+  .addClass("slide-right");
+
+const shopName = $(".shop-name-wrap");
+shopName.addClass("slide-right");
+
+const myCard = $(".my-card .card-no-icon");
+myCard.addClass("slide-right");
 
 const svgPath = $("svg path");
 
