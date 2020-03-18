@@ -340,10 +340,14 @@ section {
   position: absolute;
   top: 50%;
   left: 50%;
-  transform: translate(-50%, -60%) rotate(65deg) scale(2);
+  transform: translate(-25%, 80%) rotate(65deg) scale(2);
   z-index: 10;
 }
-#first-section .decoration path {
+#first-section .decoration svg {
+  width: 40%;
+  height: 40%;
+}
+#first-section .decoration svg path {
   fill: rgba(136, 84, 50, 0.281) !important;
 }
 #first-section div.box.first-sec-img {
@@ -614,7 +618,64 @@ section {
 #review-section {
   min-height: 500px;
 }
+#review-section .box {
+  position: relative;
+}
+#review-section .box .decoration {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(10%, -50%) scale(1.4);
+  z-index: 10;
+}
+#review-section .box .decoration svg {
+  width: 40%;
+  height: 40%;
+}
+#review-section .box .decoration svg path {
+  stroke: black !important;
+  fill: rgba(0, 0, 0, 0) !important;
+}
+#review-section .box .rw-name {
+  position: absolute;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(50%, -50%);
+  z-index: 11;
+  font-family: myFont, "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  font-size: 5vw;
+}
+#review-section .box .rw-content {
+  padding: 5vh 1vw;
+  font-size: 1.3vw;
+  font-weight: 500;
+}
 
+.up {
+  animation: up 1s forwards;
+}
+
+.down {
+  animation: down 1s forwards;
+}
+
+@keyframes up {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+  }
+}
+@keyframes down {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
 /* footer */
 footer {
   padding-left: 4vw;

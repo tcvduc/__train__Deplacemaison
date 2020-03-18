@@ -449,7 +449,23 @@ const shop_all_on_mouseleave = {
   transform: "scaleX(0)"
 };
 
-// shop all animation
+// xử lý section review
+
+
+
+
+setTimeout(() => {
+  $(".rw-name")
+    .text("Ca Heo")
+    .addClass("up");
+});
+
+setTimeout(() => {
+  $(".rw-name")
+    .text("Ca map")
+    .removeClass("up")
+    .addClass("down");
+});
 
 // footer
 
