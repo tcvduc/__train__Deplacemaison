@@ -162,9 +162,9 @@ path {
   color: #fcf9ee;
   font-size: 20vw;
   line-height: 17vw;
-  letter-spacing: 2rem;
+  letter-spacing: -2rem;
   font-weight: 500;
-  font-family: myFont, sans-serif;
+  font-family: "Roboto Condensed", sans-serif;
 }
 .load-main .load-1 {
   display: block;
@@ -333,6 +333,19 @@ section {
   background-color: transparent;
   min-height: 500px;
 }
+#first-section .row {
+  position: relative;
+}
+#first-section .decoration {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -60%) rotate(65deg) scale(2);
+  z-index: 10;
+}
+#first-section .decoration path {
+  fill: rgba(136, 84, 50, 0.281) !important;
+}
 #first-section div.box.first-sec-img {
   border: 4px solid black;
 }
@@ -348,23 +361,28 @@ section {
   align-items: center;
   position: relative;
 }
-#first-section .explore p {
+#first-section .explore .explore-content {
   margin-right: 2vw;
   font-size: 1.5vw;
   text-transform: uppercase;
-  transform: translate(1vh, 1vh);
+  color: black;
+  position: relative;
   cursor: pointer;
 }
 #first-section .explore .explore-under {
   position: absolute;
-  top: 52%;
-  left: 1%;
+  left: 0;
+  bottom: 0.5vh;
+  height: 0.2vh;
+  width: 100%;
   transform: scaleX(0);
-  height: 2px;
-  width: 75%;
   background-color: black;
-  transition: transform 0.5s ease-out;
-  transform-origin: bottom left;
+  transition: 0.3s;
+  transform-origin: left;
+}
+#first-section .explore .explore-content:hover .explore-under {
+  transform: scaleX(1);
+  transform-origin: right;
 }
 #first-section .ex-button {
   display: flex;
@@ -392,6 +410,55 @@ section {
   width: 5vw;
 }
 
+.spin {
+  animation: spin 0.5s forwards;
+}
+
+.spinBack {
+  animation: spinBack 0.5s forwards;
+}
+
+.bigger {
+  animation: bigger 0.5s forwards;
+}
+
+.smaller {
+  animation: smaller 0.5s forwards;
+}
+
+/* button animation svg */
+@keyframes spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+@keyframes spinBack {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(-360deg);
+  }
+}
+@keyframes bigger {
+  from {
+    transform: scale(1);
+  }
+  to {
+    transform: scale(1.22);
+  }
+}
+@keyframes smaller {
+  from {
+    transform: scale(1.22);
+  }
+  to {
+    transform: scale(1);
+  }
+}
 /* rolling section */
 #rolling-section {
   padding-left: 0;
@@ -487,23 +554,28 @@ section {
   align-items: center;
   position: relative;
 }
-#product-section .shop-all p {
+#product-section .shop-all .shop-all-content {
   margin-right: 2vw;
   font-size: 1.5vw;
   text-transform: uppercase;
-  transform: translate(1vh, 1vh);
+  position: relative;
+  color: black;
   cursor: pointer;
 }
 #product-section .shop-all .shop-all-under {
   position: absolute;
-  top: 52%;
-  left: 1%;
-  transform: scaleX(0);
-  height: 2px;
-  width: 75%;
+  left: 0;
+  bottom: 0.5vh;
+  height: 0.2vh;
+  width: 100%;
   background-color: black;
-  transition: transform 0.5s ease-out;
-  transform-origin: bottom left;
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: 0.3s;
+}
+#product-section .shop-all .shop-all-content:hover .shop-all-under {
+  transform: scaleX(1);
+  transform-origin: right;
 }
 #product-section .shop-all-button {
   display: flex;
@@ -702,11 +774,11 @@ footer #ft-col-4 #ft-to-top .btn-top {
   height: 5vh;
   width: 5vw;
 }
-footer #ft-col-4 #ft-to-top #circle {
+footer #ft-col-4 #ft-to-top #up-btn-circle {
   cursor: pointer;
   position: absolute;
 }
-footer #ft-col-4 #ft-to-top #arrow {
+footer #ft-col-4 #ft-to-top #up-btn-arrow {
   cursor: pointer;
   transform: rotate(-90deg);
   top: 2.5vh;
@@ -718,6 +790,31 @@ footer #ft-col-4 #ft-to-top path {
   fill: black !important;
 }
 
+.supperSpin {
+  animation: supperSpin 0.5s forwards;
+}
+
+.supperSpinBack {
+  animation: supperSpinBack 0.5s forwards;
+}
+
+/* footer btn up animation bug */
+@keyframes supperSpin {
+  from {
+    transform: rotate(-90deg);
+  }
+  to {
+    transform: rotate(270deg);
+  }
+}
+@keyframes supperSpinBack {
+  from {
+    transform: rotate(270deg);
+  }
+  to {
+    transform: rotate(-90deg);
+  }
+}
 /* moblie responsive   */
 /* medium - md - <=768px */
 @media (max-width: 768px) {
@@ -804,13 +901,13 @@ footer #ft-col-4 #ft-to-top path {
   footer .box {
     min-height: 25vh;
   }
-  footer #circle {
+  footer #up-btn-circle {
     cursor: pointer;
     position: absolute;
     height: 8vh;
     width: 10vw;
   }
-  footer #arrow {
+  footer #up-btn-arrow {
     cursor: pointer !important;
     transform: rotate(-90deg) !important;
     top: 2vh !important;
@@ -946,13 +1043,13 @@ footer #ft-col-4 #ft-to-top path {
   footer .box {
     min-height: 25vh;
   }
-  footer #circle {
+  footer #up-btn-circle {
     cursor: pointer;
     position: absolute;
     height: 8vh;
     width: 10vw;
   }
-  footer #arrow {
+  footer #up-btn-arrow {
     cursor: pointer !important;
     transform: rotate(-90deg) !important;
     top: 2vh !important;

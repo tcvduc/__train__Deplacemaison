@@ -1,5 +1,10 @@
 let log = console.log;
 
+// img drag bug
+$("img").on("dragstart", event => {
+  event.preventDefault();
+});
+
 // nav bug - khi lăn đến footer thì phải biến mất
 
 let offsetFooter = $("footer").offset();
@@ -301,6 +306,72 @@ $(window).ready(() => {
 });
 
 //  this.CSS({ animation: "write 1s forwards" });
+
+// Xử lý hiệu ứng xoay tròn to ra
+// button spin svg animation
+
+// explore btn
+$("#ex-btn-wrap").mouseenter(event => {
+  $("#circle_explore")
+    .addClass("bigger")
+    .removeClass("smaller");
+
+  $("#arrow_explore")
+    .addClass("spin")
+    .removeClass("spinBack");
+});
+
+$("#ex-btn-wrap").mouseleave(event => {
+  $("#circle_explore")
+    .addClass("smaller")
+    .removeClass("bigger");
+
+  $("#arrow_explore")
+    .addClass("spinBack")
+    .removeClass("spin");
+});
+
+// shop all btn
+
+$("#sa-btn-wrap").mouseenter(() => {
+  $("#circle_shop_all")
+    .addClass("bigger")
+    .removeClass("smaller");
+
+  $("#arrow_shop_all")
+    .addClass("spin")
+    .removeClass("spinBack");
+});
+
+$("#sa-btn-wrap").mouseleave(() => {
+  $("#circle_shop_all")
+    .addClass("smaller")
+    .removeClass("bigger");
+  $("#arrow_shop_all")
+    .addClass("spinBack")
+    .removeClass("spin");
+});
+
+// footer btn up
+$("#up-btn-wrap")
+  .mouseenter(() => {
+    $("#up-btn-circle")
+      .addClass("bigger")
+      .removeClass("smaller");
+
+    $("#up-btn-arrow")
+      .addClass("supperSpin")
+      .removeClass("supperSpinBack");
+  })
+  .mouseleave(() => {
+    $("#up-btn-circle")
+      .addClass("smaller")
+      .removeClass("bigger");
+
+    $("#up-btn-arrow")
+      .addClass("supperSpinBack")
+      .removeClass("supperSpin");
+  });
 
 // explore css
 const explore_pure_css = {

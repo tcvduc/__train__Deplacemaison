@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      #ok {
+        width: 100vw;
+        background: black;
+        min-height: 50px;
+      }
+      #ok div {
+        width: 100%;
+        background: lightblue;
+        min-height: 50px;
+        transform: scaleX(0);
+        transform-origin: right;
+        transition: all 1.5s;
+      }
+      #ok:hover div {
+        transform: scaleX(1);
+        transform-origin: left;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="ok">
+      <div></div>
+    </div>
+  </body>
+</html>
