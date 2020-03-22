@@ -1170,7 +1170,7 @@ footer #ft-col-4 #ft-to-top path {
     position: fixed;
     z-index: 100;
     overflow: hidden;
-    transition: 0.1s;
+    transition: 0.5s;
   }
   .nav-mobile .nav-mb-header {
     padding: 5vw;
@@ -1240,13 +1240,21 @@ footer #ft-col-4 #ft-to-top path {
   }
 
   .nav-mobile-animation-in {
-    animation: fadeOut 0.3s reverse;
+    animation: fadeOut 0.5s 1 reverse;
   }
 
   .nav-mobile-animation-out {
-    animation: fadeOut 0.3s forwards;
+    animation: mbFadeOut 0.3s 1 reverse;
   }
 
+  @keyframes mbFadeOut {
+    from {
+      top: -100%;
+    }
+    to {
+      top: 0%;
+    }
+  }
   nav {
     background-color: rgba(0, 0, 0, 0);
   }
@@ -1269,7 +1277,7 @@ footer #ft-col-4 #ft-to-top path {
     height: 0.2vh;
     width: 50%;
     background-color: black;
-    transition: 0.5s;
+    transition: 0.7s;
   }
   nav .hamberger .ham-top-default {
     transform: rotate(0deg);
@@ -1281,14 +1289,13 @@ footer #ft-col-4 #ft-to-top path {
     height: 0.3vh;
     width: 100%;
     background-color: black;
-    transition: 0.5s;
   }
   nav .hamberger .ham-bottom {
     height: 0.2vh;
     width: 50%;
     background-color: black;
     align-self: flex-end;
-    transition: 0.5s;
+    transition: 0.7s;
   }
   nav .hamberger .ham-bottom-default {
     transform: rotate(0deg);
@@ -1311,14 +1318,14 @@ footer #ft-col-4 #ft-to-top path {
   }
   header .box#fall h1 {
     letter-spacing: -0.2rem;
-    font-size: 20vw;
+    font-size: 24vw;
   }
   header .box#winter {
     width: 100%;
   }
   header .box#winter h1 {
     letter-spacing: -0.2rem;
-    font-size: 20vw;
+    font-size: 24vw;
   }
   header #layer {
     transform: translate(0, 0) scale(1.5) !important;
