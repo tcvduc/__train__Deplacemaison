@@ -230,6 +230,7 @@ nav {
   flex-direction: column;
   justify-content: space-between;
   align-items: center;
+  z-index: 100;
 }
 #nav-left .shop-name {
   padding: 2vw;
@@ -271,18 +272,17 @@ nav {
 }
 
 #nav-top {
+  padding: 5vw;
   right: 0;
   top: 0;
   overflow: hidden;
   position: fixed;
   width: 89vw;
-  height: 10vh;
   background-color: transparent;
   display: flex;
   justify-content: flex-end;
 }
 #nav-top .my-card {
-  padding: 2vw;
   display: flex;
 }
 #nav-top .my-card .card-no-icon {
@@ -353,15 +353,17 @@ section {
   position: relative;
 }
 #first-section .decoration {
+  height: 5vh;
+  width: 5vw;
   position: absolute;
   top: 50%;
   left: 50%;
-  transform: translate(-25%, 80%) rotate(65deg) scale(2);
+  transform: translate(-25%, -80%) rotate(65deg) scale(8);
   z-index: 10;
 }
 #first-section .decoration svg {
-  width: 40%;
-  height: 40%;
+  width: 100%;
+  height: 100%;
 }
 #first-section .decoration svg path {
   fill: rgba(136, 84, 50, 0.281) !important;
@@ -832,7 +834,7 @@ footer #ft-col-4 .infor-up .list-infor ul a {
 footer #ft-col-4 .social-media {
   padding-top: 9vh;
   height: 100%;
-  width: 50%;
+  width: 100%;
 }
 footer #ft-col-4 .social-media .fb-icon {
   height: 15%;
@@ -1016,7 +1018,6 @@ footer #ft-col-4 #ft-to-top path {
   }
   nav #nav-top .my-card {
     display: flex;
-    padding: 3vh 3vw 0 0;
   }
 
   header .box#fall h1 {
@@ -1166,15 +1167,22 @@ footer #ft-col-4 #ft-to-top path {
   .nav-mobile {
     height: 100%;
     width: 100%;
-    background-color: black;
+    background-color: #141414;
     position: fixed;
     z-index: 100;
     overflow: hidden;
     transition: 0.5s;
   }
+  .nav-mobile .nav-mobile-wrap {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+  }
   .nav-mobile .nav-mb-header {
     padding: 5vw;
-    height: 30%;
+    height: 20%;
     width: 100%;
     display: flex;
     justify-content: space-between;
@@ -1187,7 +1195,7 @@ footer #ft-col-4 #ft-to-top path {
   }
   .nav-mobile .nav-mb-header .hamberger-mb {
     position: relative;
-    top: -1rem;
+    top: -0.5rem;
     height: 50%;
     width: 10%;
     cursor: pointer;
@@ -1198,7 +1206,7 @@ footer #ft-col-4 #ft-to-top path {
     height: 0.5vh;
     width: 65%;
     background-color: #fff;
-    transition: 0.5s;
+    transition: 0.1s;
     align-self: center;
   }
   .nav-mobile .nav-mb-header .hamberger-mb .ham-top-default {
@@ -1214,7 +1222,7 @@ footer #ft-col-4 #ft-to-top path {
     width: 65%;
     background-color: #fff;
     align-self: center;
-    transition: 0.5s;
+    transition: 0.1s;
   }
   .nav-mobile .nav-mb-header .hamberger-mb .ham-bottom-default {
     transform: rotate(0deg);
@@ -1238,6 +1246,76 @@ footer #ft-col-4 #ft-to-top path {
     font-family: "Roboto Condensed", sans-serif;
     color: #fff;
   }
+  .nav-mobile .nav-mb-main {
+    font-family: "Roboto Condensed", sans-serif;
+    padding: 5vw;
+  }
+  .nav-mobile .nav-mb-main .tab {
+    color: #fff;
+    font-size: 5vw;
+    text-transform: uppercase;
+    position: relative;
+    transform-origin: left;
+  }
+  .nav-mobile .nav-mb-main .tab-under {
+    position: absolute;
+    bottom: -1vh;
+    left: 0;
+    height: 0.3vh;
+    width: 100%;
+    background-color: #fcf9ee;
+    transform-origin: left;
+    transform: scaleX(0);
+    transition: 0.5s;
+  }
+  .nav-mobile .nav-mb-main .tab-content {
+    margin-top: 5vh;
+    display: flex;
+    flex-direction: column;
+  }
+  .nav-mobile .nav-mb-main .tab-content a {
+    transform-origin: left;
+    font-size: 10vw;
+    text-transform: uppercase;
+    color: #fcf9ee;
+  }
+  .nav-mobile .tab-in {
+    animation: toRight 0.5s forwards;
+  }
+  .nav-mobile .tab-out {
+    animation: toRight 1s reverse;
+  }
+  .nav-mobile .tab-under-in {
+    animation: toRight 1s forwards;
+  }
+  .nav-mobile .tab-under-out {
+    animation: toRight 1s reverse;
+  }
+  @keyframes bompUp {
+    from {
+      transform: scaleY(0);
+    }
+    to {
+      transform: scaleY(1);
+    }
+  }
+  @keyframes toRight {
+    from {
+      transform: scaleX(0);
+    }
+    to {
+      transform: scaleX(1);
+    }
+  }
+  .nav-mobile .nav-mb-footer {
+    padding: 5vw;
+    font-family: "Roboto Condensed", sans-serif;
+  }
+  .nav-mobile .nav-mb-footer .foot a {
+    font-size: 5vw;
+    text-transform: uppercase;
+    color: #fcf9ee;
+  }
 
   .nav-mobile-animation-in {
     animation: fadeOut 0.5s 1 reverse;
@@ -1259,7 +1337,6 @@ footer #ft-col-4 #ft-to-top path {
     background-color: rgba(0, 0, 0, 0);
   }
   nav .shop-name {
-    padding: 3vh 0 0 3vw;
     width: 20%;
   }
   nav .shop-name svg path {
@@ -1270,11 +1347,10 @@ footer #ft-col-4 #ft-to-top path {
     flex-direction: column;
     justify-content: space-evenly;
     width: 8%;
-    padding: 3vh 0;
     cursor: pointer;
   }
   nav .hamberger .ham-top {
-    height: 0.2vh;
+    height: 0.4vh;
     width: 50%;
     background-color: black;
     transition: 0.7s;
@@ -1283,15 +1359,22 @@ footer #ft-col-4 #ft-to-top path {
     transform: rotate(0deg);
   }
   nav .hamberger .ham-top-change {
-    transform: rotate(45deg) translate(10%, -200%);
+    transform: rotate(45deg);
   }
   nav .hamberger .ham-mid {
-    height: 0.3vh;
+    height: 0.4vh;
     width: 100%;
     background-color: black;
+    transition: 0.5s;
+  }
+  nav .hamberger .ham-mid-default {
+    transform: rotate(0deg);
+  }
+  nav .hamberger .ham-mid-change {
+    transform: rotate(-45deg);
   }
   nav .hamberger .ham-bottom {
-    height: 0.2vh;
+    height: 0.4vh;
     width: 50%;
     background-color: black;
     align-self: flex-end;
@@ -1301,7 +1384,7 @@ footer #ft-col-4 #ft-to-top path {
     transform: rotate(0deg);
   }
   nav .hamberger .ham-bottom-change {
-    transform: rotate(45deg) translate(-10%, 200%);
+    transform: rotate(45deg);
   }
   nav #nav-top {
     display: flex;
