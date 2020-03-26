@@ -20,7 +20,7 @@ const listVisible = $(".shop-link")
   .children()
   .children();
 
-log(listVisible);
+// log(listVisible);
 
 document.addEventListener("scroll", () => {
   var docTop = $(document).scrollTop();
@@ -180,41 +180,53 @@ $("#product-section .row .owl-carousel").owlCarousel({
   }
 });
 
-// anime js slide up down
+// special hover up dowm some element
 
-const ulSlide = $(".list-infor");
-ulSlide.children().addClass("slide");
-const liSlide = ulSlide
-  .children()
-  .children()
-  .addClass("slide-right");
+// nav top
+// my cart
+const cart_father = $(".card-no-icon");
+const cart_children = cart_father.children();
+const cart_firstchild = $(".card-no-icon a:first-child");
+const cart_secondchild = $(".card-no-icon a:nth-child(2)");
 
-const navLeftSlide = $("#nav-left .shop-link");
-navLeftSlide
-  .children()
-  .children()
-  .addClass("slide-right");
+cart_father.addClass("father");
+cart_children.addClass("children");
+cart_firstchild.addClass("child-1");
+cart_secondchild.addClass("child-2");
 
-const shopName = $(".shop-name-wrap");
-shopName.addClass("slide-right");
+// nav left
+const nl_father = $(".shop-link ul").children();
+const nl_children = nl_father.children();
+const nl_firstchild = $(".shop-link ul div li:first-child");
+const nl_secondchild = $(".shop-link ul div li:nth-child(2)");
 
-const myCard = $(".my-card .card-no-icon");
-myCard.addClass("slide-right");
+nl_father.addClass("father");
+nl_children.addClass("children");
+nl_firstchild.addClass("child-1");
+nl_secondchild.addClass("child-2");
 
-const svgPath = $("svg path");
+// shop name
+const sn_father = $(".shop-name-wrap");
+const sn_children = sn_father.children();
+const sn_firstchild = $(".shop-name-wrap svg:first-child");
+const sn_secondchild = $(".shop-name-wrap svg:nth-child(2)");
 
-const svgText = anime({
-  targets: svgPath[0],
-  loop: true,
-  direction: "alternate",
-  strokeDashoffset: [anime.setDashoffset, 0],
-  easing: "easeInOutSine",
-  duration: 700,
-  delay: (el, i) => {
-    return i * 500;
-  }
-});
+sn_father.addClass("shop-name-father");
+sn_children.addClass("shop-name-children");
+sn_firstchild.addClass("shop-name-child-1");
+sn_secondchild.addClass("shop-name-child-2");
 
+// footer
+// f mean footer
+const f_father = $("footer ul").children();
+const f_children = f_father.children();
+const f_firstchild = $("footer ul div li:first-child");
+const f_secondchild = $("footer ul div li:nth-child(2)");
+
+f_father.addClass("father");
+f_children.addClass("children");
+f_firstchild.addClass("child-1");
+f_secondchild.addClass("child-2");
 // xử lý loading animation
 
 const load1 = $(".load-1");
@@ -450,9 +462,6 @@ const shop_all_on_mouseleave = {
 };
 
 // xử lý section review
-
-
-
 
 setTimeout(() => {
   $(".rw-name")

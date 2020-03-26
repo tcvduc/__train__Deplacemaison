@@ -63,6 +63,37 @@ body {
   transform: rotate(0);
 }
 
+/* special hover cho mấy cái cần thiết  */
+.father {
+  position: relative;
+  overflow: hidden;
+  min-height: 5vh;
+  width: 100%;
+  margin-bottom: 2vh;
+}
+
+.children {
+  height: 5vh;
+  position: absolute;
+  transition: 0.5s;
+}
+
+.child-1 {
+  transform: translate(0, 0);
+}
+
+.child-2 {
+  transform: translate(0, 100%);
+}
+
+.father:hover .child-2 {
+  transform: translate(0, 0);
+}
+
+.father:hover .child-1 {
+  transform: translate(0, -100%);
+}
+
 /* hiệu ứng lật khi hover */
 .slide {
   min-height: 4vh;
@@ -233,13 +264,34 @@ nav {
   z-index: 100;
 }
 #nav-left .shop-name {
-  padding: 2vw;
-  padding-right: 4vw;
+  padding: 3vw;
+}
+#nav-left .shop-name .shop-name-father {
+  position: relative;
+  overflow: hidden;
+  min-height: 5vh;
+  width: 100%;
+}
+#nav-left .shop-name .shop-name-children {
+  position: absolute;
+  transition: 0.5s;
+}
+#nav-left .shop-name .shop-name-child-1 {
+  transform: translate(0, 0);
+}
+#nav-left .shop-name .shop-name-child-2 {
+  transform: translate(100%, 0);
+}
+#nav-left .shop-name .shop-name-father:hover .shop-name-child-2 {
+  transform: translate(0, 0);
+}
+#nav-left .shop-name .shop-name-father:hover .shop-name-child-1 {
+  transform: translate(-100%, 0);
 }
 #nav-left .shop-name .shop-name-wrap {
   cursor: pointer;
-  height: fit-content;
-  width: fit-content;
+  min-height: 20vh;
+  width: 5vw;
 }
 #nav-left .shop-name svg {
   height: 20vh;
@@ -250,19 +302,19 @@ nav {
   fill: black !important;
 }
 #nav-left .shop-link {
+  width: 100%;
   padding: 2vw;
+}
+#nav-left .shop-link .father {
+  margin-bottom: 0;
 }
 #nav-left .shop-link ul {
   list-style: none;
   padding-left: 0;
   margin-bottom: 0;
 }
-#nav-left .shop-link ul li {
-  padding: 0.2vw;
-}
 #nav-left .shop-link ul a {
   font-family: "Roboto Condensed", sans-serif;
-  padding: 1vw;
   font-weight: 500;
   text-transform: uppercase;
   font-size: 1vw;
@@ -272,7 +324,7 @@ nav {
 }
 
 #nav-top {
-  padding: 5vw;
+  padding: 2vw;
   right: 0;
   top: 0;
   overflow: hidden;
@@ -284,10 +336,13 @@ nav {
 }
 #nav-top .my-card {
   display: flex;
+  width: 6vw;
+}
+#nav-top .my-card .father {
+  width: 100%;
 }
 #nav-top .my-card .card-no-icon {
   text-transform: uppercase;
-  margin-right: 0.5vw;
   font-family: "Roboto Condensed", sans-serif;
 }
 #nav-top .my-card .card-no-icon a {
@@ -702,9 +757,6 @@ footer {
 footer .box {
   min-height: 300px;
 }
-footer .letter {
-  flex-grow: 3;
-}
 footer .letter .letter-header h3 {
   text-transform: uppercase;
   font-size: 1vw;
@@ -718,8 +770,8 @@ footer .letter .letter-content path {
   fill: black !important;
 }
 footer .email {
-  flex-grow: 7;
   display: flex;
+  flex-direction: column;
   flex-wrap: wrap;
   justify-content: space-around;
   align-items: center;
@@ -733,7 +785,6 @@ footer .email .email-header h4 {
   color: black;
 }
 footer .email .email-content {
-  margin-top: -10vh;
   display: flex;
   width: 100%;
 }
@@ -765,6 +816,9 @@ footer #ft-col-2 h3 {
   font-size: 1vw;
   color: black;
 }
+footer #ft-col-2 .infor-up {
+  width: 100%;
+}
 footer #ft-col-2 .infor-up .list-infor {
   text-transform: uppercase;
 }
@@ -791,6 +845,9 @@ footer #ft-col-3 h3 {
   text-transform: uppercase;
   font-size: 1vw;
   color: black;
+}
+footer #ft-col-3 .infor-up {
+  width: 100%;
 }
 footer #ft-col-3 .infor-up .list-infor {
   text-transform: uppercase;
