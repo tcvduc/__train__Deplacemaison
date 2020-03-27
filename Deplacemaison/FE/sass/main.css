@@ -336,7 +336,7 @@ nav {
 }
 #nav-top .my-card {
   display: flex;
-  width: 6vw;
+  width: 5vw;
 }
 #nav-top .my-card .father {
   width: 100%;
@@ -358,6 +358,9 @@ header {
   padding-right: 10vw;
   padding-left: 23.5vw;
   background-color: #fcf9ee;
+}
+header .box {
+  background-color: transparent;
 }
 header .box#fall h1 {
   font-family: "Roboto Condensed", sans-serif;
@@ -402,18 +405,22 @@ section {
 /* first section */
 #first-section {
   background-color: transparent;
-  min-height: 500px;
+  min-height: 40vh;
 }
 #first-section .row {
   position: relative;
 }
+#first-section .box {
+  background-color: transparent;
+  min-height: 100px;
+}
 #first-section .decoration {
-  height: 5vh;
-  width: 5vw;
+  height: 30vh;
+  width: 30vw;
   position: absolute;
   top: 50%;
   left: 50%;
-  transform: translate(-25%, -80%) rotate(65deg) scale(8);
+  transform: translate(-50%, -56%) rotate(65deg);
   z-index: 10;
 }
 #first-section .decoration svg {
@@ -540,7 +547,7 @@ section {
 #rolling-section {
   padding-left: 0;
   padding-right: 0;
-  min-height: 550px;
+  min-height: 50vh;
   display: flex;
   align-items: center;
   margin-top: 0;
@@ -604,7 +611,16 @@ section {
   margin-left: -23vw;
   padding-left: 0;
   padding-right: 0;
-  margin: 20vh 0;
+  margin: 0;
+}
+#product-section .row:first-child {
+  margin-top: 10vh;
+}
+#product-section .row:nth-child(2) {
+  margin-top: unset;
+}
+#product-section .box {
+  background-color: transparent;
 }
 #product-section .product {
   background-color: rgba(0, 0, 0, 0.5);
@@ -689,10 +705,12 @@ section {
 
 /* review section */
 #review-section {
-  min-height: 500px;
+  min-height: 50vh;
+  margin-top: unset;
 }
 #review-section .box {
   position: relative;
+  background-color: rgba(0, 0, 0, 0);
 }
 #review-section .box .decoration {
   position: absolute;
@@ -709,47 +727,61 @@ section {
   stroke: black !important;
   fill: rgba(0, 0, 0, 0) !important;
 }
+#review-section .box .review-name-wrap {
+  height: 15vh;
+  width: 35vw;
+  position: relative;
+  top: 10vh;
+  overflow: hidden;
+}
+#review-section .box .rw-name-1-up {
+  transform: translate(0, -100%);
+}
+#review-section .box .rw-name-1 {
+  transform: translate(0, 0);
+}
+#review-section .box .rw-name-2 {
+  transform: translate(0, 100%);
+}
+#review-section .box .rw-name-2-up {
+  transform: translate(0, 0);
+}
 #review-section .box .rw-name {
   position: absolute;
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(50%, -50%);
+  right: 3vw;
   z-index: 11;
   font-family: myFont, "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
   font-size: 5vw;
+  transition: 0.5s;
+}
+#review-section .box .review-content-wrap {
+  height: 9vh;
+  width: 35vw;
+  position: relative;
+  overflow: hidden;
 }
 #review-section .box .rw-content {
-  padding: 5vh 1vw;
+  padding: 0.2vw;
   font-size: 1.3vw;
   font-weight: 500;
+  position: absolute;
+  right: 3vw;
+  z-index: 11;
+  transition: 0.5s;
+}
+#review-section .box .rw-content-1-up {
+  transform: translate(0, -100%);
+}
+#review-section .box .rw-content-1 {
+  transform: translate(0, 0);
+}
+#review-section .box .rw-content-2 {
+  transform: translate(0, 100%);
+}
+#review-section .box .rw-content-2-up {
+  transform: translate(0, 0);
 }
 
-.up {
-  animation: up 1s forwards;
-}
-
-.down {
-  animation: down 1s forwards;
-}
-
-@keyframes up {
-  from {
-    opacity: 1;
-  }
-  to {
-    opacity: 0;
-  }
-}
-@keyframes down {
-  from {
-    opacity: 0;
-  }
-  to {
-    opacity: 1;
-  }
-}
-/* footer */
 footer {
   padding-left: 4vw;
   padding-right: 10vw;
@@ -889,18 +921,18 @@ footer #ft-col-4 .infor-up .list-infor ul a {
   font-size: 1.5vw;
 }
 footer #ft-col-4 .social-media {
-  padding-top: 9vh;
+  padding-top: 15vh;
   height: 100%;
   width: 100%;
 }
 footer #ft-col-4 .social-media .fb-icon {
-  height: 15%;
-  width: 15%;
+  height: 20%;
+  width: 20%;
   cursor: pointer;
 }
 footer #ft-col-4 .social-media .ins-icon {
-  height: 15%;
-  width: 15%;
+  height: 20%;
+  width: 20%;
   cursor: pointer;
 }
 footer #ft-col-4 #ft-to-top .btn-top {
@@ -1471,6 +1503,13 @@ footer #ft-col-4 #ft-to-top path {
     transform: translate(0, 0) scale(1.5) !important;
   }
 
+  main #first-section {
+    margin-top: 0;
+    padding: 1vw;
+  }
+  main #first-section .explore-content {
+    font-size: 4.5vw !important;
+  }
   main #review-section {
     min-height: 100px;
   }

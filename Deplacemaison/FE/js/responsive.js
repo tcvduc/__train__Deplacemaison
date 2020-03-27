@@ -2,13 +2,28 @@ $(window).resize(() => {
   let width = $(window).width();
   let height = $(window).height();
 
+  const f_col_1 = $("#ft-col-1");
+  const f_col_2 = $("#ft-col-2");
+  const f_col_3 = $("#ft-col-3");
+
+  const firstSection = $("first-section");
   // 576px
   if (width <= 576) {
     $("#nav-left").addClass("d-none-1");
     $("#nav-top").addClass("width-100");
+
+    f_col_1.addClass("d-none").removeClass("d-flex");
+    f_col_2.addClass("d-none").removeClass("d-flex");
+    f_col_3.addClass("d-none").removeClass("d-flex");
+
+    
   } else {
     $("#nav-left").removeClass("d-none-1");
     $("#nav-top").removeClass("width-100");
+
+    f_col_1.removeClass("d-none").addClass("d-flex");
+    f_col_2.removeClass("d-none").addClass("d-flex");
+    f_col_3.removeClass("d-none").addClass("d-flex");
   }
 });
 

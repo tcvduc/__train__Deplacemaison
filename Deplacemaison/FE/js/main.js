@@ -462,19 +462,74 @@ const shop_all_on_mouseleave = {
 };
 
 // xử lý section review
+const reviewNameWrap = $(".review-name-wrap");
+const reviewerName = $(".rw-name");
+const reviewer_1 = $(".review-name-wrap div:first-child");
+const reviewer_2 = $(".review-name-wrap div:nth-child(2)");
+const content_1 = $(".review-content-wrap div:first-child");
+const content_2 = $(".review-content-wrap div:nth-child(2)");
 
-setTimeout(() => {
-  $(".rw-name")
-    .text("Ca Heo")
-    .addClass("up");
-});
+const datas = [
+  {
+    name: "Ca Heo",
+    content: "lorem 300 lorem 300 lorem 300 lorem 300 lorem 300 lorem 300"
+  },
+  {
+    name: "Ca Map",
+    content: "lorem 500 lorem 500 lorem 500 lorem 500 lorem 500 lorem 500"
+  }
+];
 
-setTimeout(() => {
-  $(".rw-name")
-    .text("Ca map")
-    .removeClass("up")
-    .addClass("down");
-});
+reviewer_1.text(datas[0].name);
+reviewer_2.text(datas[1].name);
+
+content_1.text(datas[0].content);
+content_2.text(datas[1].content);
+
+setInterval(() => {
+  handleShowReviewer();
+}, 3000);
+
+function handleShowReviewer() {
+  const reviewNameWrap = $(".review-name-wrap");
+  const reviewerName = $(".rw-name");
+  const reviewer_1 = $(".review-name-wrap div:first-child");
+  const reviewer_2 = $(".review-name-wrap div:nth-child(2)");
+  const content_1 = $(".review-content-wrap div:first-child");
+  const content_2 = $(".review-content-wrap div:nth-child(2)");
+
+  const datas = [
+    {
+      name: "Ca Heo",
+      content: "lorem 300 lorem 300 lorem 300 lorem 300 lorem 300 lorem 300"
+    },
+    {
+      name: "Ca Map",
+      content: "lorem 500 lorem 500 lorem 500 lorem 500 lorem 500 lorem 500"
+    }
+  ];
+
+  // const reviewContent = data.map(data => {
+  //   return <div class="`review-content`"></div>;
+  // });
+
+  if (reviewer_1.hasClass("rw-name-1") && reviewer_2.hasClass("rw-name-2")) {
+    reviewer_1.addClass("rw-name-1-up").removeClass("rw-name-1");
+    reviewer_2.addClass("rw-name-2-up").removeClass("rw-name-2");
+
+    content_1.addClass("rw-content-1-up").removeClass("rw-content-1");
+    content_2.addClass("rw-content-2-up").removeClass("rw-content-2");
+  } else if (
+    reviewer_1.hasClass("rw-name-1-up") &&
+    reviewer_2.hasClass("rw-name-2-up")
+  ) {
+    reviewer_1.addClass("rw-name-1").removeClass("rw-name-1-up");
+    reviewer_2.addClass("rw-name-2").removeClass("rw-name-2-up");
+
+    content_1.addClass("rw-content-1").removeClass("rw-content-1-up");
+    content_2.addClass("rw-content-2").removeClass("rw-content-2-up");
+  }
+}
 
 // footer
 
