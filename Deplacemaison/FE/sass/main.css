@@ -1321,6 +1321,7 @@ footer #ft-col-4 #ft-to-top path {
   }
   .nav-mobile .nav-mb-header .my-card {
     display: flex;
+    width: 13vw;
   }
   .nav-mobile .nav-mb-header .my-card .card-no-icon {
     text-transform: uppercase;
@@ -1480,6 +1481,9 @@ footer #ft-col-4 #ft-to-top path {
     justify-content: space-between;
     position: initial;
   }
+  nav #nav-top .my-card {
+    width: 13vw;
+  }
 
   header {
     margin-top: 10vh;
@@ -1510,11 +1514,69 @@ footer #ft-col-4 #ft-to-top path {
   main #first-section .explore-content {
     font-size: 4.5vw !important;
   }
+  main section#who-we-are-section {
+    padding: 0;
+  }
+  main section#who-we-are-section .row {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+  }
+  main section#who-we-are-section .box {
+    padding-left: 7vw;
+  }
+  main section#who-we-are-section h3 {
+    font-size: 3vw !important;
+  }
+  main section#who-we-are-section h2 {
+    font-size: 6vw !important;
+  }
+  main #rolling-section .row {
+    margin-top: 0;
+  }
+  main #rolling-section .not-scroll {
+    height: 7vh;
+    font-size: 3vw;
+  }
   main #review-section {
     min-height: 100px;
+    padding: 0;
   }
-  main #product-section #arrow_shop_all {
+  main #review-section .decoration svg {
+    width: 70% !important;
+  }
+  main #review-section .review-content-wrap {
+    width: 100% !important;
+  }
+  main #review-section .rw-content {
+    padding: 0 !important;
+    width: 80%;
+    height: 100%;
+    font-size: 3vw !important;
+  }
+  main #review-section .review-name-wrap {
+    height: 10vh !important;
+    top: 1vh !important;
+    left: 27%;
+  }
+  main #review-section .review-name-wrap .rw-name {
+    font-size: 10vw;
+  }
+  main #product-section {
+    margin-left: 0;
+  }
+  main #product-section .row#shop-all-r {
+    padding: 0;
+  }
+  main #product-section .shop-all-content {
+    font-size: 4.5vw !important;
+  }
+  main #product-section .shop-all-button {
+    width: 15vw;
+  }
+  main #product-section .shop-all-button #arrow_shop_all {
     left: 3vw !important;
+    width: 5vw !important;
   }
 
   footer .box {

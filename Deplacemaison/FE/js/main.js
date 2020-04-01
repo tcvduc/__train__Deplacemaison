@@ -53,12 +53,30 @@ $("#rolling-section .row .owl-carousel").owlCarousel({
   nav: false,
   responsive: {
     0: {
-      items: 1
-    },
-    600: {
-      items: 4,
+      item: 4,
+      loop: true,
       margin: 0,
-      width: 150
+      width: 0,
+      autoplay: true,
+      autoplayTimeout: 2000,
+      autoplaySpeed: 3000,
+      slideTransition: "linear",
+      autoplayHoverPause: false,
+      mouseDrag: false,
+      nav: false
+    },
+    576: {
+      item: 4,
+      loop: true,
+      margin: 0,
+      width: 0,
+      autoplay: true,
+      autoplayTimeout: 2000,
+      autoplaySpeed: 3000,
+      slideTransition: "linear",
+      autoplayHoverPause: false,
+      mouseDrag: false,
+      nav: false
     },
     1000: {
       items: 5
@@ -157,25 +175,8 @@ $("#product-section .row .owl-carousel").owlCarousel({
     },
 
     600: {
-      items: 2,
-      loop: false,
-      center: true,
-      margin: 0,
-      left: 100,
-
-      URLhashListener: true,
-      autoplayHoverPause: true,
-      startPosition: 0,
-      dots: false,
-      autoplay: false,
-      autoplayTimeout: 2000,
-      autoplaySpeed: 3000,
-      slideTransition: "linear",
-
-      nav: false
-    },
-    1000: {
-      items: 4
+      items: 4,
+      loop: false
     }
   }
 });
