@@ -26,20 +26,6 @@ const products = [
     sex: "wmns",
     price: 1000,
     src: "./images/5d1c718d8da84280f895e643_garcia__wmns-white-p-800.jpeg"
-  },
-  {
-    id: 5,
-    name: "Garcia",
-    sex: "wmns",
-    price: 1000,
-    src: "./images/5d1c718d8da84280f895e643_garcia__wmns-white-p-800.jpeg"
-  },
-  {
-    id: 6,
-    name: "Garcia",
-    sex: "wmns",
-    price: 1000,
-    src: "./images/5d1c718d8da84280f895e643_garcia__wmns-white-p-800.jpeg"
   }
 ];
 
@@ -68,4 +54,4 @@ const productElements = products.map(product => {
 
 // bugs không thể drag
 const placeToPutProductDataIn = $("#product-section .owl-carousel ");
-//placeToPutProductDataIn.append(productElements);
+placeToPutProductDataIn.append(productElements);

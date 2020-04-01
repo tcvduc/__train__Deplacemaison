@@ -119,24 +119,6 @@ $("#product-section .row .owl-carousel").owlCarousel({
 
   nav: false,
   responsive: {
-    0: {
-      items: 6,
-      loop: false,
-      center: true,
-      margin: 200,
-      left: 100,
-
-      URLhashListener: true,
-      autoplayHoverPause: true,
-      startPosition: product_index,
-      dots: false,
-      autoplay: false,
-      autoplayTimeout: 2000,
-      autoplaySpeed: 3000,
-      slideTransition: "linear",
-
-      nav: false
-    },
     300: {
       items: 2,
       loop: false,
