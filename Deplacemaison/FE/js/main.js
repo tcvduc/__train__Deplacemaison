@@ -103,10 +103,10 @@ $(".not-scroll").css(not_scroll_text);
 /*  hash product section */
 const product_index = $(".product").length - 5;
 $("#product-section .row .owl-carousel").owlCarousel({
-  items: 6,
+  items: 3,
   loop: false,
   center: true,
-  margin: 100,
+  margin: 0,
 
   URLhashListener: true,
   autoplayHoverPause: true,
@@ -137,11 +137,29 @@ $("#product-section .row .owl-carousel").owlCarousel({
 
       nav: false
     },
-    500: {
+    400: {
       items: 2,
       loop: false,
       center: true,
-      margin: 0,
+
+      left: 100,
+
+      URLhashListener: true,
+      autoplayHoverPause: true,
+      startPosition: product_index,
+      dots: false,
+      autoplay: false,
+      autoplayTimeout: 2000,
+      autoplaySpeed: 3000,
+      slideTransition: "linear",
+
+      nav: false
+    },
+    500: {
+      items: 3,
+      loop: false,
+      center: true,
+      margin: 150,
       left: 100,
 
       URLhashListener: true,
@@ -156,9 +174,23 @@ $("#product-section .row .owl-carousel").owlCarousel({
       nav: false
     },
 
-    600: {
+    1000: {
       items: 4,
-      loop: false
+      loop: false,
+      center: true,
+      margin: 200,
+      left: 100,
+
+      URLhashListener: true,
+      autoplayHoverPause: true,
+      startPosition: product_index,
+      dots: false,
+      autoplay: false,
+      autoplayTimeout: 2000,
+      autoplaySpeed: 3000,
+      slideTransition: "linear",
+
+      nav: false
     }
   }
 });
