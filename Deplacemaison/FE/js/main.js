@@ -1,7 +1,7 @@
 let log = console.log;
 
 // img drag bug
-$("img").on("dragstart", event => {
+$("img").on("dragstart", (event) => {
   event.preventDefault();
 });
 
@@ -11,14 +11,9 @@ let offsetFooter = $("footer").offset();
 let takeSomeSpace = (20 * offsetFooter.top) / 100;
 log(offsetFooter.top);
 
-const listUp = $(".shop-link")
-  .children()
-  .children();
+const listUp = $(".shop-link").children().children();
 
-const listVisible = $(".shop-link")
-  .children()
-  .children()
-  .children();
+const listVisible = $(".shop-link").children().children().children();
 
 // log(listVisible);
 
@@ -26,15 +21,15 @@ document.addEventListener("scroll", () => {
   var docTop = $(document).scrollTop();
   if (docTop >= offsetFooter.top - takeSomeSpace) {
     listUp.addClass("nav-bug-li");
-    listVisible.click(event => {});
+    listVisible.click((event) => {});
   } else {
     listUp.removeClass("nav-bug-li");
-    listVisible.click(event => {});
+    listVisible.click((event) => {});
   }
 });
 
 // owl carousel
-$(document).ready(function() {
+$(document).ready(function () {
   $(".owl-carousel").owlCarousel();
 });
 
@@ -52,8 +47,8 @@ $("#rolling-section .row .owl-carousel").owlCarousel({
   mouseDrag: false,
   nav: false,
   responsive: {
-    0: {
-      item: 4,
+    300: {
+      item: 3,
       loop: true,
       margin: 0,
       width: 0,
@@ -63,7 +58,7 @@ $("#rolling-section .row .owl-carousel").owlCarousel({
       slideTransition: "linear",
       autoplayHoverPause: false,
       mouseDrag: false,
-      nav: false
+      nav: false,
     },
     576: {
       item: 4,
@@ -76,12 +71,9 @@ $("#rolling-section .row .owl-carousel").owlCarousel({
       slideTransition: "linear",
       autoplayHoverPause: false,
       mouseDrag: false,
-      nav: false
+      nav: false,
     },
-    1000: {
-      items: 5
-    }
-  }
+  },
 });
 
 // background rolling
@@ -92,14 +84,26 @@ const rolling_pure_css = {
   padding: "1vw",
   backgroundColor: "#fbc355",
   border: "3px solid black",
-  overflow: "hidden"
+  overflow: "hidden",
 };
 $("#rolling-section .owl-stage").css(rolling_pure_css);
 const not_scroll_text = {
-  textTransform: "uppercase"
+  textTransform: "uppercase",
 };
 $(".not-scroll").css(not_scroll_text);
 
+// product section
+// const product_Hover_CSS = {
+//   cursor: "pointer",
+// };
+const product = $(".product");
+
+product
+  .mouseenter(() => {
+    product.css("cursor", "pointer");
+  })
+  .click(() => {});
+// log(product);
 /*  hash product section */
 const product_index = $(".product").length - 5;
 $("#product-section .row .owl-carousel").owlCarousel({
@@ -135,7 +139,7 @@ $("#product-section .row .owl-carousel").owlCarousel({
       autoplaySpeed: 3000,
       slideTransition: "linear",
 
-      nav: false
+      nav: false,
     },
     400: {
       items: 2,
@@ -153,10 +157,10 @@ $("#product-section .row .owl-carousel").owlCarousel({
       autoplaySpeed: 3000,
       slideTransition: "linear",
 
-      nav: false
+      nav: false,
     },
     500: {
-      items: 3,
+      items: 2,
       loop: false,
       center: true,
       margin: 150,
@@ -171,10 +175,64 @@ $("#product-section .row .owl-carousel").owlCarousel({
       autoplaySpeed: 3000,
       slideTransition: "linear",
 
-      nav: false
+      nav: false,
+    },
+    576: {
+      items: 3,
+      loop: false,
+      center: true,
+      margin: 250,
+      left: 100,
+
+      URLhashListener: true,
+      autoplayHoverPause: true,
+      startPosition: product_index,
+      dots: false,
+      autoplay: false,
+      autoplayTimeout: 2000,
+      autoplaySpeed: 3000,
+      slideTransition: "linear",
+
+      nav: false,
+    },
+    768: {
+      items: 3,
+      loop: false,
+      center: true,
+      margin: 350,
+      left: 100,
+
+      URLhashListener: true,
+      autoplayHoverPause: true,
+      startPosition: product_index,
+      dots: false,
+      autoplay: false,
+      autoplayTimeout: 2000,
+      autoplaySpeed: 3000,
+      slideTransition: "linear",
+
+      nav: false,
+    },
+    992: {
+      items: 3,
+      loop: false,
+      center: true,
+      margin: 350,
+      left: 100,
+
+      URLhashListener: true,
+      autoplayHoverPause: true,
+      startPosition: product_index,
+      dots: false,
+      autoplay: false,
+      autoplayTimeout: 2000,
+      autoplaySpeed: 3000,
+      slideTransition: "linear",
+
+      nav: false,
     },
 
-    1000: {
+    1200: {
       items: 4,
       loop: false,
       center: true,
@@ -190,9 +248,9 @@ $("#product-section .row .owl-carousel").owlCarousel({
       autoplaySpeed: 3000,
       slideTransition: "linear",
 
-      nav: false
-    }
-  }
+      nav: false,
+    },
+  },
 });
 
 // special hover up dowm some element
@@ -338,66 +396,42 @@ $(window).ready(() => {
 // button spin svg animation
 
 // explore btn
-$("#ex-btn-wrap").mouseenter(event => {
-  $("#circle_explore")
-    .addClass("bigger")
-    .removeClass("smaller");
+$("#ex-btn-wrap").mouseenter((event) => {
+  $("#circle_explore").addClass("bigger").removeClass("smaller");
 
-  $("#arrow_explore")
-    .addClass("spin")
-    .removeClass("spinBack");
+  $("#arrow_explore").addClass("spin").removeClass("spinBack");
 });
 
-$("#ex-btn-wrap").mouseleave(event => {
-  $("#circle_explore")
-    .addClass("smaller")
-    .removeClass("bigger");
+$("#ex-btn-wrap").mouseleave((event) => {
+  $("#circle_explore").addClass("smaller").removeClass("bigger");
 
-  $("#arrow_explore")
-    .addClass("spinBack")
-    .removeClass("spin");
+  $("#arrow_explore").addClass("spinBack").removeClass("spin");
 });
 
 // shop all btn
 
 $("#sa-btn-wrap").mouseenter(() => {
-  $("#circle_shop_all")
-    .addClass("bigger")
-    .removeClass("smaller");
+  $("#circle_shop_all").addClass("bigger").removeClass("smaller");
 
-  $("#arrow_shop_all")
-    .addClass("spin")
-    .removeClass("spinBack");
+  $("#arrow_shop_all").addClass("spin").removeClass("spinBack");
 });
 
 $("#sa-btn-wrap").mouseleave(() => {
-  $("#circle_shop_all")
-    .addClass("smaller")
-    .removeClass("bigger");
-  $("#arrow_shop_all")
-    .addClass("spinBack")
-    .removeClass("spin");
+  $("#circle_shop_all").addClass("smaller").removeClass("bigger");
+  $("#arrow_shop_all").addClass("spinBack").removeClass("spin");
 });
 
 // footer btn up
 $("#up-btn-wrap")
   .mouseenter(() => {
-    $("#up-btn-circle")
-      .addClass("bigger")
-      .removeClass("smaller");
+    $("#up-btn-circle").addClass("bigger").removeClass("smaller");
 
-    $("#up-btn-arrow")
-      .addClass("supperSpin")
-      .removeClass("supperSpinBack");
+    $("#up-btn-arrow").addClass("supperSpin").removeClass("supperSpinBack");
   })
   .mouseleave(() => {
-    $("#up-btn-circle")
-      .addClass("smaller")
-      .removeClass("bigger");
+    $("#up-btn-circle").addClass("smaller").removeClass("bigger");
 
-    $("#up-btn-arrow")
-      .addClass("supperSpinBack")
-      .removeClass("supperSpin");
+    $("#up-btn-arrow").addClass("supperSpinBack").removeClass("supperSpin");
   });
 
 // explore css
@@ -410,14 +444,14 @@ const explore_pure_css = {
   width: "2px",
   backgroundColor: "black",
   transition: "transform 0.35s ease-out",
-  transformOrigin: "bottom left"
+  transformOrigin: "bottom left",
 };
 const explore_on_mouseenter = {
-  transform: "scaleX(50)"
+  transform: "scaleX(50)",
 };
 const explore_on_mouseleave = {
   transformOrigin: "bottom right",
-  transform: "scaleX(0)"
+  transform: "scaleX(0)",
 };
 
 // explore animation
@@ -441,7 +475,7 @@ const wwa__h2__pure__css = {
   fontWeight: "lighter",
   fontSize: "3.7vw",
   color: "black",
-  letterSpacing: "-0.1rem"
+  letterSpacing: "-0.1rem",
 };
 
 const wwa__h3__pure__css = {
@@ -449,13 +483,12 @@ const wwa__h3__pure__css = {
   position: "relative",
   textTransform: "uppercase",
   fontSize: "1.5vw",
-  color: "black"
+  color: "black",
 };
 
 $("#who-we-are-section h2").css(wwa__h2__pure__css);
 $("#who-we-are-section h3").css(wwa__h3__pure__css);
 
-// product section
 // shop all pure css
 const shop_all_pure_css = {
   position: "absolute",
@@ -466,14 +499,14 @@ const shop_all_pure_css = {
   width: "2px",
   backgroundColor: "black",
   transition: "transform 0.35s ease-out",
-  transformOrigin: "bottom left"
+  transformOrigin: "bottom left",
 };
 const shop_all_on_mouseenter = {
-  transform: "scaleX(50)"
+  transform: "scaleX(50)",
 };
 const shop_all_on_mouseleave = {
   transformOrigin: "bottom right",
-  transform: "scaleX(0)"
+  transform: "scaleX(0)",
 };
 
 // xử lý section review
@@ -487,12 +520,12 @@ const content_2 = $(".review-content-wrap div:nth-child(2)");
 const datas = [
   {
     name: "Ca Heo",
-    content: "lorem 300 lorem 300 lorem 300 lorem 300 lorem 300 lorem 300"
+    content: "lorem 300 lorem 300 lorem 300 lorem 300 lorem 300 lorem 300",
   },
   {
     name: "Ca Map",
-    content: "lorem 500 lorem 500 lorem 500 lorem 500 lorem 500 lorem 500"
-  }
+    content: "lorem 500 lorem 500 lorem 500 lorem 500 lorem 500 lorem 500",
+  },
 ];
 
 reviewer_1.text(datas[0].name);
@@ -516,12 +549,12 @@ function handleShowReviewer() {
   const datas = [
     {
       name: "Ca Heo",
-      content: "lorem 300 lorem 300 lorem 300 lorem 300 lorem 300 lorem 300"
+      content: "lorem 300 lorem 300 lorem 300 lorem 300 lorem 300 lorem 300",
     },
     {
       name: "Ca Map",
-      content: "lorem 500 lorem 500 lorem 500 lorem 500 lorem 500 lorem 500"
-    }
+      content: "lorem 500 lorem 500 lorem 500 lorem 500 lorem 500 lorem 500",
+    },
   ];
 
   // const reviewContent = data.map(data => {
