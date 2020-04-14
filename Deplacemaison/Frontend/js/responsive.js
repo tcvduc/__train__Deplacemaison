@@ -7,6 +7,8 @@ $(window).resize(() => {
   const f_col_3 = $("#ft-col-3");
 
   const firstSection = $("first-section");
+
+  const loader = $(".loader");
   // 576px
   if (width <= 576) {
     $("#nav-left").addClass("d-none-1");
@@ -15,8 +17,6 @@ $(window).resize(() => {
     f_col_1.addClass("d-none").removeClass("d-flex");
     f_col_2.addClass("d-none").removeClass("d-flex");
     f_col_3.addClass("d-none").removeClass("d-flex");
-
-    
   } else {
     $("#nav-left").removeClass("d-none-1");
     $("#nav-top").removeClass("width-100");
@@ -141,38 +141,60 @@ function hambergerMobileClick() {
     // handle nav mobile animation
 
     navMobile.removeClass("d-block").removeClass("nav-mobile-animation-in");
-    navMobile.addClass("nav-mobile-animation-out");
-
-    // fixed nav mobile bugs @_@ - hơi dơ
     setTimeout(() => {
-      navMobile.addClass("d-none");
-    }, 300);
+      navMobile.addClass("nav-mobile-animation-out");
+    }, 2000);
+
+    // // fixed nav mobile bugs @_@ - hơi dơ
+    // setTimeout(() => {
+    //   navMobile.addClass("d-none");
+    // }, 1500);
   }
 }
 
 // try some ES6
 navMobileMainHandle = () => {
-  const tab = $(".tab");
+  const tabChild = $(".tab .child-2");
   const tabUnder = $(".tab-under");
-  const tabListContent = $(".tab-content").children();
-  const navMobile = $(".nav-mobile");
+  const tabListContent = $(".tab-content .father").children();
+  const lisdChildFooterNavMobile = $(".nav-mb-footer .father").children();
+  // tab main
+  // tab-under
+  if (tabUnder.hasClass("tab-in")) {
+    tabUnder.removeClass("tab-in");
+    tabUnder.addClass("tab-out");
 
-  if (tab.hasClass("tab-in")) {
-    tab.removeClass("tab-in");
-    tab.addClass("tab-out");
-  } else if (tab.hasClass("tab-out")) {
-    tab.removeClass("tab-out");
-    tab.addClass("tab-int");
+    tabChild.removeClass("tab-child-in");
+    tabChild.addClass("tab-child-out");
+
+    tabListContent.removeClass("tab-child-in");
+    tabListContent.addClass("tab-child-out");
+
+    lisdChildFooterNavMobile.removeClass("tab-child-in");
+    lisdChildFooterNavMobile.addClass("tab-child-out");
+  } else if (tabUnder.hasClass("tab-out")) {
+    tabUnder.removeClass("tab-out");
+    setTimeout(() => {
+      tabUnder.addClass("tab-in");
+    }, 1000);
+
+    tabChild.removeClass("tab-child-out");
+    tabListContent.removeClass("tab-child-out");
+    lisdChildFooterNavMobile.removeClass("tab-child-out");
+    setTimeout(() => {
+      tabChild.addClass("tab-child-in");
+    }, 1300);
+
+    setTimeout(() => {
+      tabListContent.addClass("tab-child-in");
+    }, 1500);
+
+    setTimeout(() => {
+      lisdChildFooterNavMobile.addClass("tab-child-in");
+    }, 1900);
   }
 };
 
-const hamMobileTop = $(".ham-mb-top");
-const hamTop = $(".ham-top");
-
-hamMobileTop.click(() => {
-  navMobileMainHandle;
-});
-
-hamTop.click(() => {
-  navMobileMainHandle;
-});
+// const hamMobileTop = $(".ham-mb-top");
+// const hamTop = $(".ham-top");
+// const hambergerMoblie = $(".hamberger-mb");

@@ -162,9 +162,9 @@ path {
   position: fixed;
   top: 0;
   left: 0;
-  z-index: 10;
-  height: 100vh;
-  width: 100vw;
+  z-index: 11;
+  height: 100%;
+  width: 100%;
   background-color: black;
   display: flex;
   justify-content: space-between;
@@ -1041,12 +1041,66 @@ footer #ft-col-4 #ft-to-top path {
     transform: rotate(-90deg);
   }
 }
+.nav-mobile-animation-in {
+  animation: fadeOut 0.5s 1 reverse;
+}
+
+.nav-mobile-animation-out {
+  animation: mbFadeOut 0.3s 1 forwards;
+}
+
+@keyframes mbFadeOut {
+  from {
+    height: 100%;
+  }
+  to {
+    height: 0%;
+  }
+}
+.tab-child-in {
+  animation: popUp 1s forwards;
+}
+
+.tab-child-out {
+  animation: popDown 1s forwards;
+}
+
+@keyframes popUp {
+  from {
+    transform: translate(0, 100%);
+  }
+  to {
+    transform: translate(0, 0);
+  }
+}
+@keyframes popDown {
+  from {
+    transform: translate(0, 0);
+  }
+  to {
+    transform: translate(0, 100%);
+  }
+}
 /* moblie responsive   */
 /* small - sm - <= 500px */
 @media (min-width: 300px) and (max-width: 500px) {
   .container-fluid {
     padding: unset;
     margin: unset;
+  }
+
+  .loader .load-header {
+    padding: 20px;
+  }
+  .loader svg {
+    width: 50px !important;
+  }
+  .loader .loadding {
+    letter-spacing: 0;
+  }
+  .loader .load-footer-text {
+    font-size: 5.2vw;
+    line-height: 8.5vw;
   }
 
   .nav-mobile {
@@ -1148,7 +1202,7 @@ footer #ft-col-4 #ft-to-top path {
   }
   .nav-mobile .nav-mb-main .tab-under {
     position: absolute;
-    bottom: -1vh;
+    bottom: 0;
     left: 0;
     height: 0.3vh;
     width: 100%;
@@ -1162,7 +1216,7 @@ footer #ft-col-4 #ft-to-top path {
     display: flex;
     flex-direction: column;
   }
-  .nav-mobile .nav-mb-main .tab-content a {
+  .nav-mobile .nav-mb-main .tab-content div {
     transform-origin: left;
     font-size: 10vw;
     text-transform: uppercase;
@@ -1200,28 +1254,12 @@ footer #ft-col-4 #ft-to-top path {
     padding: 5vw;
     font-family: "Roboto Condensed", sans-serif;
   }
-  .nav-mobile .nav-mb-footer .foot a {
+  .nav-mobile .nav-mb-footer .foot div {
     font-size: 5vw;
     text-transform: uppercase;
     color: #fcf9ee;
   }
 
-  .nav-mobile-animation-in {
-    animation: fadeOut 0.5s 1 reverse;
-  }
-
-  .nav-mobile-animation-out {
-    animation: mbFadeOut 0.3s 1 reverse;
-  }
-
-  @keyframes mbFadeOut {
-    from {
-      top: -100%;
-    }
-    to {
-      top: 0%;
-    }
-  }
   nav {
     background-color: rgba(0, 0, 0, 0);
   }
@@ -1609,22 +1647,6 @@ footer #ft-col-4 #ft-to-top path {
     color: #fcf9ee;
   }
 
-  .nav-mobile-animation-in {
-    animation: fadeOut 0.5s 1 reverse;
-  }
-
-  .nav-mobile-animation-out {
-    animation: mbFadeOut 0.3s 1 reverse;
-  }
-
-  @keyframes mbFadeOut {
-    from {
-      top: -100%;
-    }
-    to {
-      top: 0%;
-    }
-  }
   nav {
     background-color: rgba(0, 0, 0, 0);
   }

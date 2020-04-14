@@ -152,9 +152,9 @@ path {
   position: fixed;
   top: 0;
   left: 0;
-  z-index: 10;
-  height: 100vh;
-  width: 100vw;
+  z-index: 11;
+  height: 100%;
+  width: 100%;
   background-color: black;
   display: flex;
   justify-content: space-between;
@@ -1095,6 +1095,47 @@ footer {
   }
 }
 
+.nav-mobile-animation-in {
+  animation: fadeOut 0.5s 1 reverse;
+}
+
+.nav-mobile-animation-out {
+  animation: mbFadeOut 0.3s 1 forwards;
+}
+
+@keyframes mbFadeOut {
+  from {
+    height: 100%;
+  }
+  to {
+    height: 0%;
+  }
+}
+
+.tab-child-in {
+  animation: popUp 1s forwards;
+}
+.tab-child-out {
+  animation: popDown 1s forwards;
+}
+
+@keyframes popUp {
+  from {
+    transform: translate(0, 100%);
+  }
+  to {
+    transform: translate(0, 0);
+  }
+}
+@keyframes popDown {
+  from {
+    transform: translate(0, 0);
+  }
+  to {
+    transform: translate(0, 100%);
+  }
+}
+
 /* moblie responsive   */
 
 /* small - sm - <= 500px */
@@ -1102,6 +1143,24 @@ footer {
   .container-fluid {
     padding: unset;
     margin: unset;
+  }
+
+  .loader {
+    .load-header {
+      padding: 20px;
+    }
+    svg {
+      width: 50px !important;
+    }
+
+    .loadding {
+      letter-spacing: 0;
+    }
+
+    .load-footer-text {
+      font-size: 5.2vw;
+      line-height: 8.5vw;
+    }
   }
 
   .nav-mobile {
@@ -1214,7 +1273,7 @@ footer {
       }
       .tab-under {
         position: absolute;
-        bottom: -1vh;
+        bottom: 0;
         left: 0;
         height: 0.3vh;
         width: 100%;
@@ -1228,7 +1287,7 @@ footer {
         margin-top: 5vh;
         display: flex;
         flex-direction: column;
-        a {
+        div {
           transform-origin: left;
           font-size: 10vw;
           text-transform: uppercase;
@@ -1272,28 +1331,12 @@ footer {
       padding: 5vw;
       font-family: "Roboto Condensed", sans-serif;
       .foot {
-        a {
+        div {
           font-size: 5vw;
           text-transform: uppercase;
           color: #fcf9ee;
         }
       }
-    }
-  }
-  .nav-mobile-animation-in {
-    animation: fadeOut 0.5s 1 reverse;
-  }
-
-  .nav-mobile-animation-out {
-    animation: mbFadeOut 0.3s 1 reverse;
-  }
-
-  @keyframes mbFadeOut {
-    from {
-      top: -100%;
-    }
-    to {
-      top: 0%;
     }
   }
 
@@ -1748,22 +1791,6 @@ footer {
           color: #fcf9ee;
         }
       }
-    }
-  }
-  .nav-mobile-animation-in {
-    animation: fadeOut 0.5s 1 reverse;
-  }
-
-  .nav-mobile-animation-out {
-    animation: mbFadeOut 0.3s 1 reverse;
-  }
-
-  @keyframes mbFadeOut {
-    from {
-      top: -100%;
-    }
-    to {
-      top: 0%;
     }
   }
 
