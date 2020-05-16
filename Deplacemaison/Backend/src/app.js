@@ -1,8 +1,8 @@
 const express = require("express");
 const app = express();
 const path = require("path");
-const hbs = require("hbs");
-const port = process.env.PORT || 5000;
+
+const port = process.env.PORT || 9000;
 let log = console.log;
 
 // direction
@@ -20,7 +20,7 @@ app.use(publicLink);
 app.get("/", (req, res) => {
   res.render("index", {
     name: "Ca heo",
-    content: "Web nay animation nhieu qua   ",
+    content: "Web nay animation nhieu qua  ",
   });
 });
 
