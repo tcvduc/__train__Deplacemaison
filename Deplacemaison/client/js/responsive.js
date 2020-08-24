@@ -144,14 +144,6 @@ function hambergerMobileClick() {
     setTimeout(() => {
       navMobile.addClass("nav-mobile-animation-out");
     }, 2000);
-    setTimeout(() => {
-      navMobile.addClass("d-none");
-    }, 2200);
-
-    // // fixed nav mobile bugs @_@ - hơi dơ
-    // setTimeout(() => {
-    //   navMobile.addClass("d-none");
-    // }, 1500);
   }
 }
 
@@ -197,7 +189,3 @@ navMobileMainHandle = () => {
     }, 1900);
   }
 };
-
-// const hamMobileTop = $(".ham-mb-top");
-// const hamTop = $(".ham-top");
-// const hambergerMoblie = $(".hamberger-mb");
