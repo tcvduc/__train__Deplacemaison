@@ -1,0 +1,148 @@
+#loader {
+  height: 100%;
+  width: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  background-color: black;
+  transition: 1.13s;
+}
+.loader-container {
+  display: flex;
+  flex-direction: column;
+}
+/* load header css */
+.load-header {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 15%;
+}
+.load-header svg {
+  height: 70px;
+  width: 70px;
+}
+/* load main css */
+.load-main {
+  display: flex;
+
+  align-items: center;
+  height: 70%;
+}
+.loading-container {
+  height: 300px;
+  width: 100%;
+  background-color: black;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  overflow: hidden;
+}
+
+.lean-taller {
+  transform: scale(0.6, 1.3);
+}
+
+.loading {
+  letter-spacing: -0.3rem;
+  color: #fcf9ee;
+  font-size: 150px;
+  font-weight: 500;
+  transition: 2s;
+}
+
+/* .go-up {
+  transform: translateY(-100%);
+} */
+
+/* load footer css */
+.load-footer {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 15%;
+}
+
+.load-footer-text {
+  color: #fcf9ee;
+  font-size: 20px;
+  font-weight: 500;
+}
+
+/* mobile responsive */
+
+/* small device 0 to 576px */
+@media screen and (max-width: 576px) {
+  .load-header svg {
+    height: 30px;
+    width: 30px;
+  }
+  .loading-container {
+    height: 200px;
+  }
+  .loading {
+    font-size: 100px;
+  }
+
+  .load-footer-text {
+    font-size: 15px;
+  }
+}
+
+/* medium device 576px to 768px */
+@media screen and (min-width: 576px) and (max-width: 768px) {
+  .load-header svg {
+    height: 40px;
+    width: 40px;
+  }
+  .loading-container {
+    height: 200px;
+  }
+  .loading {
+    font-size: 100px;
+  }
+
+  .load-footer-text {
+    font-size: 18px;
+  }
+}
+
+/* large device 768 to 992px */
+@media screen and (min-width: 768px) and (max-width: 992px) {
+  .load-header svg {
+    height: 50px;
+    width: 50px;
+  }
+  .loading-container {
+    height: 200px;
+  }
+  .loading {
+    font-size: 130px;
+  }
+
+  .load-footer-text {
+    font-size: 20px;
+  }
+}
+
+/* extra large device -xl -  992 to 1200 */
+@media screen and (min-width: 992px) and (max-width: 1200px) {
+  .load-header svg {
+    height: 70px;
+    width: 70px;
+  }
+  .loading-container {
+    height: 300px;
+  }
+  .loading {
+    font-size: 200px;
+  }
+
+  .load-footer-text {
+    font-size: 35px;
+  }
+}

@@ -47,7 +47,8 @@ body {
 }
 
 .rotate-360 {
-  transform: translate3d(0px, 0%, 0px) scale3d(1, 1, 1) rotateX(0deg) rotateY(0deg) rotateZ(0deg) skew(0deg, 0deg);
+  transform: translate3d(0px, 0%, 0px) scale3d(1, 1, 1) rotateX(0deg)
+    rotateY(0deg) rotateZ(0deg) skew(0deg, 0deg);
   transform-style: preserve-3d;
 }
 
@@ -156,74 +157,6 @@ path {
     stroke-dashoffset: 0;
     stroke: black;
   }
-}
-/* xử lý loadding  */
-.loader {
-  position: fixed;
-  top: 0;
-  left: 0;
-  z-index: 11;
-  height: 100%;
-  width: 100%;
-  background-color: black;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  flex-direction: column;
-}
-
-.load-header {
-  display: flex;
-  padding: 50px;
-  justify-content: center;
-  align-items: center;
-  min-height: 100px;
-  background-color: black;
-  width: 100%;
-}
-
-.load-footer {
-  background-color: black;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
-  min-height: 100px;
-  width: 100%;
-}
-.load-footer .load-footer-text {
-  color: #fcf9ee;
-  display: block;
-  font-size: 1.2vw;
-  line-height: 1.5vw;
-  letter-spacing: 0.05em;
-}
-
-.load-main {
-  position: relative;
-  height: 100%;
-  width: 100%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-.load-main .loadding {
-  position: absolute;
-  display: none;
-  color: #fcf9ee;
-  font-size: 20vw;
-  line-height: 17vw;
-  letter-spacing: -2rem;
-  font-weight: 500;
-  font-family: "Roboto Condensed", sans-serif;
-}
-.load-main .load-1 {
-  display: block;
-}
-
-/* không thể dùng tranfrom để canh giữa vì anime js dùng transform */
-.loader.hidden {
-  animation: fadeOut 0.5s forwards;
 }
 
 @keyframes fadeOut {
@@ -1368,7 +1301,13 @@ footer #ft-col-4 #ft-to-top path {
   main #first-section .row:nth-child(2) .col:first-child .box .ex-button {
     width: 15%;
   }
-  main #first-section .row:nth-child(2) .col:first-child .box .ex-button #arrow_explore {
+  main
+    #first-section
+    .row:nth-child(2)
+    .col:first-child
+    .box
+    .ex-button
+    #arrow_explore {
     left: 3vw;
   }
   main #first-section .explore-content {
@@ -1745,7 +1684,13 @@ footer #ft-col-4 #ft-to-top path {
   main #first-section .row:nth-child(2) .col:first-child .box .ex-button {
     width: 15%;
   }
-  main #first-section .row:nth-child(2) .col:first-child .box .ex-button #arrow_explore {
+  main
+    #first-section
+    .row:nth-child(2)
+    .col:first-child
+    .box
+    .ex-button
+    #arrow_explore {
     left: 2.5vw;
   }
   main #first-section .explore-content {
