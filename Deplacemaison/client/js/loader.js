@@ -1,10 +1,6 @@
 let log = console.log;
 
-let cookies_loader = document.cookie;
-cookies_loader =
-  "username=John Smith; expires=Thu, 18 Dec 2013 12:00:00 UTC; path=/";
-
-log(cookies_loader);
+// handle cookie
 
 function setCookie(ck__name, ck__value, expire__days) {
   // function: set cookie when browser was loading
@@ -14,7 +10,7 @@ function setCookie(ck__name, ck__value, expire__days) {
   var d = new Date();
   d.setTime(d.getTime() + expire__days * 24 * 60 * 60 * 1000);
   var expries = "expries=" + d.toUTCString();
-  document.cookie = ck__name += "" + ck__value + ";" + expries + ";path=/";
+  document.cookie = ck__name + "=" + ck__value + ";" + expries + ";path=/";
 }
 
 function getCookie(ck__name) {
@@ -43,78 +39,117 @@ function checkCookie() {
   // input:
   // output: cookies were setted or not
 
-  var username = getCookie("username");
-  if (username != "") {
-    alert("Welcome again " + username);
+  var user = getCookie("username");
+  if (user != "") {
+    alert("Welcome again " + user);
   } else {
-    username = prompt("Please enter your name:", "");
-    if (username != "" && username != null) {
-      setCookie("username", username, 10);
+    user = prompt("Please enter your name:", "");
+    if (user != "" && user != null) {
+      setCookie("username", user, 30);
     }
   }
 }
 
-function goUpEffect(y__axis, element) {
+// handle animation
+
+function goUpEffect(y__axis, element, style) {
   // function: create go up effect
-  // input:  y axis, element
+  // input:  y axis, element, base style (has been created)
   // output: animation go up
 
   // create style
-  var style = document.createElement("style");
-  style.type = "text/css";
+
   style.innerHTML = `.go-up  {transform: translateY(-${y__axis}%)!important;  }`;
 
   // add new style tag to header
-  document.getElementsByTagName("head")[0].appendChild(style);
   element.classList.add("go-up");
 }
 
-function handleLoad(e, loading, y__axis) {
-  // go up for it
+function goUpForLoader(y__axis, loader, style) {
+  // function: animation close the element loader
+  // input: y axis, element loader, base style
+  // output: animation close it
 
-  goUpEffect(0, loading[0]);
+  style.textContent += `.go-up-loader  {transform: translateY(-${y__axis}%)!important;  }`;
+
+  loader.classList.add("go-up-loader");
+}
+
+function handleLoad(e, loading, y__axis, style) {
+  // function: handle animation loading when browser loading
+  // input: event, array loading, y axis, base style
+  // output: animation loading - go up for it
+
+  // first child
+  goUpEffect(0, loading[0], style);
 
   setTimeout(() => {
-    goUpEffect(y__axis, loading[1]);
-    goUpEffect(y__axis, loading[2]);
-    goUpEffect(y__axis, loading[3]);
+    goUpEffect(y__axis, loading[1], style);
+    goUpEffect(y__axis, loading[2], style);
+    goUpEffect(y__axis, loading[3], style);
   }, 500);
 
   setTimeout(() => {
-    goUpEffect(200, loading[1]);
-    goUpEffect(200, loading[2]);
-    goUpEffect(200, loading[3]);
+    goUpEffect(200, loading[1], style);
+    goUpEffect(200, loading[2], style);
+    goUpEffect(200, loading[3], style);
   }, 900);
 
   setTimeout(() => {
-    goUpEffect(300, loading[3]);
+    goUpEffect(300, loading[3], style);
   }, 1300);
 
-  // close the loader
+  setTimeout(() => {
+    goUpEffect(400, loading[3], style);
+  }, 1700);
+
+  // close  85% the loader
   setTimeout(() => {
     let loader = document.querySelector("#loader");
-    goUpEffect(300, loader);
+    goUpForLoader(85, loader, style);
   }, 2100);
+
+  // close the 15 percent remain
+  setTimeout(() => {
+    let loader = document.querySelector("#loader");
+    goUpForLoader(100, loader, style);
+  }, 2700);
 }
 
+// loader main
 function loader() {
   // nodelist give us permision to control like an array
   let loading = document.querySelectorAll(".loading");
 
-  // dom on load
+  // base style
+  var style = document.createElement("style");
+  style.type = "text/css";
 
-  window.addEventListener("load", (e) => {
-    // default y axis
-    let y__axis = 100;
+  // add it to head tag
+  document.getElementsByTagName("head")[0].appendChild(style);
 
-    // handle load
-    handleLoad(e, loading, y__axis);
+  // handle cookie
+  var user = getCookie("username");
+  if (user != "") {
+    alert("hi");
+    const loader = document.querySelector("#loader");
+    loader.style.display = "none";
+  } else {
+    // dom on load
+    window.addEventListener("load", (e) => {
+      // default y axis
+      let y__axis = 100;
 
-    // check cookie
-    // setTimeout(() => {
-    //   checkCookie();
-    // }, 2500);
-  });
+      // handle load
+      handleLoad(e, loading, y__axis, style);
+
+      // check cookie
+      setTimeout(() => {
+        checkCookie();
+      }, 4000);
+    });
+  }
 }
 
+// active it
 loader();

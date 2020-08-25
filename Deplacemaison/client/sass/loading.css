@@ -5,7 +5,7 @@
   top: 0;
   left: 0;
   background-color: black;
-  transition: 2s;
+  transition: 0.6s;
 }
 .loader-container {
   display: flex;
@@ -57,9 +57,9 @@
   transition: 0.5s;
 }
 
-/* .loading:first-child {
+.loading:first-child {
   transform: translateY(100%);
-} */
+}
 
 /* .go-up {
   transform: translateY(-100%);
