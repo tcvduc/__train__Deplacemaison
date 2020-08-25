@@ -131,7 +131,6 @@ function loader() {
   // handle cookie
   var user = getCookie("username");
   if (user != "") {
-    alert("hi");
     const loader = document.querySelector("#loader");
     loader.style.display = "none";
   } else {
