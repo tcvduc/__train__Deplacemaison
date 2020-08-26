@@ -34,20 +34,55 @@ function getCookie(ck__name) {
   return "";
 }
 
-function checkCookie() {
+function checkCookie(cookie__notification) {
   // function: set the cookie to browser when user admitted
   // input:
   // output: cookies were setted or not
 
-  var user = getCookie("username");
-  if (user != "") {
-    alert("Welcome again " + user);
+  var is__allowed = getCookie("isUserAllowed");
+  if (is__allowed != "") {
+    // do somthing
+    cookie__notification.classList.remove("ck-appear");
   } else {
-    user = prompt("Please enter your name:", "");
-    if (user != "" && user != null) {
-      setCookie("username", user, 30);
+    cookie__notification.classList.add("ck-appear");
+
+    if (is__allowed != "" && user != null) {
+      setCookie("username", is__allowed, 30);
     }
   }
+}
+
+function btnDenyClickHandle(e, cookie__notification) {
+  // function: handle button deny when it was clicked
+  // input: event, element cookie notification
+  // output: close the element father
+
+  cookie__notification.classList.remove("ck-appear");
+}
+
+function btnAllowClickHandle(e, cookie__notification) {
+  // function: handle button allow when it was clicked
+  // input: event, element cookie notification
+  // output: close the element father, save cookie
+
+  setCookie("isUserAllowed", "accepted", 3);
+  cookie__notification.classList.remove("ck-appear");
+}
+
+function cookieBtnOnClick() {
+  const btn__deny = document.querySelector(".btn-deny");
+  const btn__allow = document.querySelector(".btn-allow");
+  const cookie__notification = document.querySelector("#cookie-notification");
+
+  // deny clicked
+  btn__deny.addEventListener("click", (e) => {
+    btnDenyClickHandle(e, cookie__notification);
+  });
+
+  // allow clicked
+  btn__allow.addEventListener("click", (e) => {
+    btnAllowClickHandle(e, cookie__notification);
+  });
 }
 
 // handle animation
@@ -129,7 +164,9 @@ function loader() {
   document.getElementsByTagName("head")[0].appendChild(style);
 
   // handle cookie
-  var user = getCookie("username");
+  var user = getCookie("isUserAllowed");
+  const cookie__notification = document.querySelector("#cookie-notification");
+
   if (user != "") {
     const loader = document.querySelector("#loader");
     loader.style.display = "none";
@@ -144,11 +181,14 @@ function loader() {
 
       // check cookie
       setTimeout(() => {
-        checkCookie();
-      }, 4000);
+        checkCookie(cookie__notification);
+      }, 3500);
     });
   }
 }
 
 // active it
 loader();
+
+// cookie btn on click handle
+cookieBtnOnClick();

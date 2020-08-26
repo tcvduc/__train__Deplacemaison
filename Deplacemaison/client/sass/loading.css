@@ -1,7 +1,15 @@
+* {
+  box-sizing: border-box;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  padding: 0px;
+  margin: 0px;
+}
+
 #loader {
   height: 100%;
   width: 100%;
   position: fixed;
+  z-index: 100;
   top: 0;
   left: 0;
   background-color: black;
@@ -89,6 +97,9 @@
   height: auto;
   width: 400px;
   background-color: #141414;
+  transition: 2s;
+  opacity: 0;
+  padding: 20px;
 }
 .cookie-mess {
   color: #fcf9ee;
@@ -124,6 +135,7 @@
   font-size: 25px;
   transform: rotateY(180deg);
 }
+
 .btn-deny {
   position: relative;
   display: flex;
@@ -136,23 +148,48 @@
   font-size: 25px;
 }
 
+.ck-appear {
+  animation-name: ck__appear;
+  animation-timing-function: ease;
+  animation-fill-mode: forwards;
+  animation-duration: 0.13s;
+  animation-iteration-count: 1;
+}
+@keyframes ck__appear {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
 /* mobile responsive */
 
 /* small device 0 to 576px */
 @media screen and (max-width: 576px) {
+  /* loader handle */
   .load-header svg {
     height: 30px;
     width: 30px;
   }
   .loading-container {
-    height: 200px;
+    height: 150px;
   }
+
   .loading {
     font-size: 100px;
   }
 
   .load-footer-text {
     font-size: 15px;
+  }
+
+  /* cookie */
+  #cookie-notification {
+    bottom: 0;
+    right: 0;
+    width: 100%;
   }
 }
 
@@ -163,14 +200,30 @@
     width: 40px;
   }
   .loading-container {
-    height: 200px;
+    height: 150px;
   }
+
   .loading {
     font-size: 100px;
   }
 
   .load-footer-text {
-    font-size: 18px;
+    font-size: 20px;
+  }
+
+  /* cookie */
+  #cookie-notification {
+    bottom: 0;
+    right: 0;
+    width: 100%;
+  }
+  .cookie-mess {
+    font-size: 20px;
+  }
+
+  .btn-ck {
+    height: 70px;
+    width: 70px;
   }
 }
 
@@ -195,17 +248,31 @@
 /* extra large device -xl -  992 to 1200 */
 @media screen and (min-width: 992px) and (max-width: 1200px) {
   .load-header svg {
-    height: 70px;
-    width: 70px;
+    height: 60px;
+    width: 60px;
   }
   .loading-container {
-    height: 300px;
+    height: 170px;
   }
+
   .loading {
-    font-size: 200px;
+    font-size: 150px;
   }
 
   .load-footer-text {
-    font-size: 35px;
+    font-size: 30px;
+  }
+
+  /* cookie */
+  #cookie-notification {
+    width: 500px;
+  }
+  .cookie-mess {
+    font-size: 25px;
+  }
+
+  .btn-ck {
+    height: 70px;
+    width: 70px;
   }
 }
