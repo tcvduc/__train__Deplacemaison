@@ -1,18 +1,24 @@
 let log = console.log;
 
-function navLeftBottomHoverHandle(e) {
-  this.children[0].classList.add("roll");
-  this.children[1].classList.add("roll");
+function navTopHandleScroll(blackmode) {
+  window.addEventListener("scroll", function () {
+    let scrollY = this.scrollY;
+
+    if (scrollY > 0) {
+      // blackmode had gone
+      blackmode.classList.add("blackmode-gone");
+    } else {
+      // blackmode had come
+      blackmode.classList.remove("blackmode-gone");
+    }
+  });
 }
 
 function nav() {
-  const nav_left_bottom_wrapper = document.querySelectorAll(
-    ".nav-left-bottom  .nav-link-wrapper"
-  );
+  const blackmode = document.getElementById("blackmode");
 
-  nav_left_bottom_wrapper.forEach((ele) => {
-    ele.addEventListener("mouseover", navLeftBottomHoverHandle);
-  });
+  // handle blackmode when user was scrolling the browser
+  navTopHandleScroll(blackmode);
 }
 
 nav();

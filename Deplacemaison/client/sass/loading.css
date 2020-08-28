@@ -12,6 +12,7 @@
   margin: 0px;
 }
 
+/* loader css */
 #loader {
   height: 100%;
   width: 100%;
@@ -93,7 +94,9 @@
   font-size: 20px;
   font-weight: 500;
 }
+/*--------------------------------*/
 
+/*--------------------------------*/
 /* cookie css */
 #cookie-notification {
   position: fixed;
@@ -168,6 +171,8 @@
     opacity: 1;
   }
 }
+
+/*--------------------------------*/
 
 /* mobile responsive */
 
