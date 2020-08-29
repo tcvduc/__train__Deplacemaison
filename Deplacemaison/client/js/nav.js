@@ -116,7 +116,172 @@ S195.4,66.5,195.4,43z"
   logo__mobile__after__click.innerHTML = html__string;
 }
 
-function navMobileHandle() {}
+function navBeforeClickHandle(nav__before__click, nav__after__click) {
+  // function: nav before click  mobile animation
+  // input: nav before click, nav after click
+  // output: animation
+
+  nav__before__click.addEventListener("click", (e) => {
+    const hbg__top = document.getElementsByClassName("hbg-top")[0];
+    const hbg__mid = document.getElementsByClassName("hbg-mid")[0];
+    const hbg__bottom = document.getElementsByClassName("hbg-bottom")[0];
+
+    // when it got clicked by user then rotate
+    hbg__top.classList.add("hbg-top-rotate");
+    hbg__mid.classList.add("hbg-mid-rotate");
+    hbg__bottom.classList.add("hbg-bottom-rotate");
+
+    // initial hambuger after click
+    const hbg__top__after = document.getElementsByClassName("hbg-top")[1];
+    const hbg__mid__after = document.getElementsByClassName("hbg-mid")[1];
+    const hbg__bottom__after = document.getElementsByClassName("hbg-bottom")[1];
+
+    hbg__top__after.classList.add("hbg-top-rotate");
+    hbg__mid__after.classList.add("hbg-mid-rotate");
+    hbg__bottom__after.classList.add("hbg-bottom-rotate");
+
+    // pure css of nav after click
+    const tabs = document.getElementsByClassName("tabs")[0];
+    const tabs_after = document.getElementsByClassName("tabs-after")[0];
+    const nav_main_nav_link = document.getElementsByClassName("nav-link");
+    const nav_footer_link = document.getElementsByClassName("nav-footer-link");
+
+    // base css
+    tabs.classList.add("tabs-close");
+    tabs_after.classList.add("tabs-after-close");
+    for (let i = 0; i < nav_main_nav_link.length; i++) {
+      nav_main_nav_link[i].classList.add("tabs-close");
+    }
+    for (let i = 0; i < nav_footer_link.length; i++) {
+      nav_footer_link[i].classList.add("tabs-close");
+    }
+
+    // scroll down
+    setTimeout(() => {
+      // nav after click scroll down
+
+      // nav after appear
+      setTimeout(() => {
+        nav__before__click.style.display = "none";
+        nav__after__click.style.display = "flex";
+      }, 490);
+
+      // then container scrolling down
+      setTimeout(() => {
+        const nav_after_click = document.getElementById("nav-after-click");
+        nav_after_click.classList.remove("scrolling-to-top");
+        nav_after_click.classList.add("scrolling-to-bottom");
+      }, 500);
+
+      // then main and footer animation
+      setTimeout(() => {
+        // tab close
+
+        setTimeout(() => {
+          tabs.classList.remove("tabs-close");
+        }, 300);
+        // under tabs close before tab
+        setTimeout(() => {
+          tabs_after.classList.remove("tabs-after-close");
+        }, 200);
+
+        // then links close
+        setTimeout(() => {
+          for (let i = 0; i < nav_main_nav_link.length; i++) {
+            nav_main_nav_link[i].classList.remove("tabs-close");
+          }
+        }, 500);
+
+        // then footer link close
+        setTimeout(() => {
+          for (let i = 0; i < nav_footer_link.length; i++) {
+            nav_footer_link[i].classList.remove("tabs-close");
+          }
+        }, 600);
+      }, 600);
+    }, 200);
+  });
+}
+function navAfterClickHandle(nav__before__click, nav__after__click) {
+  // function: nav after click  mobile animation
+  // input: nav before click, nav after click
+  // output: animation
+
+  // initial defautl css
+  const hbg__top__after = document.getElementsByClassName("hbg-top")[1];
+  const hbg__mid__after = document.getElementsByClassName("hbg-mid")[1];
+  const hbg__bottom__after = document.getElementsByClassName("hbg-bottom")[1];
+
+  hbg__top__after.classList.add("hbg-top-rotate");
+  hbg__mid__after.classList.add("hbg-mid-rotate");
+  hbg__bottom__after.classList.add("hbg-bottom-rotate");
+
+  nav__after__click.addEventListener("click", (e) => {
+    // when it got clicked by user then rotate back to default
+    hbg__top__after.classList.remove("hbg-top-rotate");
+    hbg__mid__after.classList.remove("hbg-mid-rotate");
+    hbg__bottom__after.classList.remove("hbg-bottom-rotate");
+
+    // initial hambuger before click
+    const hbg__top__before = document.getElementsByClassName("hbg-top")[0];
+    const hbg__mid__before = document.getElementsByClassName("hbg-mid")[0];
+    const hbg__bottom__before = document.getElementsByClassName(
+      "hbg-bottom"
+    )[0];
+
+    hbg__top__before.classList.remove("hbg-top-rotate");
+    hbg__mid__before.classList.remove("hbg-mid-rotate");
+    hbg__bottom__before.classList.remove("hbg-bottom-rotate");
+
+    setTimeout(() => {
+      // nav after scroll up
+      setTimeout(() => {
+        const nav_after_click = document.getElementById("nav-after-click");
+        nav_after_click.classList.remove("scrolling-to-bottom");
+        nav_after_click.classList.add("scrolling-to-top");
+      }, 1000);
+
+      // tab is dissapearing
+      // under tab is dissapearing
+      // links are dissppearing
+      setTimeout(() => {
+        const tabs_after = document.getElementsByClassName("tabs-after")[0];
+        const tabs = document.getElementsByClassName("tabs")[0];
+        const nav_main_nav_link = document.getElementsByClassName("nav-link");
+        const nav_footer_link = document.getElementsByClassName(
+          "nav-footer-link"
+        );
+        // tab close
+        setTimeout(() => {
+          tabs.classList.add("tabs-close");
+        }, 300);
+        // under tabs close before tab
+        setTimeout(() => {
+          tabs_after.classList.add("tabs-after-close");
+        }, 200);
+
+        // then links close
+        setTimeout(() => {
+          for (let i = 0; i < nav_main_nav_link.length; i++) {
+            nav_main_nav_link[i].classList.add("tabs-close");
+          }
+        }, 500);
+
+        // then footer link close
+        setTimeout(() => {
+          for (let i = 0; i < nav_footer_link.length; i++) {
+            nav_footer_link[i].classList.add("tabs-close");
+          }
+        }, 600);
+      }, 100);
+
+      setTimeout(() => {
+        nav__after__click.style.display = "none";
+        nav__before__click.style.display = "flex";
+      }, 1700);
+    }, 200);
+  });
+}
 
 function nav() {
   const blackmode = document.getElementById("blackmode");
@@ -127,13 +292,17 @@ function nav() {
   const nav__before__click = document.getElementById("nav-before-click");
   const nav__after__click = document.getElementById("nav-after-click");
 
-  log(nav__before__click);
-
-  nav__before__click.style.display = "none";
-  nav__after__click.style.display = "initial";
+  nav__after__click.style.display = "none";
+  nav__before__click.style.display = "flex";
 
   // create svg logo
   createLogoSVGNavMobile();
+
+  // handle nav before click
+  navBeforeClickHandle(nav__before__click, nav__after__click);
+
+  // handle nav after click
+  navAfterClickHandle(nav__before__click, nav__after__click);
 }
 
 nav();
