@@ -1,0 +1,246 @@
+:root {
+  --primary-color: #fcf9ee;
+  --secondary-color: #141414;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+::-webkit-scrollbar {
+  display: none;
+}
+
+img {
+  vertical-align: middle;
+  max-width: 100%;
+}
+
+.col-1 {
+  flex: 0 0 8.3333333%;
+  max-width: 8.3333333%;
+}
+.col-2 {
+  flex: 0 0 16.6666667%;
+  max-width: 16.6666667%;
+}
+.col-3 {
+  flex: 0 0 25%;
+  max-width: 25%;
+}
+.col-4 {
+  flex: 0 0 33.333333%;
+  max-width: 33.3333%;
+}
+.col-5 {
+  flex: 0 0 41.666667;
+  max-width: 41.666667%;
+}
+
+.col-6 {
+  flex: 0 0 50%;
+  max-width: 50%;
+}
+
+.col-7 {
+  flex: 0 0 58.33333%;
+  max-width: 58.33333%;
+}
+
+.col-8 {
+  flex: 0 0 66.66667%;
+  max-width: 66.66667%;
+}
+.col-9 {
+  flex: 0 0 75%;
+  max-width: 75%;
+}
+
+.col-10 {
+  flex: 0 0 83.33333%;
+  max-width: 83.33333%;
+}
+
+.col-11 {
+  flex: 0 0 91.66667%;
+  max-width: 91.66667%;
+}
+.col-12 {
+  flex: 0 0 100%;
+  max-width: 100%;
+}
+
+/* pure layout */
+/* pure layout */
+/* pure layout */
+
+.index-pure-layout {
+  display: flex;
+  flex-wrap: wrap;
+  width: 100%;
+  min-height: 300px;
+  background-color: coral;
+  border: 1px solid #000;
+  padding: 15vh 15vh 10vh 25vw;
+}
+
+.row {
+  display: flex;
+  flex-wrap: wrap;
+  width: 100%;
+  height: 100%;
+}
+
+.content {
+  height: 100%;
+  width: 100%;
+  background-color: cornflowerblue;
+  border: 1px solid #000;
+  min-height: 200px;
+}
+
+/* header css */
+/* header css */
+/* header css */
+#spring {
+  min-height: 200px;
+}
+
+#summer {
+  min-height: 200px;
+}
+
+#time {
+  min-height: 200px;
+}
+
+/* pure items */
+/* pure items */
+/* pure items */
+#pure-items .col-6 .content {
+  min-height: 85vh;
+  width: 100%;
+}
+
+#pure-items .row {
+  position: relative;
+  justify-content: space-between;
+}
+#pure-items .col-6 {
+  max-width: 48%;
+}
+
+#equal {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 200px;
+  height: 200px;
+  background-color: cornsilk;
+}
+
+/* explore */
+/* explore */
+/* explore */
+#explore .content:first-child {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+}
+
+/* rolling  */
+/* rolling  */
+/* rolling  */
+
+/* products */
+/* products */
+/* products */
+
+#products .row {
+  width: 2000px;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+}
+.product {
+  display: flex;
+  flex-direction: column;
+  height: 450px;
+  width: 400px;
+  background-color: crimson;
+  border: 1px solid #000;
+}
+.pd {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.pd-img {
+  height: 40%;
+}
+
+.pd-sex {
+  height: 15%;
+}
+.pd-name {
+  height: 30%;
+}
+.pd-price {
+  height: 15%;
+}
+
+/* shop all */
+/* shop all */
+/* shop all */
+#shop-all .content:first-child {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+}
+
+/* review */
+#review .row {
+  justify-content: space-between;
+}
+#review .col-6 {
+  max-width: 48%;
+}
+
+.name {
+  position: absolute;
+  z-index: 10;
+}
+
+#review-name .content {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding-left: 120px;
+  position: relative;
+}
+.review-name-decoration {
+  position: absolute;
+  top: 30%;
+  left: 40%;
+  height: 100px;
+  width: 100px;
+  background-color: crimson;
+  z-index: 8;
+}
+
+#review .col-6:nth-child(2) .content {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+/* footer */
+/* footer */
+/* footer */
+footer {
+  padding: 0 10vh;
+}
