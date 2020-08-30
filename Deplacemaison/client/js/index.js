@@ -1,6 +1,85 @@
 let log = console.log;
 
+function createSpecialCSS(data_content) {
+  // function: create an special css for list element
+  // input: array element
+  // output: special css
+
+  // get position
+  const special__ele = document.getElementsByClassName("special-ele");
+  const arr_data_content = [];
+
+  // how it work
+  for (let i = 0; i < special__ele.length; i++) {
+    const content = `<div class="special-wrapper">
+    <a href="#" class="special-active">${data_content[i]}</a>
+    <a href="#" class="special-active">${data_content[i]}</a>
+  </div>`;
+    arr_data_content.push(content);
+  }
+
+  // active it
+  for (let i = 0; i < special__ele.length; i++) {
+    //  log(special__ele[i].children);
+    special__ele[i].children[0].innerHTML = arr_data_content[i];
+  }
+}
+
+function createSocialSVG() {
+  // function: create social icon
+  const fb_content = `<?xml version="1.0" encoding="utf-8"?>
+  <!-- Generator: Adobe Illustrator 23.0.4, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+  <svg version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+     viewBox="0 0 512 512" style="enable-background:new 0 0 512 512;" xml:space="preserve">
+  <g>
+    <path style="fill:#141414;" d="M366.4,35.3l-57.3-0.1c-64.3,0-105.9,42.6-105.9,108.7V194h-57.6c-5,0-9,4-9,9v72.6c0,5,4,9,9,9
+      h57.6v183.2c0,5,4,9,9,9h75.1c5,0,9-4,9-9V284.6h67.3c5,0,9-4,9-9l0-72.6c0-2.4-1-4.7-2.6-6.4c-1.7-1.7-4-2.6-6.4-2.6h-67.3v-42.5
+      c0-20.4,4.9-30.8,31.5-30.8l38.6,0c5,0,9-4,9-9V44.3C375.3,39.4,371.3,35.4,366.4,35.3z"/>
+  </g>
+  </svg>
+  `;
+
+  const ins_content = `<?xml version="1.0" encoding="utf-8"?>
+
+  <!-- Generator: Adobe Illustrator 23.0.4, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+  <svg version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+     viewBox="0 0 512 512" style="enable-background:new 0 0 512 512;" xml:space="preserve">
+  <style type="text/css">
+    .st0{fill:#141414;}
+  </style>
+  <g>
+    <g>
+      <g>
+        <path class="st0" d="M337.7,38H174.3C99,38,38,99,38,174.3v163.5C38,413,99,474,174.3,474h163.5C413,474,474,413,474,337.7V174.3
+          C474,99,413,38,337.7,38z M433.1,337.7c0,52.6-42.8,95.4-95.4,95.4H174.3c-52.6,0-95.4-42.8-95.4-95.4V174.3
+          c0-52.6,42.8-95.4,95.4-95.4h163.5c52.6,0,95.4,42.8,95.4,95.4V337.7z"/>
+      </g>
+    </g>
+    <g>
+      <g>
+        <path class="st0" d="M256,147c-60.2,0-109,48.8-109,109s48.8,109,109,109s109-48.8,109-109S316.2,147,256,147z M256,324.1
+          c-37.6,0-68.1-30.6-68.1-68.1c0-37.6,30.6-68.1,68.1-68.1s68.1,30.5,68.1,68.1C324.1,293.6,293.6,324.1,256,324.1z"/>
+      </g>
+    </g>
+    <g>
+      <g>
+        <circle class="st0" cx="373.2" cy="138.8" r="14.5"/>
+      </g>
+    </g>
+  </g>
+  </svg>
+  `;
+
+  const fb = document.getElementsByClassName("fb")[0];
+  const ins = document.getElementsByClassName("ins")[0];
+
+  fb.innerHTML = fb_content;
+  ins.innerHTML = ins_content;
+}
+
 function createArrowSVG() {
+  // function: create an arrow for the circle
+  // output: arrow icon
   const content = `<?xml version="1.0" encoding="utf-8"?>
   <!-- Generator: Adobe Illustrator 23.0.4, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
   <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
@@ -247,16 +326,23 @@ function createCircleSVG() {
   `;
 
   const circle = document.getElementsByClassName("circle");
-
+  // create a circle
   for (let i = 0; i < circle.length; i++) {
     circle[i].innerHTML = content;
   }
 
-  const arrow = document.createElement("div");
-  arrow.classList.add("arrow");
+  // create an arrow for it
+  const arr__arrow = [];
+  for (let i = 0; i < 3; i++) {
+    let arrow = document.createElement("div");
+    arrow.classList.add("arrow");
+    arr__arrow.push(arrow);
+  }
+  // log(arr__arrow);
 
+  // append specific
   for (let i = 0; i < circle.length; i++) {
-    circle[i].appendChild(arrow);
+    circle[i].appendChild(arr__arrow[i]);
   }
 }
 
@@ -300,6 +386,20 @@ function main() {
 
   // create arrow icon
   createArrowSVG();
+
+  // create social icon
+  createSocialSVG();
+
+  // create special css
+  const data_content = [
+    "faq",
+    "returns",
+    "contact",
+    "terms",
+    "privacy",
+    "cookie",
+  ];
+  createSpecialCSS(data_content);
 }
 
 main();

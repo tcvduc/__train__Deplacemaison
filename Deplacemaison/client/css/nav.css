@@ -26,6 +26,9 @@ svg {
   flex: 0 0 33.333333%;
   max-width: 33.3333%;
 }
+
+/* nav css */
+/* nav css */
 /* nav css */
 nav {
   position: fixed;
@@ -36,7 +39,7 @@ nav {
   display: flex;
 }
 
-/* css animation */
+/* css special animation */
 .nav-link-wrapper {
   overflow: hidden;
 }
