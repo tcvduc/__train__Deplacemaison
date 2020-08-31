@@ -116,15 +116,61 @@ img {
 /* header css */
 /* header css */
 #spring {
-  min-height: 200px;
+  max-height: 200px;
+  overflow: hidden;
+
+  font-variant: all-petite-caps;
 }
 
+/* spring special css */
+/* spring special css */
+/* spring special css */
+.special-active {
+  transition: 0.3s;
+}
+
+.spring-wrapper {
+  height: 100%;
+  width: 100%;
+  position: relative;
+}
+.spring-active {
+  top: -105px;
+  left: 0px;
+  position: absolute;
+  font-size: 255px;
+  letter-spacing: -25px;
+  transition: 0.3s;
+  color: var(--secondary-color);
+}
+.spring-active:last-child {
+  top: 100%;
+  left: 0;
+}
+
+.spring-wrapper:hover .spring-active:first-child {
+  top: -350px;
+}
+
+.spring-wrapper:hover .spring-active:last-child {
+  top: -105px;
+}
+
+/*  summer */
+/*  summer */
+/*  summer */
 #summer {
-  min-height: 200px;
+  max-height: 200px;
+  overflow: hidden;
+  font-variant: all-petite-caps;
 }
 
 #time {
-  min-height: 200px;
+  max-height: 200px;
+}
+
+#time g {
+  fill: var(--secondary-color);
 }
 
 /* pure items */
@@ -253,7 +299,7 @@ img {
 /* footer */
 /* footer */
 footer {
-  padding: 10vh;
+  padding: 3vh 10vh;
 }
 
 footer .col-6 .content {
@@ -280,7 +326,7 @@ footer .content {
   width: 70px;
 }
 .subscribe-2 {
-  padding: 70px 0 10px 0;
+  padding: 12px 0 10px 0;
   font-size: 13px;
   color: var(--secondary-color);
   font-weight: 500;
@@ -337,7 +383,7 @@ input {
 }
 
 .foot-bot .content {
-  padding: 110px 20px 0 20px;
+  padding: 70px 20px 0 20px;
   font-size: 15px;
   text-transform: uppercase;
   font-weight: 500;
@@ -352,7 +398,7 @@ input {
 .social {
   display: flex;
   justify-content: center;
-  padding: 118px 20px 0 20px;
+  padding: 78px 20px 0 20px;
 }
 
 /* circle btn css */
@@ -468,8 +514,11 @@ footer .content {
   .foot-top a {
     font-size: 15px;
   }
+
   .foot-top .content {
     font-size: 10px;
+
+    padding: 5px 20px;
     padding-left: 5px;
   }
 
@@ -563,6 +612,7 @@ footer .content {
 
   .social {
     width: 65%;
+    padding: 108px 20px 0 20px;
   }
 }
 
@@ -701,16 +751,15 @@ footer .content {
   }
 
   .btn-up {
-    padding: 0 20px 54px 20px;
+    padding: 0 20px 24px 20px;
   }
 
   .circle {
-    height: 55px;
-    width: 70px;
+    height: 80px;
+    width: 90px;
   }
-
   .arrow {
-    height: 23px;
+    height: 35px;
   }
 
   .fb {
