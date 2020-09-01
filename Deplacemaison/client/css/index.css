@@ -173,6 +173,20 @@ img {
   fill: var(--secondary-color);
 }
 
+#time svg {
+  transition: 0.5s;
+  animation: draw_time 3s forwards;
+}
+
+@keyframes draw_time {
+  from {
+    stroke-dashoffset: 0%;
+  }
+  to {
+    stroke-dashoffset: 100%;
+  }
+}
+
 /* pure items */
 /* pure items */
 /* pure items */

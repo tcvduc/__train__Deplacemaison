@@ -25,18 +25,6 @@ function createSpecialCSS(data_content) {
   }
 }
 
-function replaceAllString(origin, string_was_replaced, replace_by) {
-  // function: replace all string s in origin string
-  // input: origin string, string s that need to find, string k to replace by its
-  // output: origin string that contains string s was replaced by string k
-  // explain:
-  // replaceAllStringBy(abcdefabcqewabcssasdabc,abc,ooo)
-  // output: ooodefoooqewooossasdooo
-  // log(origin);
-  // log(string_was_replaced);
-  // log(replace_by);
-}
-
 function createTimeSVG() {
   let content = `<?xml version="1.0" encoding="utf-8"?>
   <!-- Generator: Adobe Illustrator 24.1.2, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
@@ -310,7 +298,13 @@ function createTimeSVG() {
   </svg>
   `;
 
-  content = content.replace("fill:#D8C4B3;", "fill:red;");
+  // important - debug
+  //content = content.replace("fill:#D8C4B3;", "fill:red;");
+
+  let rp = "fill:#D8C4B3;";
+  let by = "fill:var(--secondary-color)";
+
+  content = replaceStringBy(content, rp, by);
 
   // problem: find and replace all the string s in origin string
 
@@ -696,27 +690,73 @@ function main() {
     "cookie",
   ];
   createSpecialCSS(data_content);
-
-  // handle string
-  let o = "abcdefasdqweqweasdabcasdadsabc";
-  let s = "abc";
-  let k = "ooo";
-  replaceAllString(o, s, k);
 }
 
 main();
 
-function findSubString() {
-  let s = "abcdefasdqweqweasdabcasdadsabc";
-  let sub = "abc";
+function replaceStringBy(origin, rp, by) {
+  const regex = new RegExp(`(${rp})`, "g");
+  // let rs = origin.replace(`${regex}`, "ooo";
+  // log(rs);
 
-  for (let i = 0; i < s.length; i += 2) {}
-
-  log(s);
-  log(sub);
-
-  s.search();
-  log(s.match(sub));
+  let rs = origin.replace(regex, `${by}`);
+  return rs;
 }
 
-findSubString();
+// dont delete it
+function replaceStringBy2(s, rp, by) {
+  // function: get all the start positions of string
+  // input: string s, string want to replace
+  // output: array contains start positions
+
+  // ex:
+  // abcdefabcd
+  // 0123456789
+  // start pos: 0
+  // start pos: 6
+
+  // abc - len = 3
+  // 0+3= 3-1
+  // 6+3=9
+  // -> subtraction by 1
+
+  // let arr_indexs = getIndexToReplaceString(s, sub);
+  // let count = replace.length - 1;
+
+  let t = "abc";
+
+  // for (let j = 0; j < arr_indexs.length; j++) {
+  //   for (let i = 0; i < s.length; i++) {
+  //     // start at start pos
+  //     if (arr_indexs[j] === i) {
+  //       s[i] = "1";
+  //     }
+  //   }
+  // }
+}
+
+// dont delete it
+function getIndexToReplaceString(s, sub) {
+  // function: get all the start positions of string
+  // input: string s, string want to replace
+  // output: array contains start positions
+  // let array_index = [];
+  // for (let i = 0; i < s.length; i++) {
+  //   let temp = s[i] + s[i + 1] + s[i + 2];
+  //   if (s[i + 1] === undefined || s[i + 2] === undefined) {
+  //     continue;
+  //   } else {
+  //     if (temp === sub) {
+  //       array_index.push(i);
+  //     }
+  //   }
+  // }
+  // return array_index;
+}
+
+let s = "abcdefasdqweqweasdabcasdabcdsa";
+let sub = "abc";
+let by = "ooo";
+
+// log(getIndexToReplaceString(s, sub));
+log(replaceStringBy(s, sub, by));
