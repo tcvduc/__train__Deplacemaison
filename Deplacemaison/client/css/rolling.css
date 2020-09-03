@@ -115,25 +115,84 @@ img {
 /* rolling css */
 /* rolling css */
 /* rolling css */
-.roll-container {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  align-items: center;
-  padding: 10vh;
-}
 
 .roll-wrap {
-  width: 100%;
+  position: absolute;
+  width: 100vw;
   display: flex;
-}
-.roll {
-  height: 200px;
-  width: 300px;
-  background-color: limegreen;
-  border: 1px solid #000;
+  min-height: 100px;
+  top: 0;
+  left: 0;
 }
 
-.btn-next {
+.roll {
+  position: absolute;
+  min-height: 10px;
   padding: 20px;
+  width: 5000%;
+  background-color: #ddc92a;
+  border: 1px solid #000;
+  animation: rolling 600s infinite reverse linear;
+  top: 0%;
+  left: 0;
+  display: flex;
+  justify-content: space-between;
+  border-top: 4px solid var(--secondary-color);
+  border-bottom: 4px solid var(--secondary-color);
+}
+
+.do-not {
+  display: flex;
+  font-size: 30px;
+  text-transform: uppercase;
+  font-weight: 500;
+}
+
+@keyframes rolling {
+  0% {
+    left: -4000%;
+  }
+  25% {
+    left: -3000%;
+  }
+  50% {
+    left: -2000%;
+  }
+  75% {
+    left: -1000%;
+  }
+  100% {
+    top: 0;
+    left: 0;
+  }
+}
+
+/*--------------------------------*/
+
+/* mobile responsive */
+/* mobile responsive */
+/* mobile responsive */
+
+/* small device 0 to 576px */
+@media screen and (max-width: 576px) {
+  .roll {
+    padding: 10px;
+    border-bottom-width: 2px;
+    border-top-width: 2px;
+  }
+  .do-not {
+    font-size: 13px;
+  }
+}
+
+/* medium device 576px to 768px */
+@media screen and (min-width: 576px) and (max-width: 768px) {
+}
+
+/* large device 768 to 992px */
+@media screen and (min-width: 768px) and (max-width: 992px) {
+}
+
+/* extra large device -xl -  992 to 1200 */
+@media screen and (min-width: 992px) and (max-width: 1200px) {
 }

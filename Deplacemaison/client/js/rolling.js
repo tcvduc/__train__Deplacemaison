@@ -1,63 +1,61 @@
 let log = console.log;
 
-function rotateLeftArray(a) {
-  // function: rotate left array algorithm
-  // input: array that you want to rotate left
-  // output: its rotate left
-  let temp = a[0];
-
-  for (let i = 0; i < a.length; i++) {
-    a[i] = a[i + 1];
-  }
-  a[a.length - 1] = temp;
-
-  return a;
+function createDontScroll() {
+  // function: create element dont scroll
+  let dont_Scroll = document.createElement("div");
+  dont_Scroll.classList.add("do-not");
+  let content = document.createTextNode("do not scroll");
+  dont_Scroll.appendChild(content);
+  return dont_Scroll;
 }
 
-var toNodeList = function (arrayOfNodes) {
-  var fragment = document.createDocumentFragment();
-  arrayOfNodes.forEach(function (item) {
-    fragment.appendChild(item.cloneNode());
-  });
-  return fragment.childNodes;
-};
+function rollingHandle() {
+  // function: create rolling section
+  const roll = document.getElementsByClassName("roll")[0];
 
-function handleBtnNextClick() {
-  let next = document.getElementsByClassName("btn-next")[0];
-  let rolls = document.querySelectorAll(".roll");
-  // let a = [1, 2, 3, 4, 5];
+  // responsive
+  let sm_heigth = window.screen.height;
+  let sm_width = window.screen.width;
 
-  let roll_wrap = document.getElementsByClassName("roll-wrap")[0];
-
-  let a = [...rolls];
-  next.addEventListener("click", (e) => {
-    a = rotateLeftArray(a);
-    log(a);
-    var node = toNodeList(a);
-    log(node);
-
-    // remove old child
-    for (let i = 0; i < rolls.length; i++) {
-      roll_wrap.removeChild(rolls[i]);
+  window.addEventListener("load", (e) => {
+    if (sm_width <= 576) {
+      // small device
+      for (let i = 0; i < 150; i++) {
+        let dont_Scroll_ele = createDontScroll();
+        roll.appendChild(dont_Scroll_ele);
+      }
+    } else if (sm_width > 576 && sm_width <= 768) {
+      // medium
+      for (let i = 0; i < 100; i++) {
+        let dont_Scroll_ele = createDontScroll();
+        roll.appendChild(dont_Scroll_ele);
+      }
+    } else if (sm_width > 768 && sm_width <= 992) {
+      // large
+      for (let i = 0; i < 150; i++) {
+        let dont_Scroll_ele = createDontScroll();
+        roll.appendChild(dont_Scroll_ele);
+      }
+    } else if (sm_width > 992 && sm_width <= 1200) {
+      // extra large
+      for (let i = 0; i < 150; i++) {
+        let dont_Scroll_ele = createDontScroll();
+        roll.appendChild(dont_Scroll_ele);
+      }
+    } else {
+      for (let i = 0; i < 300; i++) {
+        let dont_Scroll_ele = createDontScroll();
+        roll.appendChild(dont_Scroll_ele);
+      }
     }
-    // then add new child
-    for (let i = 0; i < node.length; i++) {
-      roll_wrap.appendChild(node[i]);
-    }
-
-    // roll_wrap.append(node);
-
-    a.forEach((e) => {
-      log(e);
-    });
   });
 }
 
 function rolling() {
   // function: everything about rolling would be created in here
-  handleBtnNextClick();
-
   // handle rotate left array
+
+  rollingHandle();
 }
 
 rolling();
