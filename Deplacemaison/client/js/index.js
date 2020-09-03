@@ -1,30 +1,5 @@
 let log = console.log;
 
-function createSpecialCSS(data_content) {
-  // function: create an special css for list element
-  // input: array element
-  // output: special css
-
-  // get position
-  const special__ele = document.getElementsByClassName("special-ele");
-  const arr_data_content = [];
-
-  // how it work
-  for (let i = 0; i < special__ele.length; i++) {
-    const content = `<div class="special-wrapper">
-    <a href="#" class="special-active">${data_content[i]}</a>
-    <a href="#" class="special-active">${data_content[i]}</a>
-  </div>`;
-    arr_data_content.push(content);
-  }
-
-  // active it
-  for (let i = 0; i < special__ele.length; i++) {
-    //  log(special__ele[i].children);
-    special__ele[i].children[0].innerHTML = arr_data_content[i];
-  }
-}
-
 function createTimeSVG() {
   let content = `<?xml version="1.0" encoding="utf-8"?>
   <!-- Generator: Adobe Illustrator 24.1.2, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
@@ -310,6 +285,73 @@ function createTimeSVG() {
 
   const time = document.getElementById("time");
   time.innerHTML = content;
+}
+
+function createEqualSVG(color) {
+  // fill color by - secondary color
+  const content = `<?xml version="1.0" encoding="utf-8"?>
+  <!-- Generator: Adobe Illustrator 23.0.4, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+  <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+     viewBox="0 0 80 80" style="enable-background:new 0 0 80 80;" xml:space="preserve">
+  <g>
+    <path style="fill:${color};" d="M66.7,37.8c-0.2,0.1-0.3,0.2-0.5,0.3c-7.9-0.3-26.2-0.7-54.8-1.3c-2-2-3.1-3.3-3.5-3.8
+      c-0.3-0.6-0.5-1.4-0.4-2.4c-0.1-0.2-0.9-1.2-2.4-3c-1.5-1.9-2.7-3.3-3.7-4.2c2-1.2,3.1-1.8,3.3-1.9c8.5-2.4,17.3-3.7,26.6-4
+      c4.1-0.1,10.4,0,18.7,0.2c4.6,0,8.9,0.6,12.7,1.8c0.3,2.3,1.1,5.4,2.4,9.3c1.3,3.9,2.1,6.6,2.3,8.1C67.1,37.4,66.9,37.7,66.7,37.8z
+       M71.2,44.4c0.3,0.5,1.4,2.8,3.4,7c2,4.2,3.3,7.6,4,10.1L76,62c-7.9,0.1-14.7,0.2-20.6,0.3c-2.4,0.1-5.9,0.2-10.4,0.2
+      c-4.5,0-7.3,0-8.4,0c-1.5,0-2.7,0.1-3.6,0.2c-5.4,0.4-9.1-1.4-10.9-5.3c0.4-0.4,1.1-1.3,2.3-2.6c0.2-0.1,0.3-0.3,0.3-0.5l0.5-0.3
+      c-0.2,0.1-0.3,0.2-0.4,0.4c-0.1,0.2-0.2,0.3-0.4,0.4c-0.4-2.1-1.6-3.1-3.6-3c-0.2,0.1-1.2,0.2-3,0.2c0.3-2.7,0.5-4.2,0.6-4.4
+      c4.3-2,12.8-3.5,25.5-4.2C56.6,42.5,65.7,42.9,71.2,44.4z"/>
+  </g>
+  </svg>
+  `;
+
+  const equal = document.getElementById("equal");
+  equal.innerHTML = content;
+}
+
+function createSpecialHoverForExplore() {
+  const explore_under = document.getElementById("explore-under");
+  const explore = document.getElementsByClassName("explore")[0];
+
+  let flag = 0;
+
+  explore.addEventListener("mouseover", (e) => {
+    // if classlist have nothing then mid
+    explore_under.classList.add("under-go-mid");
+
+    if (
+      explore_under.classList.contains("under-mid-go-right") &&
+      explore_under.classList.contains("overed")
+    ) {
+      // if right and was overed then mid
+      explore_under.classList.remove("under-mid-go-right");
+      explore_under.classList.add("under-go-mid");
+    } else if (explore_under.classList.contains("under-mid-go-left")) {
+      // if left then mid
+      explore_under.classList.remove("under-mid-go-left");
+      explore_under.classList.add("under-go-mid");
+    }
+  });
+
+  explore.addEventListener("mouseleave", (e) => {
+    if (
+      explore_under.classList.contains("under-go-mid") &&
+      !explore_under.classList.contains("overed")
+    ) {
+      // if mid and no overed it mean the first time user hover
+      explore_under.classList.remove("under-go-mid");
+      explore_under.classList.add("under-mid-go-right");
+      explore_under.classList.add("overed");
+    } else if (
+      explore_under.classList.contains("under-go-mid") &&
+      explore_under.classList.contains("overed")
+    ) {
+      // if mid and was overed then left
+      explore_under.classList.remove("overed");
+      explore_under.classList.remove("under-go-mid");
+      explore_under.classList.add("under-mid-go-left");
+    }
+  });
 }
 
 function createSocialSVG() {
@@ -661,12 +703,45 @@ function createLetterSVG() {
   letter.innerHTML = content;
 }
 
+function createSpecialCSS(data_content) {
+  // function: create an special css for list element
+  // input: array element
+  // output: special css
+
+  // get position
+  const special__ele = document.getElementsByClassName("special-ele");
+  const arr_data_content = [];
+
+  // how it work
+  for (let i = 0; i < special__ele.length; i++) {
+    const content = `<div class="special-wrapper">
+    <a href="#" class="special-active">${data_content[i]}</a>
+    <a href="#" class="special-active">${data_content[i]}</a>
+  </div>`;
+    arr_data_content.push(content);
+  }
+
+  // active it
+  for (let i = 0; i < special__ele.length; i++) {
+    //  log(special__ele[i].children);
+    special__ele[i].children[0].innerHTML = arr_data_content[i];
+  }
+}
+
+
 function main() {
   // function main
   // everythings was happened when it active the big bang
 
   // create time icon
   createTimeSVG();
+
+  // create equal icon
+  const equal_color = "#6d635a;";
+  createEqualSVG(equal_color);
+
+  // create special hover for explore element
+  createSpecialHoverForExplore();
 
   // create letter icon
   createLetterSVG();
@@ -753,10 +828,3 @@ function getIndexToReplaceString(s, sub) {
   // }
   // return array_index;
 }
-
-let s = "abcdefasdqweqweasdabcasdabcdsa";
-let sub = "abc";
-let by = "ooo";
-
-// log(getIndexToReplaceString(s, sub));
-log(replaceStringBy(s, sub, by));
