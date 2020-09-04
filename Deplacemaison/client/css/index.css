@@ -224,7 +224,6 @@ img {
   transform: translateX(-50%);
 }
 
-
 #pure-items .row:first-child .col-6:nth-child(3) .content::before {
   content: "(02)";
   position: absolute;
@@ -241,7 +240,6 @@ img {
   transform: translateX(-50%);
 }
 
-
 #equal {
   position: absolute;
   top: 50%;
@@ -249,7 +247,7 @@ img {
   transform: translate(-50%, -50%);
   width: 200px;
   height: 200px;
-  opacity: 0.8;
+  opacity: 0.5;
   z-index: 12;
 }
 
@@ -304,6 +302,21 @@ img {
 /* rolling  */
 /* rolling  */
 
+/* who were are */
+/* who were are */
+/* who were are */
+#who-we-are {
+  font-size: 50px;
+  font-weight: 500;
+}
+#who-we-are .col-8 {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.col-8 ins {
+  margin: 0 10px;
+}
 /* products */
 /* products */
 /* products */
@@ -317,10 +330,11 @@ img {
 .product {
   display: flex;
   flex-direction: column;
-  height: 450px;
+  height: 470px;
   width: 400px;
-  background-color: crimson;
+  background-color: #e7d6c4;
   border: 1px solid #000;
+  padding: 20px;
 }
 .pd {
   display: flex;
@@ -328,20 +342,35 @@ img {
   align-items: center;
 }
 
+.pd:hover {
+  cursor: grab;
+}
 .pd-img {
-  height: 40%;
+  padding: 50px;
+  height: 80%;
+  overflow: hidden;
 }
 
 .pd-sex {
-  height: 15%;
+  height: 10%;
+}
+.pd-sex img {
+  height: 100%;
 }
 .pd-name {
   height: 30%;
+  font-size: 100px;
+  text-transform: uppercase;
+  letter-spacing: -0.4rem;
+  transform: scale(0.6, 1.1);
+  font-weight: 500;
 }
 .pd-price {
   height: 15%;
+  font-size: 35px;
+  font-weight: 400;
+  letter-spacing: -0.1rem;
 }
-
 /* shop all */
 /* shop all */
 /* shop all */

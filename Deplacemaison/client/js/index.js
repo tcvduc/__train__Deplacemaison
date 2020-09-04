@@ -728,7 +728,6 @@ function createSpecialCSS(data_content) {
   }
 }
 
-
 function main() {
   // function main
   // everythings was happened when it active the big bang
@@ -737,7 +736,7 @@ function main() {
   createTimeSVG();
 
   // create equal icon
-  const equal_color = "#6d635a;";
+  const equal_color = "#744213;";
   createEqualSVG(equal_color);
 
   // create special hover for explore element
