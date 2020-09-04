@@ -76,7 +76,7 @@ function getProducts() {
   pd_wrapper.innerHTML = product_elements;
 
   // bug text
-  log(pd_wrapper.childNodes);
+  // log(pd_wrapper.childNodes);
   // so remove it
   for (let i = 0; i < 6; i++) {
     pd_wrapper.removeChild(pd_wrapper.childNodes[i]);
