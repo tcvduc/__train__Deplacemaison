@@ -728,9 +728,43 @@ function createSpecialCSS(data_content) {
   }
 }
 
+function shopAllEffectHandle() {
+  const shop_all = document.getElementsByClassName("sa-text")[0];
+  const sa_under = document.getElementsByClassName("sa-under")[0];
+
+  shop_all.addEventListener("mouseover", (e) => {
+    // on mouse over
+
+    if (sa_under.classList.contains("overed")) {
+      sa_under.classList.remove("overed");
+      sa_under.classList.remove("sa-go-right");
+      sa_under.classList.add("sa-go-mid");
+      sa_under.classList.add("back-to-left");
+    } else {
+      sa_under.classList.remove("sa-go-left");
+      sa_under.classList.add("sa-go-mid");
+    }
+  });
+
+  shop_all.addEventListener("mouseleave", (e) => {
+    // on mouse leave
+
+    if (sa_under.classList.contains("back-to-left")) {
+      sa_under.classList.remove("sa-go-mid");
+      sa_under.classList.remove("back-to-left");
+      sa_under.classList.add("sa-go-left");
+      log("rig");
+    } else {
+      sa_under.classList.remove("sa-go-mid");
+      sa_under.classList.add("sa-go-right");
+      sa_under.classList.add("overed");
+    }
+  });
+}
+
 function main() {
   // function main
-  // everythings was happened when it active the big bang
+  // everythings was happened when it active - the big bang of universe
 
   // create time icon
   createTimeSVG();
@@ -741,6 +775,9 @@ function main() {
 
   // create special hover for explore element
   createSpecialHoverForExplore();
+
+  // create speacial hover for shop-all element
+  shopAllEffectHandle();
 
   // create letter icon
   createLetterSVG();
