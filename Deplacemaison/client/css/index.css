@@ -410,6 +410,8 @@ img {
 }
 
 /* review */
+/* review */
+/* review */
 #review .row {
   justify-content: space-between;
 }
@@ -419,30 +421,87 @@ img {
 
 .name {
   position: absolute;
+  text-transform: capitalize;
   z-index: 10;
+  font-family: "Great Vibes", cursive;
+  font-size: 70px;
 }
 
 #review-name .content {
   display: flex;
   justify-content: center;
   align-items: center;
-  padding-left: 120px;
+  padding-left: 250px;
   position: relative;
 }
+
+.rw-name-wrapper {
+  height: 65%;
+  width: 107%;
+  position: absolute;
+  top: 50%;
+  left: 125%;
+  transform: translate(-50%, -50%);
+  z-index: 12;
+  overflow: hidden;
+}
+
+.name-active {
+  position: absolute;
+  top: 0%;
+  left: 0;
+  transition: 0.3s;
+}
+
+.rw-name-wrapper .name-active:nth-child(2) {
+  top: 100%;
+}
+
+.first-child-go-top {
+  top: -100% !important;
+}
+
+.second-child-go-top {
+  top: 0% !important;
+}
+
 .review-name-decoration {
   position: absolute;
-  top: 30%;
+  top: 10%;
   left: 40%;
-  height: 100px;
-  width: 100px;
+  height: 150px;
+  width: 150px;
   background-color: crimson;
   z-index: 8;
 }
 
+/* review content */
 #review .col-6:nth-child(2) .content {
   display: flex;
   justify-content: flex-start;
   align-items: center;
+  font-size: 17px;
+  font-weight: 500;
+}
+
+.rw-content-wrapper {
+  overflow: hidden;
+  height: 45%;
+  width: 100%;
+  position: relative;
+}
+.rw-content {
+  position: absolute;
+  transition: 0.3s;
+  top: 0;
+  left: 0;
+
+  height: 100%;
+  width: 100%;
+}
+
+.rw-content-wrapper .rw-content:nth-child(2) {
+  top: 100%;
 }
 
 /* footer */
@@ -770,6 +829,37 @@ footer .content {
     font-size: 15px;
     font-weight: 500;
   }
+
+  /* review */
+  /* review */
+  /* review */
+  #review.index-pure-layout {
+    min-height: initial;
+  }
+
+  #review-name .content {
+    padding: 0;
+  }
+
+  .review-name-decoration {
+    top: 25%;
+    left: 10%;
+    height: 80px;
+    width: 80px;
+  }
+
+  .rw-name-wrapper {
+    height: 80px;
+    width: 80px;
+    top: 77%;
+  }
+  .name {
+    font-size: 30px;
+  }
+
+  .rw-content {
+    font-size: 10px;
+  }
   /*  footer css*/
   /*  footer css*/
   /*  footer css*/
@@ -957,6 +1047,38 @@ footer .content {
   .sa-text {
     font-size: 20px;
     font-weight: 500;
+  }
+
+  /* review */
+  /* review */
+  /* review */
+  #review.index-pure-layout {
+    min-height: initial;
+  }
+
+  #review-name .content {
+    padding: 0;
+  }
+
+  .review-name-decoration {
+    top: 25%;
+    left: 25%;
+    height: 120px;
+    width: 120px;
+  }
+
+  .rw-name-wrapper {
+    height: 80px;
+
+    top: 55%;
+    left: 115%;
+  }
+  .name {
+    font-size: 55px;
+  }
+
+  .rw-content {
+    font-size: 13px;
   }
   /*  footer css*/
   /*  footer css*/
@@ -1154,6 +1276,39 @@ footer .content {
     font-size: 20px;
     font-weight: 500;
   }
+
+  /* review */
+  /* review */
+  /* review */
+  #review.index-pure-layout {
+    min-height: initial;
+  }
+
+  #review-name .content {
+    padding: 0;
+  }
+
+  .review-name-decoration {
+    top: 13%;
+    left: 30%;
+    height: 150px;
+    width: 150px;
+  }
+
+  .rw-name-wrapper {
+    height: 80px;
+
+    top: 55%;
+  }
+  .name {
+    font-size: 50px;
+  }
+
+  .rw-content {
+    font-size: 15px;
+    height: 100%;
+    width: 100%;
+  }
   /*  footer css*/
   /*  footer css*/
   /*  footer css*/
@@ -1349,6 +1504,37 @@ footer .content {
   .sa-text {
     font-size: 20px;
     font-weight: 500;
+  }
+
+  /* review */
+  /* review */
+  /* review */
+  #review.index-pure-layout {
+    min-height: initial;
+  }
+
+  #review-name .content {
+    padding: 0;
+  }
+
+  .review-name-decoration {
+    top: 9%;
+    left: 43%;
+    height: 165px;
+    width: 165px;
+  }
+
+  .rw-name-wrapper {
+    height: 80px;
+
+    top: 55%;
+  }
+  .name {
+    font-size: 60px;
+  }
+
+  .rw-content {
+    font-size: 17px;
   }
   /*  footer css*/
   /*  footer css*/

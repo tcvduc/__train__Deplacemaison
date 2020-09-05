@@ -729,6 +729,7 @@ function createSpecialCSS(data_content) {
 }
 
 function shopAllEffectHandle() {
+  // function: handle effect of shop all section
   const shop_all = document.getElementsByClassName("sa-text")[0];
   const sa_under = document.getElementsByClassName("sa-under")[0];
 
@@ -762,6 +763,54 @@ function shopAllEffectHandle() {
   });
 }
 
+function createEqualAndReviewerForReviewSection() {
+  // function: create equal icon for review section
+
+  let data = [
+    {
+      review_name: "lamie",
+      review_content: "",
+    },
+    {
+      review_name: "gibson",
+      review_content: "",
+    },
+  ];
+  let content = `<?xml version="1.0" encoding="utf-8"?>
+  <!-- Generator: Adobe Illustrator 23.0.4, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+  <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+     viewBox="0 0 100 100" style="enable-background:new 0 0 100 100;" xml:space="preserve">
+  <path style="fill:none;stroke:#000000;" d="M61.8,14.5c0,0.3,0,0.5,0.1,0.8C56.6,25.1,44.8,48,26.4,84c-3.7,1.3-6.1,2-7,2
+    c-0.9,0.1-2-0.2-3.3-0.9c-0.3,0-2,0.4-5.3,1.2c-3.3,0.8-5.8,1.4-7.5,2.1C3.1,85,2.9,83.2,2.9,83c2.2-12.2,5.9-24.3,11.2-36.2
+    c2.4-5.3,6.3-13.1,11.7-23.5c2.9-5.8,6.3-10.8,10.1-15c3.2,1.1,7.6,2,13.3,2.7c5.7,0.7,9.6,1.4,11.7,2
+    C61.4,13.8,61.7,14.3,61.8,14.5z M72.8,12.9c0.8-0.1,4.4-0.1,11,0c6.5,0,11.6,0.4,15.3,1.2l-0.9,3.5c-4.6,10.1-8.8,18.8-12.3,26.3
+    c-1.3,3.2-3.4,7.6-6.1,13.3c-2.8,5.7-4.5,9.2-5.2,10.6c-0.9,1.9-1.5,3.4-2,4.8c-2.8,7.1-7.3,10.7-13.5,10.6
+    c-0.3-0.8-0.9-2.2-1.9-4.5c0-0.2-0.2-0.5-0.4-0.7c0,0-4.4,0.8-5.5,3.5c0,0.3-0.5,1.6-1.6,4c-3.2-2.1-5-3.2-5.2-3.5
+    c0-6.7,3.5-18.3,10.3-35C61.6,30.3,67.6,19,72.8,12.9z"/>
+  </svg>
+
+  <div class="rw-name-wrapper">
+  <div class="name name-active">${data[0].review_name}</div>
+  <div class="name name-active">${data[1].review_name}</div>
+</div>
+  `;
+  let rw_equal = document.getElementsByClassName("review-name-decoration")[0];
+  rw_equal.innerHTML = content;
+}
+
+function handlePermanentEffectReviewSection() {
+  let name_active = document.getElementsByClassName("name-active");
+  let rw_content = document.getElementsByClassName("rw-content");
+
+  setInterval(() => {
+    name_active[0].classList.toggle("first-child-go-top");
+    name_active[1].classList.toggle("second-child-go-top");
+
+    rw_content[0].classList.toggle("first-child-go-top");
+    rw_content[1].classList.toggle("second-child-go-top");
+  }, 3000);
+}
+
 function main() {
   // function main
   // everythings was happened when it active - the big bang of universe
@@ -776,8 +825,14 @@ function main() {
   // create special hover for explore element
   createSpecialHoverForExplore();
 
-  // create speacial hover for shop-all element
+  // create special hover for shop-all element
   shopAllEffectHandle();
+
+  // create equal for review section
+  createEqualAndReviewerForReviewSection();
+
+  // permanent effect of review section
+  handlePermanentEffectReviewSection();
 
   // create letter icon
   createLetterSVG();
