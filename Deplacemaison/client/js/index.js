@@ -754,7 +754,6 @@ function shopAllEffectHandle() {
       sa_under.classList.remove("sa-go-mid");
       sa_under.classList.remove("back-to-left");
       sa_under.classList.add("sa-go-left");
-      log("rig");
     } else {
       sa_under.classList.remove("sa-go-mid");
       sa_under.classList.add("sa-go-right");
@@ -833,29 +832,6 @@ function main() {
 
   // permanent effect of review section
   handlePermanentEffectReviewSection();
-
-  // create letter icon
-  createLetterSVG();
-
-  // create circle icon
-  createCircleSVG();
-
-  // create arrow icon
-  createArrowSVG();
-
-  // create social icon
-  createSocialSVG();
-
-  // create special css
-  const data_content = [
-    "faq",
-    "returns",
-    "contact",
-    "terms",
-    "privacy",
-    "cookie",
-  ];
-  createSpecialCSS(data_content);
 }
 
 main();
@@ -869,7 +845,7 @@ function replaceStringBy(origin, rp, by) {
   return rs;
 }
 
-// dont delete it
+// do not delete it
 function replaceStringBy2(s, rp, by) {
   // function: get all the start positions of string
   // input: string s, string want to replace

@@ -32,6 +32,7 @@ svg {
 /* nav css */
 nav {
   position: fixed;
+
   top: 0;
   left: 0;
   height: 100vh;
@@ -136,7 +137,7 @@ nav {
 
 .nav-top-mid {
   height: 100%;
-  width: 100px;
+  width: 150px;
 
   padding: 40px;
 }
@@ -185,10 +186,9 @@ nav {
   transform: translateY(-200px);
 }
 
-body {
-  min-height: 5000px;
-}
-
+/* nav mobile */
+/* nav mobile */
+/* nav mobile */
 #nav-mobile {
   display: none;
 }

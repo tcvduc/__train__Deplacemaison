@@ -1,5 +1,3 @@
-let log = console.log;
-
 function createDontScroll() {
   // function: create element dont scroll
   let dont_Scroll = document.createElement("div");

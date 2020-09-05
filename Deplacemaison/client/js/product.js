@@ -1,5 +1,3 @@
-let log = console.log;
-
 function getProducts() {
   const products = [
     {
@@ -145,9 +143,9 @@ function owlCarouselDragHandle() {
       items: 3,
       center: true,
       nav: false,
-      stagePadding: 130,
+      margin: 300,
       responsive: {
-        375: {
+        0: {
           items: 1,
           center: false,
           nav: false,
@@ -175,7 +173,6 @@ function owlCarouselDragHandle() {
           items: 3,
           center: true,
           nav: false,
-          stagePadding: 130,
         },
       },
     });

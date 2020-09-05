@@ -1,5 +1,3 @@
-let log = console.log;
-
 function navTopHandleScroll(blackmode) {
   // function: handle animation of nav top when browser was scrolled
   // input: blackmode element
