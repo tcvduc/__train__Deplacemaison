@@ -372,6 +372,13 @@ function createSpecialCSS(data_content) {
   }
 }
 
+function handleBtnTopClicked() {
+  // function: back to top when button got clicked
+  let btn_top = document.querySelector("footer .circle");
+  btn_top.addEventListener("click", (e) => {
+    document.documentElement.scrollTop = 0;
+  });
+}
 function footer() {
   // function: everything about footer would be created in here
 
@@ -397,6 +404,9 @@ function footer() {
     "cookie",
   ];
   createSpecialCSS(data_content);
+
+  // btn top got clicked
+  handleBtnTopClicked();
 }
 
 footer();

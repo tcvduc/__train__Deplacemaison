@@ -767,11 +767,11 @@ function createEqualAndReviewerForReviewSection() {
 
   let data = [
     {
-      review_name: "lamie",
+      review_name: "camap",
       review_content: "",
     },
     {
-      review_name: "gibson",
+      review_name: "caheo",
       review_content: "",
     },
   ];
@@ -814,6 +814,10 @@ function main() {
   // function main
   // everythings was happened when it active - the big bang of universe
 
+  // header section
+  // header section
+  // header section
+
   // create time icon
   createTimeSVG();
 
@@ -821,11 +825,22 @@ function main() {
   const equal_color = "#744213;";
   createEqualSVG(equal_color);
 
+  // explore section
+  // explore section
+  // explore section
   // create special hover for explore element
   createSpecialHoverForExplore();
 
+  // shop all section
+  // shop all section
+  // shop all section
+
   // create special hover for shop-all element
   shopAllEffectHandle();
+
+  // review section
+  // review section
+  // review section
 
   // create equal for review section
   createEqualAndReviewerForReviewSection();

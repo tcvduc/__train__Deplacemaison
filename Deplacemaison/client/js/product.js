@@ -155,24 +155,34 @@ function owlCarouselDragHandle() {
           items: 2,
           center: false,
           nav: false,
+          margin: 120,
           stagePadding: 0,
         },
         768: {
           items: 2,
           center: false,
           nav: false,
-          stagePadding: 50,
+
+          margin: 60,
         },
         992: {
           items: 2,
           center: false,
           nav: false,
-          stagePadding: 150,
+          margin: 0,
+          stagePadding: 0,
         },
         1200: {
+          items: 2,
+
+          nav: false,
+          margin: 100,
+        },
+        1333: {
           items: 3,
           center: true,
           nav: false,
+          margin: 300,
         },
       },
     });

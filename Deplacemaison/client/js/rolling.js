@@ -40,6 +40,12 @@ function rollingHandle() {
         let dont_Scroll_ele = createDontScroll();
         roll.appendChild(dont_Scroll_ele);
       }
+    } else if (sm_width > 1200) {
+      // laptop
+      for (let i = 0; i < 200; i++) {
+        let dont_Scroll_ele = createDontScroll();
+        roll.appendChild(dont_Scroll_ele);
+      }
     } else {
       for (let i = 0; i < 300; i++) {
         let dont_Scroll_ele = createDontScroll();
