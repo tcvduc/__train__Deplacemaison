@@ -1,5 +1,16 @@
 let log = console.log;
 
+function handleSpring() {
+  let spring__active = document.getElementsByClassName("spring-active");
+  setTimeout(() => {
+    spring__active[0].classList.add("spring__current__top");
+    spring__active[1].classList.add("spring__bottom__go__current__pos");
+
+    spring__active[2].classList.add("spring__current__top");
+    spring__active[3].classList.add("spring__bottom__go__current__pos");
+  }, 1500);
+}
+
 function createTimeSVG() {
   let content = `<?xml version="1.0" encoding="utf-8"?>
   <!-- Generator: Adobe Illustrator 24.1.2, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
@@ -817,6 +828,7 @@ function main() {
   // header section
   // header section
   // header section
+  handleSpring();
 
   // create time icon
   createTimeSVG();

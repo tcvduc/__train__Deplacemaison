@@ -2,7 +2,7 @@ Z-index
 
 + equal: 12
 + num-sex: 10
-+ nav: 
++ nav: 30 - responsive
 + footer: 20
 
 

@@ -13,8 +13,16 @@
 
     <!-- main css -->
     <link rel="stylesheet" href="./../css/index.css" type="text/css" />
+
+    <!-- Loader  css -->
+
+    <link rel="stylesheet" href="../css/loading.css" type="text/css" />
+
     <!-- nav css -->
     <link rel="stylesheet" href="../css/nav.css" type="text/css" />
+
+    <!-- time css -->
+    <link rel="stylesheet" href="./../css/time.css" type="text/css" />
 
     <!-- rolling css -->
     <link rel="stylesheet" href="./../css/rolling.css" />
@@ -37,6 +45,43 @@
     <link rel="stylesheet" href="./../css/footer.css" type="text/css" />
   </head>
   <body>
+    <!-- cookie -->
+    <!-- cookie -->
+    <!-- cookie -->
+    <section id="cookie-notification">
+      <div class="cookie-mess">
+        Cookies are small text files that websites save locally to your
+        computer, which allow sites to store and use information during your
+        visit. They can improve your experience when using a website by:
+        Remembering preferences, so you don't have to keep re-entering your
+        choices when you visit again
+      </div>
+
+      <div class="cookie-btn-group">
+        <div class="btn-ck btn-allow"></div>
+        <div class="btn-ck btn-deny"></div>
+      </div>
+    </section>
+
+    <!-- loader -->
+    <!-- loader -->
+    <!-- loader -->
+    <section id="loader" class="loader-container">
+      <div class="load-header"></div>
+      <div class="load-main">
+        <div class="loading-container lean-taller">
+          <div class="loading">27%</div>
+          <div class="loading">65%</div>
+          <div class="loading">85%</div>
+          <div class="loading">100%</div>
+        </div>
+      </div>
+      <div class="load-footer">
+        <div class="load-footer-text">© 2019 DéPlacè maison.</div>
+        <div class="load-footer-text">all rights reserved.</div>
+      </div>
+    </section>
+
     <!-- nav mobile -->
     <!-- nav mobile -->
     <!-- nav mobile -->
@@ -221,7 +266,7 @@
         <!-- time svg -->
         <!-- time svg -->
         <!-- time svg -->
-        <div class="col-3"><div class="content" id="time"></div></div>
+        <div class="col-3"><div id="time"></div></div>
       </div>
     </header>
 
@@ -380,8 +425,8 @@
               <div class="col-12">
                 <div class="content">
                   <form action="#">
-                    <input type="text" placeholder="email address" />
-                    <button class="btn btn-submit">submit</button>
+                    <input type="email" placeholder="email address" required />
+                    <button class="btn btn-submit" type="submit">submit</button>
                   </form>
                 </div>
               </div>
@@ -475,8 +520,14 @@
 
     <!-- main js -->
     <script src="./../js/index.js"></script>
+
+    <!--  loader js-->
+    <script src="../js/loader.js"></script>
     <!-- nav js -->
     <script src="../js/nav.js"></script>
+
+    <!-- time js -->
+    <script src="./../js/time.js"></script>
 
     <!-- footer js -->
     <script src="./../js/footer.js"></script>

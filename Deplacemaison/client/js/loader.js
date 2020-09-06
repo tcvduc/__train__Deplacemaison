@@ -1,5 +1,3 @@
-let log = console.log;
-
 // handle cookie
 
 function setCookie(ck__name, ck__value, expire__days) {
@@ -43,6 +41,9 @@ function checkCookie(cookie__notification) {
   if (is__allowed != "") {
     // do somthing
     cookie__notification.classList.remove("ck-appear");
+
+    // footer hover bug
+    cookie__notification.classList.add("d-none");
   } else {
     cookie__notification.classList.add("ck-appear");
 
@@ -67,6 +68,8 @@ function btnAllowClickHandle(e, cookie__notification) {
 
   setCookie("isUserAllowed", "accepted", 3);
   cookie__notification.classList.remove("ck-appear");
+  // cookies dissapear
+  cookie__notification.classList.add("d-none");
 }
 
 function cookieBtnOnClick() {
@@ -327,6 +330,8 @@ function loader() {
   if (user != "") {
     const loader = document.querySelector("#loader");
     loader.style.display = "none";
+    // footer hover bug
+    cookie__notification.classList.add("d-none");
   } else {
     // dom on load
     window.addEventListener("load", (e) => {

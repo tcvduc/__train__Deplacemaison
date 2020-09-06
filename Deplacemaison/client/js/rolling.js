@@ -2,7 +2,7 @@ function createDontScroll() {
   // function: create element dont scroll
   let dont_Scroll = document.createElement("div");
   dont_Scroll.classList.add("do-not");
-  let content = document.createTextNode("do not scroll");
+  let content = document.createTextNode("DeplMaison");
   dont_Scroll.appendChild(content);
   return dont_Scroll;
 }
