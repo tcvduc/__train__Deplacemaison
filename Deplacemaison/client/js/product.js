@@ -29,7 +29,7 @@ function getProducts() {
       pd_name: "garcia",
       pd_sex:
         "https://global-uploads.webflow.com/5c9c9c646cf0969b319f264f/5ed0ddbec534bd9d113f6188_unisex-label.svg",
-      pd_price: "€ 300 EUR",
+      pd_price: "€ 250 EUR",
       pd_img: "./../images/garcia__wmns-white.jpg",
     },
     {
@@ -37,7 +37,7 @@ function getProducts() {
       pd_name: "rivolta",
       pd_sex:
         "https://global-uploads.webflow.com/5c9c9c646cf0969b319f264f/5ed0ddbec534bd9d113f6188_unisex-label.svg",
-      pd_price: "€ 300 EUR",
+      pd_price: "€ 400 EUR",
       pd_img: "./../images/rivolta-black-p-1080.jpeg",
     },
     {
@@ -45,7 +45,7 @@ function getProducts() {
       pd_name: "tunney",
       pd_sex:
         "https://global-uploads.webflow.com/5c9c9c646cf0969b319f264f/5ed0ddbec534bd9d113f6188_unisex-label.svg",
-      pd_price: "€ 300 EUR",
+      pd_price: "€ 450 EUR",
       pd_img: "./../images/tunney__wmns-white-p-1080.jpeg",
     },
   ];

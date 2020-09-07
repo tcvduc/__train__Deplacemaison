@@ -59,7 +59,7 @@ function getIndexToReplaceString(s, sub) {
   // return array_index;
 }
 
-function createTimeSVG(animate, hands) {
+function writeByHandTimeSVG(animate, hands) {
   let content = `<?xml version="1.0" encoding="utf-8"?>
     <!-- Generator: Adobe Illustrator 24.1.2, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
     <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
@@ -351,12 +351,6 @@ function createTimeSVG(animate, hands) {
   time.innerHTML = content;
 }
 
-function writeItByHand() {
-  let paths = document.querySelectorAll("time path");
-
-  log(paths);
-}
-
 function time() {
   // create the custom time svg
 
@@ -368,9 +362,7 @@ function time() {
   for (let i = 1; i <= 8; i++) {
     hands.push("hand_" + i);
   }
-  createTimeSVG(animate, hands);
-  // write the time by hand
-  writeItByHand();
+  writeByHandTimeSVG(animate, hands);
 }
 
 time();

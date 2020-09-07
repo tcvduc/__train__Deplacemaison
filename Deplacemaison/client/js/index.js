@@ -1,14 +1,40 @@
 let log = console.log;
 
-function handleSpring() {
-  let spring__active = document.getElementsByClassName("spring-active");
-  setTimeout(() => {
-    spring__active[0].classList.add("spring__current__top");
-    spring__active[1].classList.add("spring__bottom__go__current__pos");
+function getCookie(ck__name) {
+  // function: get the cookie
+  // input: cookie name
+  // output: cookies
 
-    spring__active[2].classList.add("spring__current__top");
-    spring__active[3].classList.add("spring__bottom__go__current__pos");
-  }, 1500);
+  var cookie__name = ck__name + "=";
+  var decoded__cookie = decodeURIComponent(document.cookie);
+  var cookie__after__decode = decoded__cookie.split(";");
+
+  for (let i = 0; i < cookie__after__decode.length; i++) {
+    var c = cookie__after__decode[i];
+    while (c.charAt[0] == " ") {
+      c = c.substring(1);
+    }
+    if (c.indexOf(cookie__name) == 0) {
+      return c.substring(cookie__name.length, c.length);
+    }
+  }
+  return "";
+}
+
+function handleSpring() {
+  let cookies = getCookie("isUserAllowed");
+
+  if (cookies !== "") {
+  } else {
+    let spring__active = document.getElementsByClassName("spring-active");
+    setTimeout(() => {
+      spring__active[0].classList.add("spring__current__top");
+      spring__active[1].classList.add("spring__bottom__go__current__pos");
+
+      spring__active[2].classList.add("spring__current__top");
+      spring__active[3].classList.add("spring__bottom__go__current__pos");
+    }, 1500);
+  }
 }
 
 function createTimeSVG() {

@@ -39,6 +39,10 @@
   overflow: hidden;
 }
 
+.pd-img img {
+  transition: 0.3s;
+}
+
 .pd-sex {
   height: 10%;
 }
@@ -47,17 +51,22 @@
 }
 .pd-name {
   height: 30%;
-  font-size: 100px;
+  font-size: 80px;
   text-transform: uppercase;
   letter-spacing: -0.4rem;
   transform: scale(0.6, 1.1);
   font-weight: 500;
+  color: var(--secondary-color);
 }
 .pd-price {
   height: 15%;
   font-size: 35px;
   font-weight: 400;
   letter-spacing: -0.1rem;
+}
+
+.pd-img:hover img {
+  transform: scale(1.1);
 }
 
 .owl-carousel .owl-stage-outer {

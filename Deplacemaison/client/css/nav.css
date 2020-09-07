@@ -6,12 +6,19 @@ svg {
 /* nav css */
 /* nav css */
 /* nav css */
-nav {
+nav#nav-mobile {
+  z-index: 30;
   position: fixed;
-
   top: 0;
   left: 0;
+  width: 100%;
+}
+
+nav#nav-desktop {
   height: 100vh;
+  position: fixed;
+  top: 0;
+  left: 0;
   width: 100%;
   display: flex;
 }
@@ -165,7 +172,7 @@ nav {
 /* nav mobile */
 /* nav mobile */
 /* nav mobile */
-#nav-mobile {
+nav#nav-mobile {
   display: none;
 }
 
@@ -174,15 +181,12 @@ nav {
 
 /* small device 0 to 576px */
 @media screen and (max-width: 576px) {
-  #nav-desktop {
+  nav#nav-desktop {
     display: none;
   }
 
-  #nav-mobile {
+  nav#nav-mobile {
     display: initial;
-  }
-  nav {
-    z-index: 30;
   }
 
   /* nav before click */
@@ -450,16 +454,14 @@ nav {
 
 /* medium device 576px to 768px */
 @media screen and (min-width: 576px) and (max-width: 768px) {
-  #nav-desktop {
+  nav#nav-desktop {
     display: none;
   }
 
-  #nav-mobile {
+  nav#nav-mobile {
     display: initial;
   }
-  nav {
-    z-index: 30;
-  }
+
   .nav-main {
     justify-content: center;
   }
@@ -728,17 +730,14 @@ nav {
 
 /* large device 576px to 768px */
 @media screen and (min-width: 768px) and (max-width: 992px) {
-  #nav-desktop {
+  nav#nav-desktop {
     display: none;
   }
 
-  #nav-mobile {
+  nav#nav-mobile {
     display: initial;
   }
 
-  nav {
-    z-index: 30;
-  }
   .nav-main {
     justify-content: center;
   }
@@ -1007,17 +1006,14 @@ nav {
 
 /* large device 576px to 768px */
 @media screen and (min-width: 992px) and (max-width: 1200px) {
-  #nav-desktop {
+  nav#nav-desktop {
     display: none;
   }
 
-  #nav-mobile {
+  nav#nav-mobile {
     display: initial;
   }
 
-  nav {
-    z-index: 30;
-  }
   .nav-main {
     justify-content: center;
   }

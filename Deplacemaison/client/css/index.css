@@ -560,10 +560,15 @@ a.special-active:nth-child(2) {
   /* header */
   /* header */
   header {
-    margin-top: 120px;
+    margin-top: 80px;
   }
   #spring {
     max-height: 80px;
+  }
+
+  #time {
+    top: 20px;
+    left: -10px;
   }
 
   header .row .content {
@@ -1089,6 +1094,9 @@ a.special-active:nth-child(2) {
     max-height: 180px;
   }
 
+  .spring-wrapper {
+    left: 150px;
+  }
   header .row .content {
     min-height: initial;
     height: 180px;
