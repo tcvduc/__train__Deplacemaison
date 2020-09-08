@@ -1,0 +1,102 @@
+/* cart loading css */
+/* cart loading css */
+/* cart loading css */
+
+#cart-loading {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 10;
+  height: 100vh;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: var(--secondary-color);
+}
+#jpn-wrapper {
+  height: 300px;
+  width: 100px;
+  overflow: hidden;
+  position: relative;
+  transition: 0.3s;
+}
+
+#jpn-loading {
+  background-color: #e7d6c4;
+  height: 100%;
+  width: 100%;
+  padding: 10px;
+  transition: 0.3s;
+  position: absolute;
+  top: 100%;
+  left: 0;
+}
+
+.jpn-animation {
+  animation: jpn_animation 0.9s forwards;
+}
+
+@keyframes jpn_animation {
+  from {
+    top: 100%;
+  }
+  to {
+    top: 0;
+  }
+}
+
+.jpn-wrapper-animation {
+  animation: jpn_wrapper_animation 0.9s forwards;
+}
+
+.cart-loading-out {
+  animation: jpn_wrapper_animation 0.3s forwards;
+}
+
+@keyframes jpn_wrapper_animation {
+  from {
+    top: 0;
+  }
+  to {
+    top: -100%;
+  }
+}
+
+/* add to cart  */
+/* add to cart  */
+/* add to cart  */
+#add-to-cart {
+  position: fixed;
+  z-index: 10;
+  bottom: 40px;
+  right: 40px;
+  height: 250px;
+  width: 400px;
+  background-color: var(--secondary-color);
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.select-color {
+  position: relative;
+  height: 70px;
+  width: 250px;
+  background-color: tomato;
+  border: 1px solid #fff;
+  overflow: hidden;
+}
+#sl-cl-text {
+  text-transform: uppercase;
+  height: 100%;
+  width: 100%;
+  font-size: 25px;
+  font-weight: 500;
+}
+.option-color {
+  background-color: thistle;
+  height: 100%;
+  width: 100%;
+}
