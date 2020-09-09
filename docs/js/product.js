@@ -6,7 +6,7 @@ function getProducts() {
       pd_sex:
         "https://global-uploads.webflow.com/5c9c9c646cf0969b319f264f/5ed0ddbec534bd9d113f6188_unisex-label.svg",
       pd_price: "€ 300 EUR",
-      pd_img: "./../images/carnera__man-black.jpg",
+      pd_img: "./css/images/carnera__man-black.jpg",
     },
     {
       id: 2,
@@ -14,7 +14,7 @@ function getProducts() {
       pd_sex:
         "https://global-uploads.webflow.com/5c9c9c646cf0969b319f264f/5ed0ddbec534bd9d113f6188_unisex-label.svg",
       pd_price: "€ 300 EUR",
-      pd_img: "./../images/carnera__man-black (2).jpg",
+      pd_img: "./css/images/carnera__man-black (2).jpg",
     },
     {
       id: 3,
@@ -22,7 +22,7 @@ function getProducts() {
       pd_sex:
         "https://global-uploads.webflow.com/5c9c9c646cf0969b319f264f/5ed0ddbec534bd9d113f6188_unisex-label.svg",
       pd_price: "€ 300 EUR",
-      pd_img: "./../images/carnera__wmns-black.jpg",
+      pd_img: "./css/images/carnera__wmns-black.jpg",
     },
     {
       id: 4,
@@ -30,7 +30,7 @@ function getProducts() {
       pd_sex:
         "https://global-uploads.webflow.com/5c9c9c646cf0969b319f264f/5ed0ddbec534bd9d113f6188_unisex-label.svg",
       pd_price: "€ 250 EUR",
-      pd_img: "./../images/garcia__wmns-white.jpg",
+      pd_img: "./css/images/garcia__wmns-white.jpg",
     },
     {
       id: 5,
@@ -38,7 +38,7 @@ function getProducts() {
       pd_sex:
         "https://global-uploads.webflow.com/5c9c9c646cf0969b319f264f/5ed0ddbec534bd9d113f6188_unisex-label.svg",
       pd_price: "€ 400 EUR",
-      pd_img: "./../images/rivolta-black-p-1080.jpeg",
+      pd_img: "./css/images/rivolta-black-p-1080.jpeg",
     },
     {
       id: 6,
@@ -46,7 +46,7 @@ function getProducts() {
       pd_sex:
         "https://global-uploads.webflow.com/5c9c9c646cf0969b319f264f/5ed0ddbec534bd9d113f6188_unisex-label.svg",
       pd_price: "€ 450 EUR",
-      pd_img: "./../images/tunney__wmns-white-p-1080.jpeg",
+      pd_img: "./css/images/tunney__wmns-white-p-1080.jpeg",
     },
   ];
 
