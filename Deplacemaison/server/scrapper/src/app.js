@@ -1,6 +1,6 @@
 const scrape = require("website-scraper");
 const options = {
-  urls: ["https://deplacemaison.webflow.io/product/the-code"],
+  urls: ["https://deplacemaison.webflow.io/product/duran"],
   directory: "ScapperCartData",
 };
 

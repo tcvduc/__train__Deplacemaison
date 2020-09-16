@@ -12,11 +12,19 @@ html {
   -ms-user-select: none;
   user-select: none;
 }
+
+/* core font */
+
+@font-face {
+  font-family: ttTrailer;
+  src: url("./../fonts/tttrailer.otf");
+}
+
 * {
   box-sizing: border-box;
   margin: 0;
   padding: 0;
-  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  font-family: ttTrailer, "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
 }
 
 svg {

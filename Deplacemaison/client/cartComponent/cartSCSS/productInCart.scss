@@ -17,9 +17,8 @@
 }
 
 .box {
-  background-color: lightgreen;
-  border: 1px solid #000;
   min-height: 100px;
+  background-color: burlywood;
 }
 
 /* product in cart name */
@@ -29,46 +28,68 @@
   .box {
     height: var(--pic-height-primary);
     position: relative;
+
+    .pic-img {
+      height: 100%;
+      width: 100%;
+      overflow: hidden;
+      border: 3px solid var(--secondary-color);
+    }
+
     .pic-nname {
-      background-color: blueviolet;
-      border: 1px solid #000;
       height: 230px;
       width: 300px;
       position: absolute;
       top: 180px;
       left: -150px;
+
       .pic-nname-before {
         position: absolute;
         height: 80px;
         width: 100%;
-        background-color: brown;
-        border: 1px solid #000;
-        top: -80px;
+
+        top: -40px;
         left: 0;
+        font-size: 40px;
+        text-transform: uppercase;
       }
-      .pic-nname-name {
+      .name-wrapper {
         height: 100%;
         width: 100%;
-        background-color: burlywood;
+        overflow: hidden;
+        position: relative;
+
+        .pic-nname-name {
+          position: absolute;
+          top: -30px;
+          left: -10px;
+          font-size: 250px;
+          text-transform: uppercase;
+          letter-spacing: -0.4rem;
+        }
       }
-      .pic-nname-after {
+      .pic-price {
         position: absolute;
         height: 80px;
         width: 100%;
-        background-color: brown;
-        border: 1px solid #000;
+
         bottom: -80px;
         left: 0;
+        font-size: 60px;
+        font-weight: 400;
+        text-transform: uppercase;
       }
     }
     .side {
       position: absolute;
       height: 30px;
       width: 100%;
-      background-color: brown;
-      border: 1px solid #000;
+
       top: 100%;
       left: 0;
+      text-transform: uppercase;
+
+      font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
     }
   }
 }
@@ -80,8 +101,9 @@
   .box {
     .pic-n-ct {
       width: 70%;
-      font-size: 24px;
+      font-size: 25px;
       font-weight: 500;
+      font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
     }
   }
 }
@@ -93,20 +115,39 @@
   .box {
     height: var(--pic-height-primary);
     position: relative;
+    .pd-img {
+      height: 100%;
+      width: 100%;
+      overflow: hidden;
+      border: 3px solid var(--secondary-color);
+    }
     .made-in {
       position: absolute;
-      top: -150px;
-      left: 20px;
+      top: -100px;
+      left: 0;
       height: 300px;
-      width: 500px;
-      background-color: cadetblue;
+      width: 100%;
+      font-weight: 500;
+      text-transform: uppercase;
+      transform: scaleX(2.1);
+      transform-origin: left;
+      .mi {
+        font-size: 200px;
+        line-height: 9vw;
+        letter-spacing: 0px;
+      }
+      .where {
+        padding-left: 40px;
+
+        font-size: 11vw;
+      }
     }
     .sex {
       position: absolute;
       right: 50px;
       top: 60px;
-      height: 100px;
-      width: 200px;
+      height: 40px;
+      width: 100px;
       background-color: blueviolet;
     }
     .view-i {
@@ -116,6 +157,7 @@
       width: 100%;
       background-color: brown;
       padding: 10px 0;
+      font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
       &::before {
         content: "view";
         position: absolute;
@@ -139,6 +181,13 @@
   .box {
     height: var(--pic-height-primary);
     position: relative;
+
+    .pd-img {
+      height: 100%;
+      width: 100%;
+      overflow: hidden;
+      border: 3px solid var(--secondary-color);
+    }
     .made-in {
       position: absolute;
       top: -150px;
@@ -151,8 +200,8 @@
       position: absolute;
       right: 50px;
       top: 60px;
-      height: 100px;
-      width: 200px;
+      height: 40px;
+      width: 100px;
       background-color: blueviolet;
     }
     .view-i {
@@ -162,6 +211,7 @@
       width: 100%;
       background-color: brown;
       padding: 10px 0;
+      font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
       &::before {
         content: "view";
         position: absolute;
