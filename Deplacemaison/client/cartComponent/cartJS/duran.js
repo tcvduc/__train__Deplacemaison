@@ -28,6 +28,9 @@ function glueyNameSection(data) {
 }
 
 function glueyFrontSection(data) {
+  // function: handle front section part
+  // input: data
+  // output: Gluey it into web
   let made_in = document.getElementsByClassName("where")[0];
   let sex = document.querySelector(".sex img");
   let pd_img = document.querySelector(".pd-img img");
@@ -41,6 +44,9 @@ function glueyFrontSection(data) {
 }
 
 function glueyBackSection(data) {
+  // function: handle back section part
+  // input: data
+  // output: Gluey it into web
   let made_in = document.getElementsByClassName("where")[0];
   let sex = document.querySelector("#pic-view-2 .sex img");
   let pd_img = document.querySelector("#pic-view-2 .pd-img img");
@@ -52,6 +58,11 @@ function glueyBackSection(data) {
   // img
   pd_img.setAttribute("src", `${data.back}`);
 }
+
+function handleDragProducts(data) {
+  log(data);
+}
+
 function duran() {
   // function: get product that name is duran
 
@@ -61,7 +72,7 @@ function duran() {
   // get data
   getData(dev_url)
     .then((data) => {
-      log(data);
+      // log(data);
 
       // To gluey those data to browser
 
@@ -73,6 +84,18 @@ function duran() {
 
       // view - back
       glueyBackSection(data);
+    })
+
+    .catch((e) => {
+      log(e);
+    });
+
+  // get data you may also love
+  const dev_also_love_url = "http://localhost:1212/api/products";
+  getData(dev_also_love_url)
+    .then((data) => {
+      // products drag section
+      handleDragProducts(data);
     })
     .catch((e) => {
       log(e);

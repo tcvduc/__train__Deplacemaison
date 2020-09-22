@@ -1,6 +1,8 @@
 :root {
   --primary-color: #fcf9ee;
   --secondary-color: #141414;
+  --primary-font: ttTrailer "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  --secondary-font: cyberThrone, "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
 }
 
 html {
@@ -20,11 +22,16 @@ html {
   src: url("./../fonts/tttrailer.otf");
 }
 
+@font-face {
+  font-family: cyberThrone;
+  src: url("./../fonts/cyberthrone.ttf");
+}
+
 * {
   box-sizing: border-box;
   margin: 0;
   padding: 0;
-  font-family: ttTrailer, "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
 }
 
 svg {

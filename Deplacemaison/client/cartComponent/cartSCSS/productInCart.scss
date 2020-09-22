@@ -12,13 +12,11 @@
 .pic-header {
   min-height: 500px;
   padding: 15vh 23.5%;
-  background-color: lightcoral;
-  border: 1px solid #000;
+  background-color: var(--primary-color);
 }
 
 .box {
   min-height: 100px;
-  background-color: burlywood;
 }
 
 /* product in cart name */
@@ -47,7 +45,7 @@
         position: absolute;
         height: 80px;
         width: 100%;
-
+        font-family: ttTrailer, "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
         top: -40px;
         left: 0;
         font-size: 40px;
@@ -66,13 +64,15 @@
           font-size: 250px;
           text-transform: uppercase;
           letter-spacing: -0.4rem;
+          font-family: ttTrailer, "Segoe UI", Tahoma, Geneva, Verdana,
+            sans-serif;
         }
       }
       .pic-price {
         position: absolute;
         height: 80px;
         width: 100%;
-
+        font-family: ttTrailer, "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
         bottom: -80px;
         left: 0;
         font-size: 60px;
@@ -135,10 +135,11 @@
         font-size: 200px;
         line-height: 9vw;
         letter-spacing: 0px;
+        font-family: ttTrailer, "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
       }
       .where {
         padding-left: 40px;
-
+        font-family: ttTrailer, "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
         font-size: 11vw;
       }
     }
@@ -148,14 +149,13 @@
       top: 60px;
       height: 40px;
       width: 100px;
-      background-color: blueviolet;
     }
     .view-i {
       position: absolute;
       top: 100%;
       height: 30px;
       width: 100%;
-      background-color: brown;
+
       padding: 10px 0;
       font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
       &::before {
@@ -194,7 +194,6 @@
       left: 20px;
       height: 300px;
       width: 500px;
-      background-color: cadetblue;
     }
     .sex {
       position: absolute;
@@ -202,14 +201,13 @@
       top: 60px;
       height: 40px;
       width: 100px;
-      background-color: blueviolet;
     }
     .view-i {
       position: absolute;
       top: 100%;
       height: 30px;
       width: 100%;
-      background-color: brown;
+
       padding: 10px 0;
       font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
       &::before {
@@ -234,9 +232,45 @@
     width: 50%;
     font-size: 24px;
     font-weight: 500;
+    font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
   }
 }
 
 /* product in cart main */
 /* product in cart main */
 /* product in cart main */
+.pic-main {
+  border-top: 3px solid var(--secondary-color);
+  border-bottom: 3px solid var(--secondary-color);
+  position: relative;
+  /* you may also love */
+  /* you may also love */
+  /* you may also love */
+  .also {
+    text-transform: uppercase;
+    font-size: 63px;
+    font-weight: 500;
+    font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+    width: 50%;
+    position: relative;
+  }
+  .also::after {
+    content: "love";
+    position: absolute;
+    bottom: 20px;
+    padding-left: 20px;
+    font-size: 50px;
+    font-family: var(--secondary-font);
+  }
+  .love {
+    font-family: var(--secondary-font);
+  }
+
+  /* products */
+  /* products */
+  /* products */
+  .product-wrapper {
+    min-height: 300px;
+    background-color: cadetblue;
+  }
+}
